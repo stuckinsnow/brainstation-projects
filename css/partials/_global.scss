@@ -1,0 +1,112 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+// Colours
+
+/* P = Active Page
+BG = Background
+TT = Title and Text
+ST = Subtitles */
+
+$header_ap: #DB7A4E;
+$footer_bg: #FEFAF5;
+$footer_tt: #335576;
+$footer_st: #DB7A4E;
+
+// end of colours */
+
+/* h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+   Write them in this order
+} */
+
+#nav__logo,
+.body__navbar a {
+    color: #335576;
+}
+
+// "The navigation bar must be fixed to the top of the page"
+
+#nav__logo {
+    order: -1;
+    margin-right: auto;
+    font-weight: 900;
+}
+
+.body__navbar {
+    width: 100%;
+    position: fixed;
+    background-color: #ffffff;
+    top: 0;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    #ul__currentpage a {
+        text-decoration: none;
+        border: solid;
+        border-color: $header_ap;
+        border-top: 0;
+        border-right: 0;
+        border-bottom-width: 0.3em;
+        border-left: 0;
+    }
+
+
+    li {
+        margin: 1em;
+    }
+
+    ul li a {
+        padding-bottom: 0.1rem;
+        text-decoration: none;
+    }
+
+    ul li a:active {
+        color: $header_ap;
+    }
+}
+
+footer {
+    background-color: $footer_bg;
+}
+
+.footer__info {
+    display: flex;
+    justify-content: center;
+
+    article {
+        padding: 0 2rem;
+    }
+    ul {
+        display: inline-flex;
+        padding: 0;
+    }
+    ul li { 
+        list-style: none;
+        padding: 0;
+        width: 50%;
+    }
+
+    ul li p {
+        width: 100%;
+    }
+
+    .footer__days {
+        color: $footer_st;
+    }
+
+    article:last-child {
+        display: inline-flex;
+    }
+}
