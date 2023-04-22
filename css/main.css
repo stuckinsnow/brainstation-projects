@@ -2,7 +2,8 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* P = Active Page
+/* 
+AP = Active Page
 BG = Background
 TT = Title and Text
 ST = Subtitles */
@@ -109,19 +110,12 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   color: black;
-  --width: 20vw; /* set the weight using a variable */
-  width: var(--width); /* set the width of the container using the variable */
-  height: calc(var(--width) / 0.66); /* calculate the height based on the width variable */
-}
-
-.section__card h3, .section__card p {
-  position: relative;
-  bottom: 4rem;
-  right: 2rem;
-  float: right;
-  color: #ffffff;
-  font-size: 1.17em;
-  font-weight: 900;
+  --width: 20vw;
+  /* set the weight using a variable */
+  width: var(--width);
+  /* set the width of the container using the variable */
+  height: calc(var(--width) / 0.66);
+  /* calculate the height based on the width variable */
 }
 
 footer {
@@ -150,7 +144,8 @@ footer {
   padding: 0;
   flex-grow: 2;
 }
-.footer__info ul li h3, .footer__info ul li p {
+.footer__info ul li h3,
+.footer__info ul li p {
   width: 100%;
   margin-right: 1rem;
 }
@@ -202,7 +197,18 @@ footer {
   color: white;
 }
 
-#section__hero-pic {
+#main__hero-pic {
   width: 30%;
   height: auto;
+}
+
+.section__card h3,
+.section__card p {
+  position: relative;
+  bottom: 4rem;
+  right: 2rem;
+  float: right;
+  color: #ffffff;
+  font-size: 1.17em;
+  font-weight: 900;
 }/*# sourceMappingURL=main.css.map */

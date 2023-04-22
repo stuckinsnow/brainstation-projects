@@ -4,18 +4,19 @@ body {
 
 // Colours
 
-/* P = Active Page
+/* 
+AP = Active Page
 BG = Background
 TT = Title and Text
 ST = Subtitles */
 
-$header_ap: #db7a4e;
-$footer_bg: #fefaf5;
-$footer_tt: #335576;
-$footer_st: #db7a4e;
+$ap: #db7a4e;
+$bg: #fefaf5;
+$tt: #335576;
+$st: #db7a4e;
 
 body {
-	background-color: $footer_bg;
+	background-color: $bg;
 }
 
 main {
@@ -40,7 +41,7 @@ h3,
 h2,
 h1,
 p {
-	color: $footer_tt;
+	color: $tt;
 }
 
 #nav__logo,
@@ -74,7 +75,7 @@ p {
 	#ul__currentpage a {
 		text-decoration: none;
 		border: solid;
-		border-color: $header_ap;
+		border-color: $ap;
 		border-top: 0;
 		border-right: 0;
 		border-bottom-width: 0.3em;
@@ -92,13 +93,14 @@ p {
 	}
 
 	ul li a:active {
-		color: $header_ap;
+		color: $ap;
 	}
 }
 
 .main__title {
 	margin-left: 7rem;
 }
+
 .main__card-container {
 	display: flex;
 	gap: 2rem;
@@ -108,31 +110,23 @@ p {
 	padding-top: 1rem;
 	flex-wrap: wrap;
 	justify-content: center;
-	
 
-a {
-	width: auto;
-	height: auto;
+
+	a {
+		width: auto;
+		height: auto;
+	}
+
+	h2 {
+		width: 100%;
+		float: left;
+	}
+
+	img {
+		width: auto;
+		height: 100%
+	}
 }
-
-h2 {
-	width: 100%;
-	float: left;
-}
-
-img {
-	width: auto;
-	height: 100%
-}
-
-	
-
-}
-
- 
-
-
-
 
 .section__card {
 	//     The border radius of the cards must be 5px
@@ -147,26 +141,16 @@ img {
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 	color: black;
-	--width: 20vw; /* set the weight using a variable */
-	width: var(--width); /* set the width of the container using the variable */
-	height: calc(var(--width) / 0.66); /* calculate the height based on the width variable */
+	--width: 20vw;
+	/* set the weight using a variable */
+	width: var(--width);
+	/* set the width of the container using the variable */
+	height: calc(var(--width) / 0.66);
+	/* calculate the height based on the width variable */
 }
-
-.section__card h3, .section__card p {
-	position: relative;
-	bottom: 4rem;
-	right: 2rem;
-	float: right;
-	color: #ffffff;
-	font-size: 1.17em;
-	font-weight: 900;
-}
-
-
-
 
 footer {
-	background-color: $footer_bg;
+	background-color: $bg;
 	height: 20vh;
 }
 
@@ -196,7 +180,8 @@ footer {
 		// width: 50%;
 	}
 
-	ul li h3, ul li p {
+	ul li h3,
+	ul li p {
 		width: 100%;
 		// margin: 0 0.5rem;
 		margin-right: 1rem;
@@ -204,7 +189,7 @@ footer {
 
 	.footer__subtitle {
 		font-size: 0.625rem;
-		color: $footer_st;
+		color: $st;
 		margin-top: 0.5rem;
 	}
 

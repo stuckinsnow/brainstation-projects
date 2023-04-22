@@ -1,1 +1,56 @@
-@use "./partials/global" as *; 
+@use "./partials/global" as *;
+
+main {
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+main#hawaii {
+    background-image: url(../assets/Images/hawaii.jpg);
+}
+
+main#greece {
+    background-image: url(../assets/Images/greece.jpg);
+}
+
+main#iceland {
+    background-image: url(../assets/Images/iceland.jpg);
+}
+
+.main__title {
+    width: 100%;
+    margin-top: 10rem;
+    color: white;
+    font-size: 4rem;
+}
+
+.section__card {
+    background-color: #ffffff;
+    padding: 1rem;
+    padding-top: 0;
+
+    h2 {
+        color: #000000;
+        text-align: center;
+        border-bottom-color: black;
+        border-bottom-style: solid;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        text-align: center;
+        padding: 0.25rem;
+    }
+
+    ul li {
+        background-color: #fefaf5;
+        width: 100%;
+        box-sizing: border-box;
+        height: 3rem;
+        padding: 1rem;
+    }
+}

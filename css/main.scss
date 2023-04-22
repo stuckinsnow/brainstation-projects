@@ -52,7 +52,18 @@
 
 
 
-#section__hero-pic {
+#main__hero-pic {
 	width: 30%;
 	height: auto;
+}
+
+.section__card h3,
+.section__card p {
+	position: relative;
+	bottom: 4rem;
+	right: 2rem;
+	float: right;
+	color: #ffffff;
+	font-size: 1.17em;
+	font-weight: 900;
 }

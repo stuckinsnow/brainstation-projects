@@ -1,14 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hawaii</title>
+    <link rel="stylesheet" href="/css/destinations.css">
+    <title>Hawaii - Travelsite</title>
 </head>
+
 <body>
-    
-    Hawaii
-    
+    <nav class="body__navbar">
+        <ul>
+            <li id="nav__logo">Travel Site</li>
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="./iceland.html">Iceland</a>
+            </li>
+            <li>
+                <a href="./greece.html">Greece</a>
+            </li>
+            <li id="ul__currentpage">
+                <a href="./hawaii.html">Hawaii</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="hawaii">
+        <section class="main__card-container">
+            <h1 class="main__title">Hawaii</h2>
+                <article class="section__card">
+                    <h2>Friday</h2>
+                    <ul>
+                        <li>Breakfast</li>
+                        <li>Lunch</li>
+                        <li>Dinner</li>
+                        <li>Snorkeling</li>
+                    </ul>
+                </article>
+                <article class="section__card">
+                    <h2>Saturday</h2>
+                    <ul>
+                        <li>Breakfast</li>
+                        <li>Lunch</li>
+                        <li>Dinner</li>
+                        <li>Snorkeling</li>
+                    </ul>
+                </article>
+                <article class="section__card">
+                    <h2>Sunday</h2>
+                    <ul>
+                        <li>Breakfast</li>
+                        <li>Lunch</li>
+                        <li>Dinner</li>
+                        <li>Snorkeling</li>
+                    </ul>
+                </article>
+        </section>
+    </main>
+    <footer>
+        <section class="footer__info">
+            <!-- I made the deliberate choice to use section here as it's semantically better for SEO, but the validator complains. Should I have used a DIV for this?  -->
+            <article>
+                <h3>Contact</h3>
+                <p class="footer__subtitle">Email</p>
+                <p>
+                    <a href="mailto:info@travelsite.com">info@travelsite.com</a>
+                </p>
+            </article>
+            <article>
+                <h3>Hours</h3>
+                <ul>
+                    <li>
+                        <p class="footer__subtitle">Monday - Friday</p>
+                        <p class="footer__times">9:00 AM - 5:00 PM</p>
+                    </li>
+                    <li>
+                        <p class="footer__subtitle">Saturday</p>
+                        <p class="footer__times">10:00 AM - 4:00 PM</p>
+                    </li>
+                    <li>
+                        <p class="footer__subtitle">Sunday</p>
+                        <p class="footer__times">Closed</p>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>Social</h3>
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="../assets/Images/icon-instagram.png" alt="Instagram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../assets/Images/icon-facebook.png" alt="Facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../assets/Images/icon-twitter.png" alt="Twitter">
+                        </a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <!-- self note, as an emmet command I used section.footer__info>article*3>h3 -->
+    </footer>
 </body>
+
 </html>
