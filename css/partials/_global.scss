@@ -42,6 +42,7 @@ h1,
 p {
 	color: $footer_tt;
 }
+
 #nav__logo,
 .body__navbar a {
 	color: #335576;
@@ -53,6 +54,7 @@ p {
 	order: -1;
 	margin-right: auto;
 	font-weight: 900;
+	margin-left: 5rem;
 }
 
 .body__navbar {
@@ -66,6 +68,7 @@ p {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding-right: 9rem;
 	}
 
 	#ul__currentpage a {
@@ -83,14 +86,84 @@ p {
 	}
 
 	ul li a {
-		padding-bottom: 0.1rem;
+		padding-bottom: 0.5rem;
 		text-decoration: none;
+		color: black;
 	}
 
 	ul li a:active {
 		color: $header_ap;
 	}
 }
+
+.main__title {
+	margin-left: 7rem;
+}
+.main__card-container {
+	display: flex;
+	gap: 2rem;
+	// width: 67vw;
+	margin: auto;
+	padding-bottom: 5rem;
+	padding-top: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	
+
+a {
+	width: auto;
+	height: auto;
+}
+
+h2 {
+	width: 100%;
+	float: left;
+}
+
+img {
+	width: auto;
+	height: 100%
+}
+
+	
+
+}
+
+ 
+
+
+
+
+.section__card {
+	//     The border radius of the cards must be 5px
+	// o The border of the cards must be 1px solid black with an opacity of 20%
+	// o The box shadow of the cards must be:
+	//  Horizontal Offset: 0px
+	//  Vertical Offset: 4px
+	//  Blur: 4px
+	//  Color: Black, with an opacity of 20%
+
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+	color: black;
+	--width: 20vw; /* set the weight using a variable */
+	width: var(--width); /* set the width of the container using the variable */
+	height: calc(var(--width) / 0.66); /* calculate the height based on the width variable */
+}
+
+.section__card h3, .section__card p {
+	position: relative;
+	bottom: 4rem;
+	right: 2rem;
+	float: right;
+	color: #ffffff;
+	font-size: 1.17em;
+	font-weight: 900;
+}
+
+
+
 
 footer {
 	background-color: $footer_bg;
@@ -123,7 +196,7 @@ footer {
 		// width: 50%;
 	}
 
-	ul li p {
+	ul li h3, ul li p {
 		width: 100%;
 		// margin: 0 0.5rem;
 		margin-right: 1rem;
@@ -140,7 +213,7 @@ footer {
 	// }
 
 	img {
-		width: 2rem;
+		width: auto;
 		height: 2rem;
 		padding-right: 1rem;
 		padding-top: 1rem;

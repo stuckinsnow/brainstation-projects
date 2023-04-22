@@ -1,83 +1,58 @@
 @use "./partials/global" as *;
 
-img {
-	height: 100%;
-	width: 100%;
-}
+// img {
+// 	height: 100%;
+// 	width: 100%;
+// }
 
 #main__hero-wrapper {
 	margin-top: 4rem;
 	background-color: #fefaf5;
+	display: flex;
+	justify-content: space-evenly;
+	align-content: center;
+	align-items: center;
+	flex-direction: row;
+	padding: 4rem;
 }
+
 .main__hero {
-	width: 90%;
-	margin: auto;
-	padding: 2rem;
+	// width: 90%;
+	// margin: auto;
+	// padding: 2rem;
+
+	p {
+		width: 50vw;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
 
 	h1 {
-		width: 40%;
+		width: 50%;
+		text-transform: capitalize;
+	}
+
+	article {
+		float: left;
+		width: 55%;
+		padding: 2rem;
+	}
+
+	button {
+		background-color: #db7a4e;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		border-radius: 1rem;
+		border-color: transparent;
+		color: white;
 	}
 }
 
-.main__hero article {
-	float: left;
-	width: 55%;
-	padding: 2rem;
-}
 
-// .main__hero {
-//   width: 100%;
-//   margin-top: 6rem;
-//   height: 40vh;
-// background-color: #FEFAF5;
-//   display: flex;
-//   justify-content: space-evenly;
-//   flex-wrap: wrap;
-//   align-content: space-around;
-//   align-items: flex-end;
-// }
-
-// .main__hero article {
-//   // width: 50%;
-//   width: 40%;
-// }
 
 #section__hero-pic {
 	width: 30%;
 	height: auto;
-}
-
-.main__card-container {
-	display: flex;
-	gap: 2rem;
-	width: 67vw;
-	margin: auto;
-	padding-bottom: 5rem;
-	padding-top: 1rem;
-}
-
-.section__card {
-	//     The border radius of the cards must be 5px
-	// o The border of the cards must be 1px solid black with an opacity of 20%
-	// o The box shadow of the cards must be:
-	//  Horizontal Offset: 0px
-	//  Vertical Offset: 4px
-	//  Blur: 4px
-	//  Color: Black, with an opacity of 20%
-
-	border-radius: 5px;
-	border: 1px solid black;
-	box-shadow: 4px 0px 4px;
-	color: black;
-	flex-grow: 3;
-}
-
-.section__card p {
-	position: relative;
-	bottom: 4rem;
-	right: 2rem;
-	float: right;
-	color: #ffffff;
-	font-size: 1.17em;
-	font-weight: 900;
 }
