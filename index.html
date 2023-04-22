@@ -2,85 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
-    <title>Travelsite Home Page</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/main.css">
+	<title>Travelsite Home Page</title>
 </head>
 
 <body>
-    <nav class="body__navbar">
-        <ul>
-            <li id="nav__logo">Travel Site</li>
-            <li id="ul__currentpage"><a href="index.html">Home</a></li>
-            <li><a href="iceland.html">Iceland</a></li>
-            <li><a href="greece.html">Greece</a></li>
-            <li><a href="hawaii.html">Hawaii</a></li>
-        </ul>
-    </nav>
+	<nav class="body__navbar">
+		<ul>
+			<li id="nav__logo">Travel Site</li>
+			<li id="ul__currentpage"><a href="index.html">Home</a></li>
+			<li><a href="iceland.html">Iceland</a></li>
+			<li><a href="greece.html">Greece</a></li>
+			<li><a href="hawaii.html">Hawaii</a></li>
+		</ul>
+	</nav>
 
-    <section class="body__hero">
-        <article>
-            <h1>Travelling comes with endless discoveries</h1>
-            <p>Don't let your dreams be just dreams. Experience the world by booking a vacation with us now.</p>
-        </article>
-    </section>
+	<main>
+		<div id="main__hero-wrapper">
+			<section class="main__hero">
+				<article>
+					<h1>Travelling comes with endless discoveries</h1>
+					<p>Don't let your dreams be just dreams. Experience the world by booking a vacation with us now.</p>
+					<!-- <img id="section__hero-pic" src="./assets/Images/hero.png"> -->
+				</article>
+				<img id="section__hero-pic" src="./assets/Images/hero.png">
+				<!-- <article><img id="section__hero-pic" src="./assets/Images/hero.png"></article> -->
+			</section>
+		</div>
 
-    <section>
-        <h2 class="recommendations">Recommendations</h2>
-        <article><a href="/pages/hawaii.html"><img src="assets/Images/hawaii.jpg" alt="Photograph of Hawaii" srcset="">
-                <p class="img__card">Hawaii</p>
-                <!-- I was undecided whether to use background-image for the image or absolute positioning for the text. I went with this choice because of the "alt" writing. -->
-            </a>
-        </article>
-        <article><a href="/pages/iceland.html"><img src="assets/Images/iceland.jpg" alt="Photograph of Iceland"
-                    srcset="">
-                <p>Iceland</p>
-            </a>
-        </article>
-        <article><a href="/pages/greece.html"><img src="assets/Images/greece.jpg" alt="Photograph of Greece" srcset="">
-                <p>Greece</p>
-            </a>
-        </article>
-    </section>
+		<h2 class="recommendations">Recommendations</h2>
+		<section class="main__card-container">
+			<article class="section__card">
+				<a href="/pages/hawaii.html">
+					<img src="assets/Images/hawaii.jpg" alt="Photograph of Hawaii" srcset="">
+					<p class="article__description">Hawaii</p>
+					<!-- I was undecided whether to use background-image for the image or absolute positioning for the text. I went with this choice because of the "alt" writing. -->
+				</a>
+			</article>
+			<article class="section__card">
+				<a href="/pages/iceland.html">
+					<img src="assets/Images/iceland.jpg" alt="Photograph of Iceland" srcset="">
+					<p>Iceland</p>
+				</a>
+			</article>
+			<article class="section__card">
+				<a href="/pages/greece.html">
+					<img src="assets/Images/greece.jpg" alt="Photograph of Greece" srcset="">
+					<p>Greece</p>
+				</a>
+			</article>
+		</section>
+	</main>
 
-    <footer>
-        <section class="footer__info">
-            <article>
-                <h3>Contact</h3>
-                <p>Email</p>
-                <p><a href="mailto:info@travelsite.com">info@travelsite.com</a></p>
-            </article>
-            <article>
-                <h3>Hours</h3>
-                <ul>
-                    <li>
-                        <p class="footer__days">Monday - Friday</p>
-                        <p class="footer__times">9:00 AM to 5:00 PM</p>
-                    </li>
-                    <li>
-                        <p class="footer__days">Saturday</p>
-                        <p class="footer__times">10:00 AM -- 4:00 PM</p>
-                    </li>
-                    <li>
-                        <p class="footer__days">Sunday</p>
-                        <p class="footer__times">Closed</p>
-                    </li>
-                </ul>
-
-            </article>
-            <article>
-                <h3>Social</h3>
-                <a href=""><img src="" alt=""></a>
-                <a href=""><img src="" alt=""></a>
-                <a href=""><img src="" alt=""></a>
-            </article>
-        </section>
-        <!-- self note, as an emmet command I used section.footer__info>article*3>h3 -->
-    </footer>
-
-
+	<footer>
+		<section class="footer__info">
+			<article>
+				<h3>Contact</h3>
+				<p class="footer__subtitle">Email</p>
+				<p><a href="mailto:info@travelsite.com">info@travelsite.com</a></p>
+			</article>
+			<article>
+				<h3>Hours</h3>
+				<ul>
+					<li>
+						<p class="footer__subtitle">Monday - Friday</p>
+						<p class="footer__times">9:00 AM - 5:00 PM</p>
+					</li>
+					<li>
+						<p class="footer__subtitle">Saturday</p>
+						<p class="footer__times">10:00 AM - 4:00 PM</p>
+					</li>
+					<li>
+						<p class="footer__subtitle">Sunday</p>
+						<p class="footer__times">Closed</p>
+					</li>
+				</ul>
+			</article>
+			<article>
+				<h3>Social</h3>
+				<ul>
+					<li>
+						<a href=""><img src="./assets/Images/icon-instagram.png" alt="Instagram"></a>
+					</li>
+					<li>
+						<a href=""><img src="./assets/Images/icon-facebook.png" alt="Facebook"></a>
+					</li>
+					<li>
+						<a href=""><img src="./assets/Images/icon-twitter.png" alt="Twitter"></a>
+					</li>
+				</ul>
+			</article>
+		</section>
+		<!-- self note, as an emmet command I used section.footer__info>article*3>h3 -->
+	</footer>
 </body>
 
 </html>
