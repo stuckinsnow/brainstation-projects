@@ -36,6 +36,18 @@ p {
 #nav__logo,
 .body__navbar a {
   color: #335576;
+  transition: 0.1s ease-in-out;
+  border: solid;
+  border-top: 0;
+  border-right: 0;
+  border-bottom-width: 0.3em;
+  border-left: 0;
+  border-color: transparent;
+}
+
+.body__navbar a:hover {
+  color: #db7a4e;
+  border-color: rgba(219, 122, 78, 0.1254901961);
 }
 
 #nav__logo {
@@ -160,6 +172,14 @@ footer {
   height: 2rem;
   padding-right: 1rem;
   padding-top: 1rem;
+}
+.footer__info a {
+  color: #335576;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+}
+.footer__info a:hover {
+  color: #db7a4e;
 }
 
 main {

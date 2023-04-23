@@ -47,6 +47,18 @@ p {
 #nav__logo,
 .body__navbar a {
 	color: #335576;
+	transition: .1s ease-in-out;
+	border: solid;
+	border-top: 0;
+	border-right: 0;
+	border-bottom-width: 0.3em;
+	border-left: 0;
+	border-color: transparent;
+}
+
+.body__navbar a:hover {
+	color: $ap;
+	border-color: #db7a4e20;
 }
 
 // "The navigation bar must be fixed to the top of the page"
@@ -204,5 +216,15 @@ footer {
 		height: 2rem;
 		padding-right: 1rem;
 		padding-top: 1rem;
+	}
+
+	a {
+		color: $tt;
+		text-decoration: none;
+		transition: .1s ease-in-out;
+	}
+
+	a:hover {
+		color: $ap;
 	}
 }
