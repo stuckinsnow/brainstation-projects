@@ -163,9 +163,9 @@ footer {
   margin-right: 1rem;
 }
 .footer__info .footer__subtitle {
-  font-size: 0.625rem;
+  font-size: 0.8rem;
   color: #db7a4e;
-  margin-top: 0.5rem;
+  margin-bottom: -0.8rem;
 }
 .footer__info img {
   width: auto;
