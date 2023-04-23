@@ -70,6 +70,12 @@ h1
 	margin-right: auto;
 	font-weight: 900;
 	margin-left: 5rem;
+	
+	a {
+		color: $tt;
+		border-style: none;
+	}
+
 }
 
 .body__navbar {
