@@ -34,13 +34,15 @@ h1 {
    Write them in this order
 } */
 
+p,
 h6,
 h5,
 h4,
 h3,
 h2,
-h1,
-p {
+h1
+// Should P be at the top of this list? I assume so because h6 is smaller than h1, and I think the order for those is correct.
+{
 	color: $tt;
 }
 
