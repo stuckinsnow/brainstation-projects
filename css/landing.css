@@ -1,0 +1,6 @@
+@import url(global.css);
+
+nav ul {
+    list-style: none;
+    text-transform: uppercase;
+}
