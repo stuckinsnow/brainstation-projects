@@ -1,1 +1,8 @@
 @use "./partials/global" as *;
+
+.main__hero-bio {
+    background-size: cover;
+    background-image: url(../assets/Images/hero-bio.jpg);
+    background-position: center;
+    height: 60vh;
+}
