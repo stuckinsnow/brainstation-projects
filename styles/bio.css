@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url("../Font/AvenirNextLTPro-Regular.otf") format("otf");
+}
+.body__header {
+  width: 100%;
+  background-color: #323232;
+}
+.body__header p {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  font-style: AvenirNextLTPro-Regular;
+}
+.body__header ul {
+  list-style-type: none;
+  width: 50%;
+  display: flex;
+}
+.body__header ul li {
+  width: 100%;
+}
+
 /* @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
