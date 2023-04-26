@@ -3,6 +3,36 @@
 .main__hero-bio {
     background-size: cover;
     background-image: url(../assets/Images/hero-bio.jpg);
-    background-position: center;
-    height: 60vh;
+    background-position: right;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+
+    h1 {
+        margin-left: 2rem;
+        color: $pri-light;
+    }
+}
+
+.main__biography {
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
+}
+
+.main__gallery {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    background-color: $sec-light;
+
+    article {
+        box-sizing: border-box;
+        width: calc(100% - 2rem);
+    }
 }

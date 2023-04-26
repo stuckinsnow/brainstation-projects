@@ -13,8 +13,7 @@
   src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
 }
 img {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 100%;
 }
 
 body {
@@ -42,6 +41,7 @@ ul {
   padding: 1rem;
   margin-right: auto;
   text-transform: uppercase;
+  padding-top: 2rem;
   padding-bottom: 0;
 }
 .body__header #nav__active-page {
@@ -68,6 +68,19 @@ ul {
   text-decoration: none;
 }
 
+footer {
+  background-color: #323232;
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 1rem;
+  color: #ffffff;
+}
+footer ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
 /* @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
@@ -86,6 +99,34 @@ ul {
 .main__hero-bio {
   background-size: cover;
   background-image: url(../assets/Images/hero-bio.jpg);
-  background-position: center;
-  height: 60vh;
+  background-position: right;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.main__hero-bio h1 {
+  margin-left: 2rem;
+  color: #ffffff;
+}
+
+.main__biography {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+}
+
+.main__gallery {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #fafafa;
+}
+.main__gallery article {
+  box-sizing: border-box;
+  width: calc(100% - 2rem);
 }/*# sourceMappingURL=bio.css.map */
