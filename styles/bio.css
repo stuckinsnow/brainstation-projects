@@ -1,16 +1,16 @@
 @font-face {
   font-family: "AvenirNextLTPro-Regular";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "AvenirNextLTPro-Demi";
   font-weight: 600;
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../assets/font/AvenirNextLTPro-Demi.otf") format("opentype");
 }
 @font-face {
   font-family: "AvenirNextLTPro-Bold";
   font-weight: 700;
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../assets/font/AvenirNextLTPro-Bold.otf") format("opentype");
 }
 img {
   max-width: 100%;
@@ -27,10 +27,22 @@ ul {
   padding: 0;
 }
 
+h2 {
+  color: #000000;
+}
+
 .body__header {
   width: 100%;
   background-color: #323232;
   display: flex;
+  align-items: center;
+}
+@media (min-width: 1200px) {
+  .body__header {
+    width: auto;
+    align-content: space-between;
+    flex-direction: row;
+  }
 }
 .body__header #navbar-logo {
   order: -1;
@@ -44,6 +56,12 @@ ul {
   padding-top: 2rem;
   padding-bottom: 0;
 }
+@media (min-width: 1200px) {
+  .body__header #navbar-logo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
 .body__header #navbar-active {
   border-style: solid;
   border-width: 0;
@@ -53,12 +71,22 @@ ul {
 .body__header nav {
   width: 100%;
 }
+@media (min-width: 1200px) {
+  .body__header nav {
+    width: 30%;
+  }
+}
 .body__header ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+}
+@media (min-width: 1200px) {
+  .body__header ul {
+    flex-wrap: unset;
+  }
 }
 .body__header ul li {
   width: 50%;
@@ -73,7 +101,6 @@ ul {
 footer {
   background-color: #323232;
   box-sizing: border-box;
-  height: 100vh;
   padding: 1rem;
   color: #ffffff;
 }
@@ -84,6 +111,19 @@ footer ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 1200px) {
+  footer ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  footer ul .ul__full-width {
+    width: 100% !important;
+    color: red;
+  }
 }
 footer .li__bold {
   font-weight: bold;
@@ -113,6 +153,12 @@ footer .li__bold {
   box-sizing: border-box;
   padding: 1rem;
   width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .section__top {
+    padding: 6rem;
+  }
 }
 
 .main__gallery {

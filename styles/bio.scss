@@ -23,6 +23,11 @@
     width: 100%;
 }
 
+.section__top {
+    @include desktop {
+        padding: 6rem;
+    }
+}
 .main__gallery {
     display: flex;
     box-sizing: border-box;
