@@ -121,8 +121,22 @@ footer ul {
     justify-content: space-around;
   }
   footer ul .ul__full-width {
-    width: 100% !important;
-    color: red;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  footer ul .ul__social {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding-left: 6rem;
+  }
+  footer ul .ul__social p {
+    flex-grow: 2;
+  }
+  footer ul .ul__social div {
+    flex-grow: 4;
+    margin-left: 0.5rem;
   }
 }
 footer .li__bold {
@@ -155,6 +169,15 @@ footer .li__bold {
   width: 100%;
 }
 
+.section__hidden {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .section__hidden {
+    display: flex;
+  }
+}
+
 @media (min-width: 1200px) {
   .section__top {
     padding: 6rem;
@@ -177,12 +200,12 @@ footer .li__bold {
     width: 100%;
   }
 }
-.main__gallery article {
+.main__gallery img {
   box-sizing: border-box;
   width: calc(100% - 2rem);
 }
 @media (min-width: 1200px) {
-  .main__gallery article {
+  .main__gallery img {
     width: calc(33% - 1rem);
   }
 }/*# sourceMappingURL=bio.css.map */
