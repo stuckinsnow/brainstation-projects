@@ -31,8 +31,24 @@
     gap: 1rem;
     background-color: $sec-light;
 
+    @include desktop {
+
+        // justify-content: left;
+        padding: 6rem;
+
+        h2 {
+            width: 100%;
+        }
+    }
+
+    
+
     article {
         box-sizing: border-box;
         width: calc(100% - 2rem);
+
+        @include desktop {
+            width: calc(33% - 1rem);
+        }
     }
 }
