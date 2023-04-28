@@ -2,6 +2,8 @@
 
 .main__hero-bio {
     background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(50, 50, 50, 0.35);
+    // style guide says to use 50% but it looked too much
     background-image: url(../assets/Images/hero-bio.jpg);
     background-position: right;
     height: 45vh;
@@ -15,7 +17,8 @@
         margin-left: 2rem;
         color: $pri-light;
     }
-}
+} 
+
 
 .main__biography {
     box-sizing: border-box;
@@ -23,17 +26,31 @@
     width: 100%;
 }
 
-.section__hidden {
+.main__hidden {
     display: none;
 
-    @include desktop {
+    @include tablet {
+        padding: 0 6rem;
         display: flex;
+        flex-wrap: wrap;
+    }
+
+    article {
+        padding: 1rem;
+        padding-bottom: 2rem;
+        width: calc(50% - 2rem);
+    }
+
+    h2 {
+        padding: 0 1rem;
+        width: 100%;
     }
 }
 
 .section__top {
-    @include desktop {
+    @include tablet {
         padding: 6rem;
+        padding-bottom: 0rem;
     }
 }
 .main__gallery {
@@ -44,7 +61,7 @@
     gap: 1rem;
     background-color: $sec-light;
 
-    @include desktop {
+    @include tablet {
 
         // justify-content: left;
         padding: 6rem;
@@ -60,7 +77,7 @@
         box-sizing: border-box;
         width: calc(100% - 2rem);
 
-        @include desktop {
+        @include tablet {
             width: calc(33% - 1rem);
         }
     }
