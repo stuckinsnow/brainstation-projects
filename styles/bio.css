@@ -40,6 +40,8 @@ h2 {
 @media (min-width: 768px) {
   .body__header {
     width: auto;
+    padding-left: 4rem;
+    font-size: 1.7rem;
     align-content: space-between;
     flex-direction: row;
   }
@@ -101,17 +103,13 @@ h2 {
 footer {
   background-color: #323232;
   box-sizing: border-box;
-  padding: 1rem;
+  margin-top: 1rem;
   color: #ffffff;
 }
 @media (min-width: 768px) {
   footer {
-    padding: 2rem;
-  }
-}
-@media (min-width: 1200px) {
-  footer {
-    padding: 2rem 6.5rem;
+    padding: 0 2.25rem;
+    font-size: 0.625rem;
   }
 }
 footer img {
@@ -119,37 +117,62 @@ footer img {
 }
 footer #footer__container {
   display: flex;
-  justify-content: space-between;
-  align-content: center;
+  align-content: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
 }
 @media (min-width: 768px) {
   footer #footer__container {
+    align-content: center;
     flex-direction: row;
+    justify-content: flex-start;
   }
 }
 @media (min-width: 768px) {
   footer #footer__container #footer__bandsite {
     text-align: right;
     order: -1;
-    flex: 0 0 25%;
+    flex: 0 0 10%;
+  }
+}
+@media (min-width: 768px) {
+  footer #footer__container #footer__bandsite {
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  footer #footer__container #footer__bandsite p {
+    font-size: 1.0625rem;
+  }
+}
+@media (min-width: 768px) {
+  footer #footer__primary-bold {
+    font-family: "AvenirNextLTPro-Demi";
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
+  footer #footer__primary-bold p {
+    font-size: 1.7rem;
   }
 }
 @media (min-width: 768px) {
   footer #footer__container > div:first-child {
-    flex: 0 0 75%;
+    flex: 0 0 70%;
     order: -2;
   }
 }
-footer .li__bold {
-  font-weight: bold;
+
+@media (min-width: 768px) {
+  .footer__mini-container {
+    width: calc(33% - 3rem);
+  }
 }
 
-/* @include tablet {
-}
-@include desktop {
-} */
 .main__hero-bio {
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(50, 50, 50, 0.35);
@@ -205,15 +228,20 @@ footer .li__bold {
   box-sizing: border-box;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
   background-color: #fafafa;
 }
 @media (min-width: 768px) {
   .main__gallery {
-    padding: 6rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
   .main__gallery h2 {
     width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .main__gallery {
+    padding: 2rem 6rem;
   }
 }
 .main__gallery img {
@@ -222,6 +250,6 @@ footer .li__bold {
 }
 @media (min-width: 768px) {
   .main__gallery img {
-    width: calc(33% - 1rem);
+    width: calc(33% - 1.35rem);
   }
 }/*# sourceMappingURL=bio.css.map */

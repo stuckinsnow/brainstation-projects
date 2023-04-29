@@ -17,7 +17,7 @@
         margin-left: 2rem;
         color: $pri-light;
     }
-} 
+}
 
 
 .main__biography {
@@ -53,32 +53,36 @@
         padding-bottom: 0rem;
     }
 }
+
 .main__gallery {
     display: flex;
     box-sizing: border-box;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
     background-color: $sec-light;
 
     @include tablet {
 
-        // justify-content: left;
-        padding: 6rem;
-
+        padding: 1.5rem;
+        gap: 1.5rem;
+        // measured
         h2 {
             width: 100%;
         }
     }
 
-    
+    @include desktop {
+        padding: 2rem 6rem;
+    }
+
+
 
     img {
         box-sizing: border-box;
         width: calc(100% - 2rem);
 
         @include tablet {
-            width: calc(33% - 1rem);
+            width: calc(33% - 1.35rem);
         }
     }
 }
