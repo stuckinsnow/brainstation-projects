@@ -6,7 +6,7 @@
     // style guide says to use 50% but it looked too much
     background-image: url(../assets/Images/hero-bio.jpg);
     background-position: right;
-    height: 45vh;
+    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,44 +14,75 @@
     flex-wrap: wrap;
 
     h1 {
-        margin-left: 2rem;
         color: $pri-light;
+        font-family: 'AvenirNextLTPro-Demi';
+        margin-left: 1rem;
     }
 }
 
 
 .main__biography {
+    width: 100%;
     box-sizing: border-box;
     padding: 1rem;
-    width: 100%;
+    padding-bottom: 0;
+    h2 {
+        font-family: 'AvenirNextLTPro-Demi';
+        line-height: 1rem;
+        margin: 0;
+        padding-top: 0.2rem;
+        padding-bottom: 1rem;
+    }
 }
 
-.main__hidden {
-    display: none;
-
+.main__about-the-bees {
+    font-size: 0.825rem;
+    line-height: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    
     @include tablet {
-        padding: 0 6rem;
-        display: flex;
         flex-wrap: wrap;
+        padding: 0 6rem;
     }
 
     article {
         padding: 1rem;
-        padding-bottom: 2rem;
-        width: calc(50% - 2rem);
+        padding-top: 0;
+        @include tablet {
+            width: calc(50% - 2rem);
+            padding-bottom: 2rem;
+        }
     }
 
     h2 {
-        padding: 0 1rem;
+        font-size: 0.9rem;
+        text-indent: 1rem;
         width: 100%;
     }
 }
 
 .section__top {
+    font-family: 'AvenirNextLTPro-Demi';
+    font-size: 0.85rem;
     @include tablet {
         padding: 6rem;
         padding-bottom: 0rem;
     }
+
+    #section__photo {
+        width: 100%;
+        height: 32vh;
+        background-image: url(../assets/images/band.jpg);
+        background-position: bottom;
+        background-size: cover;
+        // This is very convoluted, but the only way to get this to match the mockup.
+    }
+    // img {
+    //     width: 100%;
+    //     max-height: 32vh;
+    // }
 }
 
 .main__gallery {
@@ -60,13 +91,23 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: $sec-light;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    h2 {
+        margin-bottom: 0;
+    }
 
     @include tablet {
 
         padding: 1.5rem;
+        padding-top: 3.375rem;
+        padding-bottom: 2.25rem;
         gap: 1.5rem;
+
         // measured
         h2 {
+            margin: 0;
+            margin-left: 0.625rem;
             width: 100%;
         }
     }
