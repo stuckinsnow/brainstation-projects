@@ -63,8 +63,12 @@
         padding-top: 0;
 
         @include tablet {
+            font-size: 0.8rem;
             width: calc(50% - 2rem);
             padding-bottom: 2rem;
+        }
+        @include desktop {
+            font-size: 1.125rem;
         }
     }
 
@@ -72,6 +76,10 @@
         font-size: 0.9rem;
         text-indent: 1rem;
         width: 100%;
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -84,6 +92,25 @@
         // padding: 6rem;
         // padding-bottom: 0rem;
         // padding-top: 0rem;
+    }
+
+    p {
+
+
+        @include tablet {
+            font-size: 1.25rem;
+        }
+
+        @include desktop {
+            font-size: 1.7rem;
+            width: 78%;
+        }
+    }
+
+    .div__author { 
+        @include tablet {
+            font-size: 1rem;
+        }
     }
 
     #bio-photo {
@@ -128,10 +155,7 @@
 
         padding: 1.5rem;
         padding-top: 3.375rem;
-        padding-bottom: 2.25rem;
         gap: 1.5rem;
-
-        // measured
         h2 {
             margin: 0;
             margin-left: 0.625rem;
