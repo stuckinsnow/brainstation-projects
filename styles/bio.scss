@@ -17,6 +17,11 @@
         color: $pri-light;
         font-family: 'AvenirNextLTPro-Demi';
         margin-left: 1rem;
+
+        @include tablet {
+            font-size: 2.625rem;
+            margin-left: 3rem;
+        }
     }
 }
 
@@ -33,6 +38,10 @@
         margin: 0;
         padding-top: 0.2rem;
         padding-bottom: 1rem;
+
+        @include tablet {
+            padding: 3rem 0 2rem 2rem;
+        }
     }
 }
 
@@ -66,16 +75,18 @@
     }
 }
 
-.section__top {
+.section__bio-top {
     font-family: 'AvenirNextLTPro-Demi';
     font-size: 0.85rem;
 
     @include tablet {
-        padding: 6rem;
-        padding-bottom: 0rem;
+        padding: 0rem 6rem;
+        // padding: 6rem;
+        // padding-bottom: 0rem;
+        // padding-top: 0rem;
     }
 
-    #section__photo {
+    #bio-photo {
         background-image: url(../assets/images/band.jpg);
         background-position: bottom;
         background-size: cover;
