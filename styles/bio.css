@@ -121,6 +121,11 @@ footer {
     font-size: 0.625rem;
   }
 }
+@media (min-width: 1200px) {
+  footer {
+    padding: 2rem 6.75rem;
+  }
+}
 footer #footer__primary-bold {
   padding-bottom: 1rem;
 }
@@ -152,8 +157,10 @@ footer #footer__container {
 @media (min-width: 768px) {
   footer #footer__container {
     align-content: center;
+    padding: 0;
     flex-direction: row;
     justify-content: flex-start;
+    gap: 0 3.75rem;
   }
 }
 footer #footer__container #footer__bandsite {
@@ -164,14 +171,15 @@ footer #footer__container #footer__bandsite {
   padding-top: 3rem;
 }
 @media (min-width: 768px) {
-  footer #footer__container {
+  footer #footer__container #footer__bandsite {
     text-align: right;
     order: -1;
-    flex: 0 0 10%;
-    font-size: 2rem;
-    text-transform: uppercase;
+    font-size: 1.5rem;
+    flex-grow: 1;
     display: flex;
     align-items: center;
+    padding-top: 0;
+    justify-content: flex-end;
   }
 }
 @media (min-width: 768px) {
@@ -188,6 +196,11 @@ footer #footer__container #footer__bandsite {
     font-size: 2.3rem;
   }
 }
+@media (min-width: 768px) and (min-width: 768px) {
+  footer #footer__primary-bold p {
+    margin-right: 0.5rem;
+  }
+}
 @media (min-width: 768px) {
   footer #footer__container > div:first-child {
     flex: 0 0 70%;
@@ -196,6 +209,11 @@ footer #footer__container #footer__bandsite {
 }
 
 @media (min-width: 768px) {
+  .footer__mini-container {
+    width: 11.25rem;
+  }
+}
+@media (min-width: 1600px) {
   .footer__mini-container {
     width: calc(33% - 3rem);
   }
@@ -235,6 +253,11 @@ footer #footer__container #footer__bandsite {
   padding: 1rem;
   padding-top: 0;
   font-size: 0.7rem;
+}
+@media (min-width: 768px) {
+  #footer__copyright {
+    padding-left: 0;
+  }
 }
 
 .main__hero-bio {
@@ -279,6 +302,7 @@ footer #footer__container #footer__bandsite {
 @media (min-width: 768px) {
   .main__about-the-bees {
     flex-wrap: wrap;
+    flex-direction: row;
     padding: 0 6rem;
   }
 }
@@ -309,11 +333,20 @@ footer #footer__container #footer__bandsite {
   }
 }
 .section__top #section__photo {
-  width: 100%;
-  height: 32vh;
   background-image: url(../assets/images/band.jpg);
   background-position: bottom;
   background-size: cover;
+  --width: calc(100vw - 2rem);
+  max-width: 100%;
+  width: var(--width);
+  height: calc(var(--width) / 1.8683159387);
+}
+@media (min-width: 768px) {
+  .section__top #section__photo {
+    background-position: center;
+    --width: calc(100vw - 12rem);
+    height: calc(var(--width) / 1.8947368421);
+  }
 }
 
 .main__gallery {

@@ -26,6 +26,7 @@
     box-sizing: border-box;
     padding: 1rem;
     padding-bottom: 0;
+
     h2 {
         font-family: 'AvenirNextLTPro-Demi';
         line-height: 1rem;
@@ -41,15 +42,17 @@
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    
+
     @include tablet {
         flex-wrap: wrap;
+        flex-direction: row;
         padding: 0 6rem;
     }
 
     article {
         padding: 1rem;
         padding-top: 0;
+
         @include tablet {
             width: calc(50% - 2rem);
             padding-bottom: 2rem;
@@ -66,19 +69,31 @@
 .section__top {
     font-family: 'AvenirNextLTPro-Demi';
     font-size: 0.85rem;
+
     @include tablet {
         padding: 6rem;
         padding-bottom: 0rem;
     }
 
     #section__photo {
-        width: 100%;
-        height: 32vh;
         background-image: url(../assets/images/band.jpg);
         background-position: bottom;
         background-size: cover;
-        // This is very convoluted, but the only way to get this to match the mockup.
+        --width: calc(100vw - 2rem);
+        max-width: 100%;
+        width: var(--width);
+        height: calc(var(--width) / 1.868315938667697);
+
+        @include tablet {
+            background-position: center;
+            --width: calc(100vw - 12rem);
+            height: calc(var(--width) / 1.894736842105263);
+        }
+
+        // This is very convoluted, but the only way I could find to get this to match the mockup.
+        // I measured the pixels of the photograph to calculate the aspect ratio for the phone and tablet
     }
+
     // img {
     //     width: 100%;
     //     max-height: 32vh;
@@ -93,6 +108,7 @@
     background-color: $sec-light;
     gap: 1rem;
     margin-bottom: 1rem;
+
     h2 {
         margin-bottom: 0;
     }
