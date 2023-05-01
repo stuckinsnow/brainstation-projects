@@ -67,6 +67,7 @@
             width: calc(50% - 2rem);
             padding-bottom: 2rem;
         }
+
         @include desktop {
             font-size: 1.125rem;
         }
@@ -95,8 +96,6 @@
     }
 
     p {
-
-
         @include tablet {
             font-size: 1.25rem;
         }
@@ -107,7 +106,7 @@
         }
     }
 
-    .div__author { 
+    .div__author {
         @include tablet {
             font-size: 1rem;
         }
@@ -152,10 +151,10 @@
     }
 
     @include tablet {
-
         padding: 1.5rem;
         padding-top: 3.375rem;
         gap: 1.5rem;
+
         h2 {
             margin: 0;
             margin-left: 0.625rem;
@@ -166,8 +165,6 @@
     @include desktop {
         padding: 2rem 6rem;
     }
-
-
 
     img {
         box-sizing: border-box;
