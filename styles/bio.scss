@@ -13,13 +13,26 @@
     align-content: center;
     flex-wrap: wrap;
 
+    @include tablet {
+        background-position: bottom;
+        --width: calc(100vw);
+        max-width: 100%;
+        width: var(--width);
+        height: calc(var(--width) / 1.706666666666667);
+    }
+
+    @include desktop {
+        background-position: top;
+        height: calc(var(--width) / 2.031746031746032);
+    }
+
     h1 {
         color: $pri-light;
         font-family: 'AvenirNextLTPro-Demi';
         margin-left: 1rem;
 
         @include tablet {
-            font-size: 2.625rem;
+            font-size: 3.5rem;
             margin-left: 3rem;
         }
     }
@@ -40,7 +53,12 @@
         padding-bottom: 1rem;
 
         @include tablet {
+            font-size: 2rem;
             padding: 3rem 0 2rem 2rem;
+        }
+
+        @include desktop {
+            padding: 3rem 0 3rem 2rem;
         }
     }
 }
@@ -80,6 +98,7 @@
 
         @include tablet {
             font-size: 1.5rem;
+            margin-bottom: 2rem;
         }
     }
 }
@@ -151,11 +170,13 @@
     }
 
     @include tablet {
-        padding: 1.5rem;
-        padding-top: 3.375rem;
+
         gap: 1.5rem;
+        padding: 3.375rem 1.5rem 2rem 1.5rem;
+        margin-bottom: 0;
 
         h2 {
+            font-size: 2.25rem;
             margin: 0;
             margin-left: 0.625rem;
             width: 100%;
@@ -172,6 +193,12 @@
 
         @include tablet {
             width: calc(33% - 1.35rem);
+            filter: grayscale(100%);
+            transition: filter 125ms ease-in-out;
         }
+    }
+
+    img:hover {
+        filter: grayscale(0);
     }
 }
