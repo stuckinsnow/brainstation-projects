@@ -1,6 +1,3 @@
-// @use 'partials/mixins' as *;
-
-
 @font-face {
   font-family: "AvenirNextLTPro-Regular";
   src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype");
@@ -40,8 +37,6 @@ $highres-width: 1600px;
   }
 }
 
-
-
 $pri-dark: #323232;
 $pri-mid: #afafaf;
 $pri-light: #ffffff;
@@ -69,7 +64,7 @@ h2 {
   color: $sec-dark;
 }
 
-.body__navigation {
+.header {
   width: 100%;
   background-color: $pri-dark;
   display: flex;
@@ -87,10 +82,18 @@ h2 {
     padding-left: 8rem;
   }
 
-  .ul__pages {
+ &__pages {
     transition: border-color 0.25s ease-in-out;
+    padding-bottom: 1rem;
+    width: 50%;
+    box-sizing: border-box;
+    border-width: 0;
+    border-bottom-width: 0.25rem;
+    border-style: solid;
+    border-color: transparent;
 
     @include tablet {
+      width: auto;
       font-size: 0.8rem;
       margin-top: 1.5rem;
       line-height: 1.5rem;
@@ -106,11 +109,13 @@ h2 {
     }
   }
 
-  .ul__pages:has(> a:hover) {
+
+  &__pages:has(> a:hover) {
     border-color: $pri-light;
   }
 
-  #logo-head {
+
+  #head-logo {
     order: -1;
     width: 100%;
     color: $pri-light;
@@ -159,21 +164,6 @@ h2 {
     }
   }
 
-  ul li {
-    margin-top: 0.5rem;
-    padding-bottom: 1rem;
-    width: 50%;
-    box-sizing: border-box;
-    border-width: 0;
-    border-bottom-width: 0.25rem;
-    border-style: solid;
-    border-color: transparent;
-
-    @include tablet {
-      width: auto;
-    }
-  }
-
   ul li a {
     color: $pri-light;
     text-decoration: none;
@@ -188,7 +178,6 @@ ul li a, footer a {
 ul li a:hover, footer a:hover {
   color: $pri-mid;
 }
-
 
 footer {
   background-color: $pri-dark;
@@ -208,7 +197,7 @@ footer {
   }
 
 
-  #footer__head {
+  #foot-head {
     padding-bottom: 1rem;
 
     a {
@@ -233,7 +222,7 @@ footer {
     }
   }
 
-  #footer__container {
+  #foot-con {
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
@@ -284,9 +273,7 @@ footer {
     }
 
   }
-
-  #footer__head {
-
+  #foot-head {
     @include tablet {
       font-family: 'AvenirNextLTPro-Demi';
       display: flex;
@@ -296,7 +283,6 @@ footer {
       flex-direction: row;
       align-items: center;
       // padding-left: 1.5rem;
-
       p {
         font-size: 2.30rem;
 
@@ -310,10 +296,8 @@ footer {
       }
     }
   }
-
-
   @include tablet {
-    #footer__container>div:first-child {
+    #foot-con>div:first-child {
       // order: -1;
       flex: 0 0 70%;
       order: -2;
@@ -322,7 +306,7 @@ footer {
 
 }
 
-.footer__mini-container {
+.foot-item {
   @include tablet {
     width: 11.25rem;
     // margin-right: 3rem;
@@ -338,9 +322,7 @@ footer {
     color: $pri-light;
   }
 
-}
-
-.footer__lower-mini-top {
+&__top {
   font-family: 'AvenirNextLTPro-Demi';
   padding: 0;
   margin: 0;
@@ -352,7 +334,7 @@ footer {
   }
 }
 
-.footer__lower-mini-mid {
+&__mid {
   padding: 0;
   margin: 0;
   margin-top: 1.5rem;
@@ -366,9 +348,11 @@ footer {
 
 }
 
-.footer__lower-mini-bottom {
+&__bottom {
   padding: 0;
   margin: 1.5rem 0;
+}
+
 }
 
 #copyright {

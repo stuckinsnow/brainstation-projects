@@ -1,6 +1,6 @@
 @use "./partials/global" as *;
 
-.main__hero-bio {
+.hero {
     background-size: cover;
     box-shadow: inset 0 0 0 1000px rgba(50, 50, 50, 0.35);
     // style guide says to use 50% but it looked too much
@@ -39,7 +39,7 @@
 }
 
 
-.main__biography {
+.biography {
     width: 100%;
     box-sizing: border-box;
     padding: 1rem;
@@ -60,10 +60,57 @@
         @include desktop {
             padding: 3rem 0 3rem 2rem;
         }
+
+        &__author {
+            @include tablet {
+                font-size: 1rem;
+            }
+        }
+
     }
+
+    &__container {
+        font-family: 'AvenirNextLTPro-Demi';
+        font-size: 0.85rem;
+
+        @include tablet {
+            padding: 0rem 6rem;
+            // padding: 6rem;
+            // padding-bottom: 0rem;
+            // padding-top: 0rem;
+        }
+
+        p {
+            @include tablet {
+                font-size: 1.25rem;
+            }
+
+            @include desktop {
+                font-size: 1.7rem;
+                width: 78%;
+            }
+        }
+
+        #bio-photo {
+            background-image: url(../assets/images/band.jpg);
+            background-position: bottom;
+            background-size: cover;
+            --width: calc(100vw - 2rem);
+            max-width: 100%;
+            width: var(--width);
+            height: calc(var(--width) / 1.868315938667697);
+
+            @include tablet {
+                background-position: center;
+                --width: calc(100vw - 12rem);
+                height: calc(var(--width) / 1.894736842105263);
+            }
+        }
+    }
+
 }
 
-.main__about-the-bees {
+.atb {
     font-size: 0.825rem;
     line-height: 1.2rem;
     display: flex;
@@ -76,7 +123,7 @@
         padding: 0 6rem;
     }
 
-    article {
+    &__information {
         padding: 1rem;
         padding-top: 0;
 
@@ -103,60 +150,7 @@
     }
 }
 
-.section__bio-top {
-    font-family: 'AvenirNextLTPro-Demi';
-    font-size: 0.85rem;
-
-    @include tablet {
-        padding: 0rem 6rem;
-        // padding: 6rem;
-        // padding-bottom: 0rem;
-        // padding-top: 0rem;
-    }
-
-    p {
-        @include tablet {
-            font-size: 1.25rem;
-        }
-
-        @include desktop {
-            font-size: 1.7rem;
-            width: 78%;
-        }
-    }
-
-    .div__author {
-        @include tablet {
-            font-size: 1rem;
-        }
-    }
-
-    #bio-photo {
-        background-image: url(../assets/images/band.jpg);
-        background-position: bottom;
-        background-size: cover;
-        --width: calc(100vw - 2rem);
-        max-width: 100%;
-        width: var(--width);
-        height: calc(var(--width) / 1.868315938667697);
-
-        @include tablet {
-            background-position: center;
-            --width: calc(100vw - 12rem);
-            height: calc(var(--width) / 1.894736842105263);
-        }
-
-        // This is very convoluted, but the only way I could find to get this to match the mockup.
-        // I measured the pixels of the photograph to calculate the aspect ratio for the phone and tablet
-    }
-
-    // img {
-    //     width: 100%;
-    //     max-height: 32vh;
-    // }
-}
-
-.main__gallery {
+.gallery {
     display: flex;
     box-sizing: border-box;
     flex-wrap: wrap;

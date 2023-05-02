@@ -31,14 +31,14 @@ h2 {
   color: #000000;
 }
 
-.body__navigation {
+.header {
   width: 100%;
   background-color: #323232;
   display: flex;
   align-items: center;
 }
 @media (min-width: 768px) {
-  .body__navigation {
+  .header {
     width: auto;
     padding-left: 3rem;
     font-size: 2.3rem;
@@ -46,34 +46,42 @@ h2 {
     flex-direction: row;
   }
 }
-@media (min-width: 1200px) {
-  .body__navigation {
+@media (min-width: 1280px) {
+  .header {
     padding-left: 8rem;
   }
 }
-.body__navigation .ul__pages {
+.header__pages {
   transition: border-color 0.25s ease-in-out;
+  padding-bottom: 1rem;
+  width: 50%;
+  box-sizing: border-box;
+  border-width: 0;
+  border-bottom-width: 0.25rem;
+  border-style: solid;
+  border-color: transparent;
 }
 @media (min-width: 768px) {
-  .body__navigation .ul__pages {
+  .header__pages {
+    width: auto;
     font-size: 0.8rem;
     margin-top: 1.5rem;
     line-height: 1.5rem;
   }
 }
-@media (min-width: 1200px) {
-  .body__navigation .ul__pages {
+@media (min-width: 1280px) {
+  .header__pages {
     font-size: 1rem;
     line-height: 2.5rem;
   }
 }
-.body__navigation .ul__pages a {
+.header__pages a {
   height: 100%;
 }
-.body__navigation .ul__pages:has(> a:hover) {
+.header__pages:has(> a:hover) {
   border-color: #ffffff;
 }
-.body__navigation #logo-head {
+.header #head-logo {
   order: -1;
   width: 100%;
   color: #ffffff;
@@ -86,24 +94,24 @@ h2 {
   border-bottom: 0;
 }
 @media (min-width: 768px) {
-  .body__navigation #logo-head {
+  .header #head-logo {
     margin-top: 0.25rem;
     font-size: 1.5rem;
   }
 }
-.body__navigation #active-page {
+.header #active-page {
   font-family: "AvenirNextLTPro-Demi";
   border-color: #ffffff;
 }
-.body__navigation nav {
+.header nav {
   width: 100%;
 }
 @media (min-width: 768px) {
-  .body__navigation nav {
+  .header nav {
     width: auto;
   }
 }
-.body__navigation ul {
+.header ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -112,28 +120,13 @@ h2 {
   align-items: center;
 }
 @media (min-width: 768px) {
-  .body__navigation ul {
+  .header ul {
     justify-content: flex-start;
     gap: 3rem;
     flex-wrap: unset;
   }
 }
-.body__navigation ul li {
-  margin-top: 0.5rem;
-  padding-bottom: 1rem;
-  width: 50%;
-  box-sizing: border-box;
-  border-width: 0;
-  border-bottom-width: 0.25rem;
-  border-style: solid;
-  border-color: transparent;
-}
-@media (min-width: 768px) {
-  .body__navigation ul li {
-    width: auto;
-  }
-}
-.body__navigation ul li a {
+.header ul li a {
   color: #ffffff;
   text-decoration: none;
 }
@@ -157,19 +150,19 @@ footer {
     font-size: 0.8rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   footer {
     padding: 1rem 6.75rem 2rem 6.75rem;
     font-size: 0.8rem;
   }
 }
-footer #footer__head {
+footer #foot-head {
   padding-bottom: 1rem;
 }
-footer #footer__head a {
+footer #foot-head a {
   color: transparent;
 }
-footer #footer__head p {
+footer #foot-head p {
   font-family: "AvenirNextLTPro-Bold";
   font-size: 1.6rem;
   margin-top: 1rem;
@@ -184,7 +177,7 @@ footer img {
     margin: 1rem;
   }
 }
-footer #footer__container {
+footer #foot-con {
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
@@ -192,7 +185,7 @@ footer #footer__container {
   flex-direction: column;
 }
 @media (min-width: 768px) {
-  footer #footer__container {
+  footer #foot-con {
     align-content: center;
     padding: 0;
     flex-direction: row;
@@ -200,12 +193,12 @@ footer #footer__container {
     gap: 0 1.725rem;
   }
 }
-@media (min-width: 1200px) {
-  footer #footer__container {
+@media (min-width: 1280px) {
+  footer #foot-con {
     gap: 0 3.725rem;
   }
 }
-footer #footer__container #bandsite-foot {
+footer #foot-con #bandsite-foot {
   text-transform: uppercase;
   font-size: 1.5rem;
   margin-bottom: 0;
@@ -213,7 +206,7 @@ footer #footer__container #bandsite-foot {
   padding-top: 3rem;
 }
 @media (min-width: 768px) {
-  footer #footer__container #bandsite-foot {
+  footer #foot-con #bandsite-foot {
     text-align: right;
     order: -1;
     font-size: 1.5rem;
@@ -224,12 +217,12 @@ footer #footer__container #bandsite-foot {
     justify-content: flex-end;
   }
 }
-footer #footer__container #bandsite-foot a {
+footer #foot-con #bandsite-foot a {
   color: #ffffff;
   text-decoration: none;
 }
 @media (min-width: 768px) {
-  footer #footer__head {
+  footer #foot-head {
     font-family: "AvenirNextLTPro-Demi";
     display: flex;
     justify-content: flex-start;
@@ -238,67 +231,64 @@ footer #footer__container #bandsite-foot a {
     flex-direction: row;
     align-items: center;
   }
-  footer #footer__head p {
+  footer #foot-head p {
     font-size: 2.3rem;
   }
 }
 @media (min-width: 768px) and (min-width: 768px) {
-  footer #footer__head p {
+  footer #foot-head p {
     margin-right: 0.25rem;
     padding: 1rem 0;
   }
 }
-@media (min-width: 768px) and (min-width: 1200px) {
-  footer #footer__head p {
+@media (min-width: 768px) and (min-width: 1280px) {
+  footer #foot-head p {
     margin-right: 2.25rem;
   }
 }
 @media (min-width: 768px) {
-  footer #footer__container > div:first-child {
+  footer #foot-con > div:first-child {
     flex: 0 0 70%;
     order: -2;
   }
 }
 
 @media (min-width: 768px) {
-  .footer__mini-container {
+  .foot-item {
     width: 11.25rem;
     width: 13rem;
   }
 }
 @media (min-width: 1600px) {
-  .footer__mini-container {
+  .foot-item {
     width: calc(33% - 3rem);
   }
 }
-.footer__mini-container a {
+.foot-item a {
   text-decoration: none;
   color: #ffffff;
 }
-
-.footer__lower-mini-top {
+.foot-item__top {
   font-family: "AvenirNextLTPro-Demi";
   padding: 0;
   margin: 0;
 }
-.footer__lower-mini-top p {
+.foot-item__top p {
   margin: 0;
   padding-bottom: 0.3rem;
 }
-
-.footer__lower-mini-mid {
+.foot-item__mid {
   padding: 0;
   margin: 0;
   margin-top: 1.5rem;
 }
-.footer__lower-mini-mid p {
+.foot-item__mid p {
   padding: 0;
   margin: 0;
   font-style: normal;
   padding-bottom: 0.3rem;
 }
-
-.footer__lower-mini-bottom {
+.foot-item__bottom {
   padding: 0;
   margin: 1.5rem 0;
 }
@@ -314,13 +304,13 @@ footer #footer__container #bandsite-foot a {
     padding-left: 0;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   #copyright {
     font-size: 1rem;
   }
 }
 
-.main__hero-bio {
+.hero {
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(50, 50, 50, 0.35);
   background-image: url(../assets/Images/hero-bio.jpg);
@@ -333,7 +323,7 @@ footer #footer__container #bandsite-foot a {
   flex-wrap: wrap;
 }
 @media (min-width: 768px) {
-  .main__hero-bio {
+  .hero {
     background-position: bottom;
     --width: calc(100vw);
     max-width: 100%;
@@ -341,31 +331,31 @@ footer #footer__container #bandsite-foot a {
     height: calc(var(--width) / 1.7066666667);
   }
 }
-@media (min-width: 1200px) {
-  .main__hero-bio {
+@media (min-width: 1280px) {
+  .hero {
     background-position: top;
     height: calc(var(--width) / 2.0317460317);
   }
 }
-.main__hero-bio h1 {
+.hero h1 {
   color: #ffffff;
   font-family: "AvenirNextLTPro-Demi";
   margin-left: 1rem;
 }
 @media (min-width: 768px) {
-  .main__hero-bio h1 {
+  .hero h1 {
     font-size: 3.5rem;
     margin-left: 3rem;
   }
 }
 
-.main__biography {
+.biography {
   width: 100%;
   box-sizing: border-box;
   padding: 1rem;
   padding-bottom: 0;
 }
-.main__biography h2 {
+.biography h2 {
   font-family: "AvenirNextLTPro-Demi";
   line-height: 1rem;
   margin: 0;
@@ -373,85 +363,42 @@ footer #footer__container #bandsite-foot a {
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  .main__biography h2 {
+  .biography h2 {
     font-size: 2rem;
     padding: 3rem 0 2rem 2rem;
   }
 }
-@media (min-width: 1200px) {
-  .main__biography h2 {
+@media (min-width: 1280px) {
+  .biography h2 {
     padding: 3rem 0 3rem 2rem;
   }
 }
-
-.main__about-the-bees {
-  font-size: 0.825rem;
-  line-height: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-}
 @media (min-width: 768px) {
-  .main__about-the-bees {
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 0 6rem;
+  .biography h2__author {
+    font-size: 1rem;
   }
 }
-.main__about-the-bees article {
-  padding: 1rem;
-  padding-top: 0;
-}
-@media (min-width: 768px) {
-  .main__about-the-bees article {
-    font-size: 0.8rem;
-    width: calc(50% - 2rem);
-    padding-bottom: 2rem;
-  }
-}
-@media (min-width: 1200px) {
-  .main__about-the-bees article {
-    font-size: 1.125rem;
-  }
-}
-.main__about-the-bees h2 {
-  font-size: 0.9rem;
-  text-indent: 1rem;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .main__about-the-bees h2 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-}
-
-.section__bio-top {
+.biography__container {
   font-family: "AvenirNextLTPro-Demi";
   font-size: 0.85rem;
 }
 @media (min-width: 768px) {
-  .section__bio-top {
+  .biography__container {
     padding: 0rem 6rem;
   }
 }
 @media (min-width: 768px) {
-  .section__bio-top p {
+  .biography__container p {
     font-size: 1.25rem;
   }
 }
-@media (min-width: 1200px) {
-  .section__bio-top p {
+@media (min-width: 1280px) {
+  .biography__container p {
     font-size: 1.7rem;
     width: 78%;
   }
 }
-@media (min-width: 768px) {
-  .section__bio-top .div__author {
-    font-size: 1rem;
-  }
-}
-.section__bio-top #bio-photo {
+.biography__container #bio-photo {
   background-image: url(../assets/images/band.jpg);
   background-position: bottom;
   background-size: cover;
@@ -461,14 +408,56 @@ footer #footer__container #bandsite-foot a {
   height: calc(var(--width) / 1.8683159387);
 }
 @media (min-width: 768px) {
-  .section__bio-top #bio-photo {
+  .biography__container #bio-photo {
     background-position: center;
     --width: calc(100vw - 12rem);
     height: calc(var(--width) / 1.8947368421);
   }
 }
 
-.main__gallery {
+.atb {
+  font-size: 0.825rem;
+  line-height: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+@media (min-width: 768px) {
+  .atb {
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 6rem;
+  }
+}
+.atb__information {
+  padding: 1rem;
+  padding-top: 0;
+}
+@media (min-width: 768px) {
+  .atb__information {
+    font-size: 0.8rem;
+    width: calc(50% - 2rem);
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .atb__information {
+    font-size: 1.125rem;
+  }
+}
+.atb h2 {
+  font-size: 0.9rem;
+  text-indent: 1rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .atb h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.gallery {
   display: flex;
   box-sizing: border-box;
   flex-wrap: wrap;
@@ -477,38 +466,38 @@ footer #footer__container #bandsite-foot a {
   gap: 1rem;
   margin-bottom: 1rem;
 }
-.main__gallery h2 {
+.gallery h2 {
   margin-bottom: 0;
 }
 @media (min-width: 768px) {
-  .main__gallery {
+  .gallery {
     gap: 1.5rem;
     padding: 3.375rem 1.5rem 2rem 1.5rem;
     margin-bottom: 0;
   }
-  .main__gallery h2 {
+  .gallery h2 {
     font-size: 2.25rem;
     margin: 0;
     margin-left: 0.625rem;
     width: 100%;
   }
 }
-@media (min-width: 1200px) {
-  .main__gallery {
+@media (min-width: 1280px) {
+  .gallery {
     padding: 2rem 6rem;
   }
 }
-.main__gallery img {
+.gallery img {
   box-sizing: border-box;
   width: calc(100% - 2rem);
 }
 @media (min-width: 768px) {
-  .main__gallery img {
+  .gallery img {
     width: calc(33% - 1.35rem);
     filter: grayscale(100%);
     transition: filter 125ms ease-in-out;
   }
 }
-.main__gallery img:hover {
+.gallery img:hover {
   filter: grayscale(0);
 }/*# sourceMappingURL=bio.css.map */
