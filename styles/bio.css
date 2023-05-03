@@ -1,17 +1,3 @@
-@font-face {
-  font-family: "AvenirNextLTPro-Regular";
-  src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: "AvenirNextLTPro-Demi";
-  font-weight: 600;
-  src: url("../assets/font/AvenirNextLTPro-Demi.otf") format("opentype");
-}
-@font-face {
-  font-family: "AvenirNextLTPro-Bold";
-  font-weight: 700;
-  src: url("../assets/font/AvenirNextLTPro-Bold.otf") format("opentype");
-}
 img {
   max-width: 100%;
 }
@@ -310,6 +296,20 @@ footer #foot-con #bandsite-foot a {
   }
 }
 
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Demi";
+  font-weight: 600;
+  src: url("../assets/font/AvenirNextLTPro-Demi.otf") format("opentype");
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Bold";
+  font-weight: 700;
+  src: url("../assets/font/AvenirNextLTPro-Bold.otf") format("opentype");
+}
 .hero {
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(50, 50, 50, 0.35);
@@ -500,4 +500,115 @@ footer #foot-con #bandsite-foot a {
 }
 .gallery img:hover {
   filter: grayscale(0);
+}
+
+.com-container {
+  padding: 1rem;
+}
+.com-container .newcomment {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.com-container .newcomment form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 80%;
+}
+.com-container .newcomment form label {
+  color: #afafaf;
+  margin-bottom: 0.25rem;
+}
+.com-container .newcomment form label, .com-container .newcomment form button {
+  text-transform: uppercase;
+}
+.com-container .newcomment form textarea, .com-container .newcomment form button {
+  margin-bottom: 1rem;
+}
+.com-container .newcomment form label, .com-container .newcomment form textarea, .com-container .newcomment form button {
+  border-radius: 0.35rem;
+}
+.com-container .newcomment form button {
+  color: #ffffff;
+  font-family: "AvenirNextLTPro-Bold";
+  font-size: 1rem;
+  text-align: center;
+  background-color: #323232;
+  padding: 0.75rem;
+}
+.com-container .newcomment form textarea {
+  padding: 0.5rem;
+}
+.com-container .newcomment form__name {
+  height: 1.25rem;
+}
+.com-container .newcomment__pic {
+  flex: 2.25rem;
+}
+.com-container .newcomment__pic div {
+  margin-top: 1.5rem;
+  height: 2.25rem;
+  width: 2.25rem;
+  overflow: hidden;
+  border-radius: 3rem;
+}
+.com-container .newcomment__pic img {
+  height: 2.25rem;
+  width: auto;
+  background-color: #afafaf;
+}
+.com-container .comments {
+  display: flex;
+  flex-direction: column;
+}
+.com-container .comment {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  border-top: 1px solid #afafaf;
+  padding: 1rem 0;
+}
+.com-container .comment:last-child {
+  border-bottom: 1px solid #afafaf;
+  margin-bottom: 1rem;
+}
+.com-container .comment__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex: 80%;
+}
+.com-container .comment__pic {
+  flex: 2.25rem;
+}
+.com-container .comment__pic div {
+  height: 2.25rem;
+  width: 2.25rem;
+  overflow: hidden;
+  border-radius: 3rem;
+}
+.com-container .comment__pic img {
+  height: 2.25rem;
+  width: auto;
+  background-color: #afafaf;
+}
+.com-container .comment__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+.com-container .comment__info div {
+  margin: 0;
+}
+.com-container .comment__name {
+  color: #323232;
+  font-weight: 900;
+}
+.com-container .comment__date {
+  color: #afafaf;
 }/*# sourceMappingURL=bio.css.map */
