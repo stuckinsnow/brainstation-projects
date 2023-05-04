@@ -1,58 +1,48 @@
+@use "./fonts" as *; 
 $tablet-width: 768px;
 $desktop-width: 1280px;
 $highres-width: 1600px;
-
 @mixin tablet {
   @media (min-width: $tablet-width) {
     @content;
   }
 }
-
 @mixin desktop {
   @media (min-width: $desktop-width) {
     @content;
   }
 }
-
 @mixin highres {
   @media (min-width: $highres-width) {
     @content;
   }
 }
-
 $pri-dark: #323232;
 $pri-mid: #afafaf;
 $pri-light: #ffffff;
-
 $sec-dark: #000000;
 $sec-mid: #e1e1e1;
 $sec-light: #fafafa;
-
 img {
   max-width: 100%;
 }
-
 body {
   font-family: "AvenirNextLTPro-Regular";
   padding: 0;
   margin: 0;
 }
-
 ul {
   margin: 0;
   padding: 0;
 }
-
 h2 {
   color: $sec-dark;
 }
-
 .header {
   width: 100%;
   background-color: $pri-dark;
   display: flex;
   align-items: center;
-
   @include tablet {
     width: auto;
     padding-left: 3rem;
@@ -60,11 +50,9 @@ h2 {
     align-content: space-between;
     flex-direction: row;
   }
-
   @include desktop {
     padding-left: 8rem;
   }
-
  &__pages {
     transition: border-color 0.25s ease-in-out;
     padding-bottom: 1rem;
@@ -74,30 +62,23 @@ h2 {
     border-bottom-width: 0.25rem;
     border-style: solid;
     border-color: transparent;
-
     @include tablet {
       width: auto;
       font-size: 0.8rem;
       margin-top: 1.5rem;
       line-height: 1.5rem;
     }
-
     @include desktop {
       font-size: 1rem;
       line-height: 2.5rem;
     }
-
     a {
       height: 100%;
     }
   }
-
-
   &__pages:has(> a:hover) {
     border-color: $pri-light;
   }
-
-
   #head-logo {
     order: -1;
     width: 100%;
@@ -109,7 +90,6 @@ h2 {
     text-transform: uppercase;
     padding-bottom: 0;
     border-bottom: 0;
-
     @include tablet {
       // padding-top: 1rem;
       // padding-bottom: 1rem;
@@ -117,20 +97,16 @@ h2 {
       font-size: 1.5rem;
     }
   }
-
   #active-page {
     font-family: 'AvenirNextLTPro-Demi';
     border-color: $pri-light;
   }
-
   nav {
     width: 100%;
-
     @include tablet {
       width: auto;
     }
   }
-
   ul {
     list-style-type: none;
     // width: 50%;
@@ -139,79 +115,95 @@ h2 {
     justify-content: center;
     text-align: center;
     align-items: center;
-
     @include tablet {
       justify-content: flex-start;
       gap: 3rem;
       flex-wrap: unset;
     }
   }
-
   ul li a {
     color: $pri-light;
     text-decoration: none;
   }
-
 }
-
 ul li a, footer a {
   transition: color 0.25s ease-in-out;
 }
-
 ul li a:hover, footer a:hover {
   color: $pri-mid;
 }
-
+.hero {
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(50, 50, 50, 0.35);
+  // style guide says to use 50% but it looked too much
+  // background-image: url(../assets/Images/hero-bio.jpg);
+  background-position: right;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  @include tablet {
+      background-position: bottom;
+      --width: calc(100vw);
+      max-width: 100%;
+      width: var(--width);
+      height: calc(var(--width) / 1.706666666666667);
+  }
+  @include desktop {
+      background-position: top;
+      height: calc(var(--width) / 2.031746031746032);
+  }
+  &__head {
+      color: $pri-light;
+      font-family: 'AvenirNextLTPro-Demi';
+      margin-left: 1rem;
+      @include tablet {
+          font-size: 3.5rem;
+          margin-left: 3rem;
+      }
+  }
+}
 footer {
   background-color: $pri-dark;
   box-sizing: border-box;
   // padding: 1rem;
   color: $pri-light;
-
   @include tablet {
     padding: 0 2.25rem;
     // measured
     font-size: 0.8rem;
   }
-
   @include desktop {
     padding: 1rem 6.75rem 2rem 6.75rem;
     font-size: 0.8rem;
   }
-
-
   #foot-head {
     padding-bottom: 1rem;
-
     a {
       color: transparent;
     }
-
     p {
       font-family: 'AvenirNextLTPro-Bold';
       font-size: 1.6rem;
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
-
   }
-
   img {
     margin-left: 0;
     margin-right: 2rem;
-
     @include tablet {
       margin: 1rem;
     }
   }
-
   #foot-con {
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
     padding: 1rem;
     flex-direction: column;
-
     @include tablet {
       align-content: center;
       padding: 0;
@@ -219,18 +211,15 @@ footer {
       justify-content: flex-start;
       gap: 0 1.725rem;
     }
-
     @include desktop {
       gap: 0 3.725rem;
     }
-
     #bandsite-foot {
       text-transform: uppercase;
       font-size: 1.5rem;
       margin-bottom: 0;
       padding-bottom: 0;
       padding-top: 3rem;
-
       @include tablet {
         text-align: right;
         order: -1;
@@ -242,19 +231,16 @@ footer {
         padding-top: 0;
         justify-content: flex-end;
       }
-
       a {
         color: $pri-light;
         text-decoration: none;
       }
     }
-
     div {
       @include tablet {
         // padding: 1rem 2rem;
       }
     }
-
   }
   #foot-head {
     @include tablet {
@@ -268,7 +254,6 @@ footer {
       // padding-left: 1.5rem;
       p {
         font-size: 2.30rem;
-
         @include tablet {
           margin-right: 0.25rem;
           padding: 1rem 0;
@@ -286,64 +271,50 @@ footer {
       order: -2;
     }
   }
-
 }
-
 .foot-item {
   @include tablet {
     width: 11.25rem;
     // margin-right: 3rem;
     width: 13rem;
   }
-
   @include highres {
     width: calc(33% - 3rem);
   }
-
   a {
     text-decoration: none;
     color: $pri-light;
   }
-
 &__top {
   font-family: 'AvenirNextLTPro-Demi';
   padding: 0;
   margin: 0;
-
   p {
     margin: 0;
     // line-height: 1.3rem;
     padding-bottom: 0.3rem;
   }
 }
-
 &__mid {
   padding: 0;
   margin: 0;
   margin-top: 1.5rem;
-
   p {
     padding: 0;
     margin: 0;
     font-style: normal;
     padding-bottom: 0.3rem;
   }
-
 }
-
 &__bottom {
   padding: 0;
   margin: 1.5rem 0;
 }
-
 }
-
 #copyright {
   padding-top: 0;
   font-size: 0.7rem;
   padding: 1rem 0 1.5rem 1rem;
-
-
   @include tablet {
     font-size: 0.8rem;
     padding-left: 0;

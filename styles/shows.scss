@@ -1,1 +1,19 @@
 @use "./partials/global" as *;
+.hero {
+    background-image: url(../assets/images/hero-shows.jpg);
+    justify-content: flex-start;
+    &__subhead {
+        width: 100%;
+        color: $pri-light;
+        margin-left: 1rem;
+        margin-bottom: 0;
+        margin-top: 0;
+        @include tablet {
+            font-size: 1.5rem;
+            margin-left: 3rem;
+        }
+    }
+    &__head {
+        width: 40%;
+    }
+}
