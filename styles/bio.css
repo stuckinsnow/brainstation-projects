@@ -27,6 +27,15 @@ ul {
   padding: 0;
 }
 
+button {
+  color: #ffffff;
+  font-family: "AvenirNextLTPro-Bold";
+  font-size: 1rem;
+  text-align: center;
+  background-color: #323232;
+  padding: 0.75rem;
+}
+
 h2 {
   color: #000000;
 }
@@ -557,14 +566,6 @@ footer #foot-con #bandsite-foot a {
 .com-container .newcomment form textarea,
 .com-container .newcomment form button {
   border-radius: 0.35rem;
-}
-.com-container .newcomment form button {
-  color: #ffffff;
-  font-family: "AvenirNextLTPro-Bold";
-  font-size: 1rem;
-  text-align: center;
-  background-color: #323232;
-  padding: 0.75rem;
 }
 @media (min-width: 768px) {
   .com-container .newcomment form button {

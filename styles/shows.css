@@ -27,6 +27,15 @@ ul {
   padding: 0;
 }
 
+button {
+  color: #ffffff;
+  font-family: "AvenirNextLTPro-Bold";
+  font-size: 1rem;
+  text-align: center;
+  background-color: #323232;
+  padding: 0.75rem;
+}
+
 h2 {
   color: #000000;
 }
@@ -367,4 +376,21 @@ footer #foot-con #bandsite-foot a {
 }
 .hero__head {
   width: 40%;
+}
+
+.shows {
+  padding: 1rem;
+}
+
+.shows__container {
+  display: flex;
+}
+.shows__container table {
+  width: 100%;
+}
+.shows__container .showslist__headings,
+.shows__container .showslist__data {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }/*# sourceMappingURL=shows.css.map */

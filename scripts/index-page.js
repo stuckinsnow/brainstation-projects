@@ -78,7 +78,7 @@ commentsForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     if (event.target.contentTitle.value === '') {
-        console.log('empty');
+        alert('empty');
         return;
     }
     const date = new Date();
