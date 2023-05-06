@@ -23,7 +23,7 @@
         }
 
         @include desktop {
-            padding: 3rem 0 3rem 1rem;
+            padding: 3rem 0 3rem 6.5rem;
         }
 
         &__author {
@@ -44,6 +44,10 @@
             // padding-top: 0rem;
         }
 
+        @include desktop {
+            padding: 0 10rem;
+        }
+
         p {
             @include tablet {
                 font-size: 1.25rem;
@@ -59,15 +63,25 @@
             background-image: url(../assets/images/band.jpg);
             background-position: bottom;
             background-size: cover;
-            --width: calc(100vw - 2rem);
-            max-width: 100%;
-            width: var(--width);
-            height: calc(var(--width) / 1.868315938667697);
+            // --width: calc(100vw - 2rem);
+            // max-width: 100%;
+            // width: var(--width);
+            // height: calc(var(--width) / 1.868315938667697);
+            width: auto;
+            height: 12rem;
+            
 
             @include tablet {
                 background-position: center;
-                --width: calc(100vw - 12rem);
-                height: calc(var(--width) / 1.894736842105263);
+                // --width: calc(100vw - 12rem);
+                // height: calc(var(--width) / 1.894736842105263);
+                height: 20rem;
+                width: auto;
+            }
+
+            @include desktop {
+                height: 35rem;
+                width: auto;
             }
         }
     }
@@ -84,6 +98,10 @@
         flex-wrap: wrap;
         flex-direction: row;
         padding: 0 6rem;
+    }
+
+    @include desktop {
+        padding: 0 10rem;
     }
 
     &__information {

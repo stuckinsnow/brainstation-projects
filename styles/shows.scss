@@ -15,12 +15,17 @@
 
         @include tablet {
             font-size: 1.5rem;
-            margin-left: 2rem;
+            margin-left: 8rem;
         }
     }
 
     &__head {
         width: 70%;
+
+        @include desktop {
+            width: 35%;
+            margin-left: 8rem;
+        }
     }
 
     iframe {
@@ -33,20 +38,18 @@
             width: 55%;
             padding: 0 2rem;
         }
+
+        @include desktop {
+            width: 40%;
+        }
     }
 }
-
-
 .show-wrapper {
-
     @include desktop {
         display: flex;
-    justify-content: space-around;
+        justify-content: space-around;
     }
-
-
-
-.show-wrapper__head {
+    .show-wrapper__head {
         font-size: 2rem;
         margin-left: 1rem;
         margin-bottom: 0;
@@ -56,20 +59,12 @@
         }
 
         @include desktop {
-            margin-left: 0;
+            margin-left: 4rem;
         }
-
-
-
+    }
 }
-
-
-}
-
-
 
 .shows {
-
     @include desktop {
         display: flex;
         align-content: flex-start;
@@ -78,7 +73,7 @@
     }
 
     // padding: 1rem;
-   
+
 }
 
 .shows__container,
@@ -119,8 +114,7 @@
             flex-direction: row;
         }
 
-        @include desktop {
-        }
+        @include desktop {}
 
         &__date-item,
         &__venue-item,
@@ -153,8 +147,6 @@
             }
         }
 
-        
-
         &__date-item {
             font-weight: bold;
         }
@@ -180,17 +172,15 @@
                 display: none;
             }
         }
-
-        
-
     }
 }
-
 
 .shows__container:first-child .showslist__headings--hidden {
 
     @include tablet {
         display: flex;
+        padding-left: 0.75rem;
+        padding-top: 1.5rem;
     }
 }
 

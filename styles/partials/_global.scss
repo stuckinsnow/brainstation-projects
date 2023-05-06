@@ -174,6 +174,9 @@ ul li a:hover, footer a:hover {
           font-size: 3.5rem;
           margin-left: 2rem;
       }
+      @include desktop {
+        margin-left: 7.5rem;
+      }
   }
 }
 footer {

@@ -186,6 +186,11 @@ ul li a:hover, footer a:hover {
     margin-left: 2rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero__head {
+    margin-left: 7.5rem;
+  }
+}
 
 footer {
   background-color: #323232;
@@ -383,7 +388,7 @@ footer #foot-con #bandsite-foot a {
 }
 @media (min-width: 1280px) {
   .biography h2 {
-    padding: 3rem 0 3rem 1rem;
+    padding: 3rem 0 3rem 6.5rem;
   }
 }
 @media (min-width: 768px) {
@@ -398,6 +403,11 @@ footer #foot-con #bandsite-foot a {
 @media (min-width: 768px) {
   .biography__container {
     padding: 0rem 6rem;
+  }
+}
+@media (min-width: 1280px) {
+  .biography__container {
+    padding: 0 10rem;
   }
 }
 @media (min-width: 768px) {
@@ -415,16 +425,20 @@ footer #foot-con #bandsite-foot a {
   background-image: url(../assets/images/band.jpg);
   background-position: bottom;
   background-size: cover;
-  --width: calc(100vw - 2rem);
-  max-width: 100%;
-  width: var(--width);
-  height: calc(var(--width) / 1.8683159387);
+  width: auto;
+  height: 12rem;
 }
 @media (min-width: 768px) {
   .biography__container #bio-photo {
     background-position: center;
-    --width: calc(100vw - 12rem);
-    height: calc(var(--width) / 1.8947368421);
+    height: 20rem;
+    width: auto;
+  }
+}
+@media (min-width: 1280px) {
+  .biography__container #bio-photo {
+    height: 35rem;
+    width: auto;
   }
 }
 
@@ -440,6 +454,11 @@ footer #foot-con #bandsite-foot a {
     flex-wrap: wrap;
     flex-direction: row;
     padding: 0 6rem;
+  }
+}
+@media (min-width: 1280px) {
+  .atb {
+    padding: 0 10rem;
   }
 }
 .atb__information {
