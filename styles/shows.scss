@@ -23,23 +23,57 @@
 }
 
 .shows {
-    padding: 1rem;
+    // padding: 1rem;
+    h2 {
+        font-size: 2rem;
+        margin-left: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+.shows__container, .showslist, .showslist__headings {
+    flex-direction: column;
 }
 
 .shows__container {
 
     display: flex;
+    border-bottom: .2rem solid $pri-mid;
+    padding: 1rem;
 
-    table {
-        width: 100%;
-
-    }
-
-    .showslist__headings,
     .showslist__data {
         display: flex;
         width: 100%;
-        justify-content: space-around;
+        list-style-type: none;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 0.25rem;
     }
 
+    .showslist__headings {
+        color: $pri-mid;
+        padding-top: 1rem;
+    }
+    .showslist__headings--hidden {
+        @include tablet {
+            // display: none;
+        }
+    }
+
+    .showslist__date-item {
+        font-weight: bold;
+    }
+
+    .showslist__ticket-item {
+        text-transform: uppercase;
+        padding: 1rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        border-radius: 0.3rem;
+        padding-bottom: 0.8rem;
+    }
+}
+
+.shows__container:last-child {
+    margin-bottom: 1rem;
 }

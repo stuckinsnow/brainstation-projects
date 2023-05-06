@@ -378,19 +378,45 @@ footer #foot-con #bandsite-foot a {
   width: 40%;
 }
 
-.shows {
-  padding: 1rem;
+.shows h2 {
+  font-size: 2rem;
+  margin-left: 1rem;
+  margin-bottom: 0;
+}
+
+.shows__container, .showslist, .showslist__headings {
+  flex-direction: column;
 }
 
 .shows__container {
   display: flex;
+  border-bottom: 0.2rem solid #afafaf;
+  padding: 1rem;
 }
-.shows__container table {
-  width: 100%;
-}
-.shows__container .showslist__headings,
 .shows__container .showslist__data {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  list-style-type: none;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.shows__container .showslist__headings {
+  color: #afafaf;
+  padding-top: 1rem;
+}
+.shows__container .showslist__date-item {
+  font-weight: bold;
+}
+.shows__container .showslist__ticket-item {
+  text-transform: uppercase;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  padding-bottom: 0.8rem;
+}
+
+.shows__container:last-child {
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=shows.css.map */
