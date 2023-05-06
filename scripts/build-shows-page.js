@@ -32,8 +32,6 @@ const showsArray = [
 
 ];
 
-console.log("Hello World!");
-
 showsArray.forEach((show) => {
     const container = document.querySelector(".shows");
     const showsContainer = document.createElement("div");
@@ -78,3 +76,16 @@ showsArray.forEach((show) => {
     trTwo.appendChild(locationItem);
     showsContainer.appendChild(btn);
 });
+
+function applyStyle() {
+    const selectedContainer = document.querySelector('.shows__container--selected');
+    if (selectedContainer) {
+      selectedContainer.classList.remove('shows__container--selected');
+    }
+    this.classList.add('shows__container--selected');
+  }
+  
+  const showsContainers = document.querySelectorAll('.shows__container');
+  showsContainers.forEach(container => {
+    container.addEventListener('click', applyStyle);
+  });

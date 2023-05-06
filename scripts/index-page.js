@@ -22,7 +22,7 @@ for (let i = 0; i < commentsArray.length; i++) {
 }
 
 
-function appendComments() {
+function displayComment() {
 
     commentsArray.forEach((commentsObj) => {
 
@@ -98,7 +98,7 @@ commentsForm.addEventListener('submit', (event) => {
 
     const parentDiv = document.querySelector('#commentsection');
     parentDiv.innerText = "";
-    appendComments();
+    displayComment();
 });
 
-appendComments();
+displayComment();
