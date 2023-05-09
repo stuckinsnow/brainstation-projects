@@ -524,6 +524,10 @@ footer #foot-con #bandsite-foot a {
   background-color: #fafafa;
 }
 
+.shows__container:first-child:hover {
+  background-color: transparent;
+}
+
 .shows__container--selected {
   background-color: #e1e1e1;
 }
@@ -532,19 +536,28 @@ footer #foot-con #bandsite-foot a {
   .shows__container:first-child .showslist__headings--hidden {
     display: flex;
     padding-left: 0.75rem;
-    padding-top: 1.5rem;
   }
 }
 
 .shows__container:first-child .showslist {
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  height: 3.5rem;
 }
 
+.shows__container:first-child {
+  text-transform: uppercase;
+  display: none;
+  border-color: transparent;
+}
 @media (min-width: 768px) {
   .shows__container:first-child {
-    align-items: end;
+    display: flex;
+    align-items: flex-end;
   }
+}
+
+.shows__container:first-child .showslist__ticket-item {
+  visibility: hidden;
 }
 
 .shows__container:last-child {

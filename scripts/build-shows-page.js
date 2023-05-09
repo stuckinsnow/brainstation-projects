@@ -29,13 +29,12 @@ const showsArray = [
         venue: "Press Club",
         location: "San Francisco, CA"
     },
-
 ];
-
 showsArray.forEach((show) => {
     const container = document.querySelector(".shows");
     const showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container");
+    showsContainer.classList.add("shows__container--JS");
     const dateT = document.createElement("li");
     dateT.classList.add("showslist__headings--hidden")
     dateT.classList.add("showslist__headings")
@@ -45,6 +44,8 @@ showsArray.forEach((show) => {
     const locationT = document.createElement("li");
     locationT.classList.add("showslist__headings--hidden")
     locationT.classList.add("showslist__headings")
+
+    const li = document.createElement("li");
 
     const trTwo = document.createElement("ul");
     trTwo.classList.add("showslist")
@@ -76,16 +77,14 @@ showsArray.forEach((show) => {
     trTwo.appendChild(locationItem);
     showsContainer.appendChild(btn);
 });
-
 function applyStyle() {
     const selectedContainer = document.querySelector('.shows__container--selected');
     if (selectedContainer) {
-      selectedContainer.classList.remove('shows__container--selected');
+        selectedContainer.classList.remove('shows__container--selected');
     }
     this.classList.add('shows__container--selected');
-  }
-  
-  const showsContainers = document.querySelectorAll('.shows__container');
-  showsContainers.forEach(container => {
+}
+const showsContainers = document.querySelectorAll('.shows__container--JS');
+showsContainers.forEach(container => {
     container.addEventListener('click', applyStyle);
-  });
+});

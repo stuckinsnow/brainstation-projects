@@ -179,6 +179,10 @@
     background-color: $sec-light;
 }
 
+.shows__container:first-child:hover {
+    background-color: transparent;
+}
+
 .shows__container--selected {
     background-color: $sec-mid;
 }
@@ -188,20 +192,29 @@
     @include tablet {
         display: flex;
         padding-left: 0.75rem;
-        padding-top: 1.5rem;
     }
 }
 
 .shows__container:first-child .showslist {
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
+    height: 3.5rem;
 }
 
 .shows__container:first-child {
 
+    text-transform: uppercase;
+    display: none;
+    border-color: transparent;
+
     @include tablet {
-        align-items: end;
+        display: flex;
+        align-items: flex-end;
     }
+}
+
+.shows__container:first-child .showslist__ticket-item {
+    visibility: hidden;
 }
 
 .shows__container:last-child {
