@@ -175,6 +175,9 @@
     }
 }
 
+.shows__container {
+    transition: background-color .25s ease-in-out;
+}
 .shows__container:hover {
     background-color: $sec-light;
 }
@@ -185,6 +188,9 @@
 
 .shows__container--selected {
     background-color: $sec-mid;
+    &:hover {
+        background-color: $sec-mid;
+    }
 }
 
 .shows__container:first-child .showslist__headings--hidden {

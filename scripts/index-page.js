@@ -3,7 +3,7 @@ const parentDiv = document.querySelector('#commentsection');
 const commentsArray = [];
 function displayComment(commentsArray) {
   parentDiv.innerText = '';
-  
+
   commentsArray.forEach(commentsObj => {
     const img = document.createElement("img");
     img.src = "./assets/images/Mohan-muruge.jpg";
@@ -36,8 +36,7 @@ function displayComment(commentsArray) {
     imgElementWrapper.appendChild(img);
     parentDiv.appendChild(comment);
   })
-}
-;
+};
 function getCommentsApiDisplayToDom() {
   axios.get('https://project-1-api.herokuapp.com/comments/?api_key=18b4fbf3-5f47-4e45-97a9-ff453c63e414')
     .then(response => {
