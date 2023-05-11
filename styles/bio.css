@@ -17,9 +17,16 @@ img {
 }
 
 body {
-  font-family: "AvenirNextLTPro-Regular";
   padding: 0;
   margin: 0;
+}
+
+body, input, textarea {
+  font-family: "AvenirNextLTPro-Regular";
+}
+
+textarea {
+  resize: none;
 }
 
 ul {

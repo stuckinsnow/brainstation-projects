@@ -11,7 +11,12 @@ function displayComment(commentsArray) {
     name.innerText = commentsObj.name;
     name.classList.add("comment__name");
     const date = document.createElement("div");
-    date.innerText = new Date(commentsObj.timestamp).toLocaleDateString("en-US");
+    date.innerText = new Date(commentsObj.timestamp).toLocaleDateString("en-US",
+      {
+        month: "2-digit",
+        day: "2-digit",
+        year: "numeric",
+      });
     // line 13 from chatGPT
     date.classList.add("comment__date");
     const comment = document.createElement("div");

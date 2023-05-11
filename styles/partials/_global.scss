@@ -26,11 +26,20 @@ $sec-light: #fafafa;
 img {
   max-width: 100%;
 }
+
 body {
-  font-family: "AvenirNextLTPro-Regular";
   padding: 0;
   margin: 0;
 }
+
+body, input, textarea {
+    font-family: "AvenirNextLTPro-Regular";
+}
+
+textarea {
+  resize: none;
+}
+
 ul {
   margin: 0;
   padding: 0;
