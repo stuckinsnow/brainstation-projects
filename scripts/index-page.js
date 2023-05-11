@@ -17,7 +17,6 @@ function displayComment(commentsArray) {
         day: "2-digit",
         year: "numeric",
       });
-    // line 13 from chatGPT
     date.classList.add("comment__date");
     const comment = document.createElement("div");
     comment.classList.add("comment");
