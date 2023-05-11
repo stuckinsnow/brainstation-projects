@@ -20,7 +20,7 @@
     }
 
     &__head {
-        width: 70%;
+        width: 75%;
 
         @include desktop {
             width: 35%;
@@ -71,9 +71,6 @@
         flex-direction: column;
         width: 70%;
     }
-
-    // padding: 1rem;
-
 }
 
 .shows__container,
@@ -96,11 +93,6 @@
         padding-top: 0;
     }
 
-    @include desktop {
-        // width: 62%;
-        // margin-right: 4.5rem;
-    }
-
     .showslist {
         display: flex;
         width: 100%;
@@ -110,18 +102,17 @@
         gap: 0.25rem;
 
         @include tablet {
+            width: 75%;
             justify-content: space-around;
             flex-direction: row;
         }
-
-        @include desktop {}
 
         &__date-item,
         &__venue-item,
         &__location-item {
 
             @include tablet {
-                width: 30%;
+                width: 33%;
                 text-align: left;
             }
 
@@ -135,15 +126,11 @@
                 color: #afafaf;
                 padding-top: 1rem;
                 order: -2;
-                /* width: 33%; */
                 flex-basis: calc(33% - 3rem);
-                /* clear: both; */
                 margin-right: auto;
                 padding: 0.5rem;
                 margin-top: 1rem;
                 margin-bottom: 2rem;
-
-                // THIS IS IMPORTANT
             }
         }
 
@@ -162,7 +149,7 @@
             @include tablet {
                 // margin-top: 0.5rem;
                 margin-bottom: 1rem;
-                width: 14rem;
+                width: 25%;
             }
         }
 
@@ -196,19 +183,17 @@
 .shows__container:first-child .showslist__headings--hidden {
 
     @include tablet {
+        padding-left: 0;
         display: flex;
-        padding-left: 0.75rem;
     }
 }
 
 .shows__container:first-child .showslist {
     flex-wrap: wrap;
-    // margin-bottom: 2rem;
     height: 3.5rem;
 }
 
 .shows__container:first-child {
-
     text-transform: uppercase;
     display: none;
     border-color: transparent;
@@ -216,11 +201,10 @@
     @include tablet {
         display: flex;
         align-items: flex-end;
+        padding: 1rem 2rem;
+        // padding: 0;
+        // padding-left: 2rem;
     }
-}
-
-.shows__container:first-child .showslist__ticket-item {
-    visibility: hidden;
 }
 
 .shows__container:last-child {

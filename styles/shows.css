@@ -383,7 +383,7 @@ footer #foot-con #bandsite-foot a {
   }
 }
 .hero__head {
-  width: 70%;
+  width: 75%;
 }
 @media (min-width: 1280px) {
   .hero__head {
@@ -469,13 +469,14 @@ footer #foot-con #bandsite-foot a {
 }
 @media (min-width: 768px) {
   .shows__container .showslist {
+    width: 75%;
     justify-content: space-around;
     flex-direction: row;
   }
 }
 @media (min-width: 768px) {
   .shows__container .showslist__date-item, .shows__container .showslist__venue-item, .shows__container .showslist__location-item {
-    width: 30%;
+    width: 33%;
     text-align: left;
   }
 }
@@ -488,9 +489,7 @@ footer #foot-con #bandsite-foot a {
     color: #afafaf;
     padding-top: 1rem;
     order: -2;
-    /* width: 33%; */
     flex-basis: calc(33% - 3rem);
-    /* clear: both; */
     margin-right: auto;
     padding: 0.5rem;
     margin-top: 1rem;
@@ -511,7 +510,7 @@ footer #foot-con #bandsite-foot a {
 @media (min-width: 768px) {
   .shows__container .showslist__ticket-item {
     margin-bottom: 1rem;
-    width: 14rem;
+    width: 25%;
   }
 }
 @media (min-width: 768px) {
@@ -541,8 +540,8 @@ footer #foot-con #bandsite-foot a {
 
 @media (min-width: 768px) {
   .shows__container:first-child .showslist__headings--hidden {
+    padding-left: 0;
     display: flex;
-    padding-left: 0.75rem;
   }
 }
 
@@ -560,11 +559,8 @@ footer #foot-con #bandsite-foot a {
   .shows__container:first-child {
     display: flex;
     align-items: flex-end;
+    padding: 1rem 2rem;
   }
-}
-
-.shows__container:first-child .showslist__ticket-item {
-  visibility: hidden;
 }
 
 .shows__container:last-child {

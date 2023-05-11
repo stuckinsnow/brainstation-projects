@@ -9,7 +9,7 @@ function displayShows(showsArray) {
     venueT.classList.add('showslist__headings--hidden', 'showslist__headings');
     const locationT = document.createElement("li");
     locationT.classList.add('showslist__headings--hidden', 'showslist__headings');
-    const li = document.createElement("li");
+    // const li = document.createElement("li");
     const ul = document.createElement("ul");
     ul.classList.add("showslist");
     const dateItem = document.createElement("li");
