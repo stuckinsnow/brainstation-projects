@@ -1,12 +1,14 @@
 import './App.scss';
+import Header from './components/header/header';
+import Comments from './components/comments/comments';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        Beep beep
-      </header>
-    </div>
+    <>
+    <Header />
+      <Comments />
+    </>
   );
 }
 
