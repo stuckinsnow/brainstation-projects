@@ -1,0 +1,178 @@
+@use '../../styles/Partials/_colours.scss' as *;
+@use '../../styles/Partials/_m_&_f.scss' as *;
+
+
+
+.com-container {
+    padding: 1rem;
+
+    h2 { 
+
+        @include tablet {
+            padding-left: 1rem;
+        }
+
+        @include desktop {
+            padding-left: 6rem;
+        }
+    }
+
+
+    .newcomment {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        @include tablet {
+            width: 80%;
+            margin: auto;
+        }
+
+        @include desktop {
+            width: 50%;
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            flex: 80%;
+
+            label {
+                color: $Pri-Mid;
+                margin-bottom: 0.25rem;
+            }
+
+            label,
+            button {
+                text-transform: uppercase;
+            }
+
+            textarea,
+            button {
+                margin-bottom: 1rem;
+            }
+
+            label,
+            textarea,
+            button {
+                border-radius: 0.35rem;
+            }
+
+            button {
+
+                @include tablet {
+                    margin-left: auto;
+                    width: 10rem;
+                }
+            }
+
+            textarea {
+                padding: 0.5rem;
+            }
+
+            &__name {
+                height: 1.25rem;
+            }
+        }
+
+        &__pic {
+            flex: 2.25rem;
+
+            div {
+                margin-top: 1.5rem;
+                height: 2.25rem;
+                width: 2.25rem;
+                overflow: hidden;
+                border-radius: 3rem;
+            }
+
+            img {
+                height: 2.25rem;
+                width: auto;
+                background-color: $Pri-Mid;
+            }
+        }
+    }
+
+    .comments {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .comment {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        border-top: 1px solid $Pri-Mid;
+        padding: 1rem 0;
+
+        @include tablet {
+            
+            width: 80%;
+            margin: auto;
+        }
+
+        @include desktop {
+            width: 50%;
+        }
+
+        &:last-child {
+            border-bottom: 1px solid $Pri-Mid;
+            margin-bottom: 1rem;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            // padding: 10px;
+            flex: 80%;
+        }
+
+        &__pic {
+            flex: 2.25rem;
+
+            div {
+                height: 2.25rem;
+                width: 2.25rem;
+                overflow: hidden;
+                border-radius: 3rem;
+            }
+
+            img {
+                height: 2.25rem;
+                width: auto;
+                background-color: $Pri-Mid;
+            }
+        }
+
+        &__info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0.5rem;
+        }
+
+        &__info div {
+            margin: 0;
+        }
+
+        &__name {
+            color: $Pri-Dark;
+            font-weight: 900;
+        }
+
+        &__date {
+            color: $Pri-Mid;
+        }
+
+        // &__wrapper div:last-child {
+        //     margin-top: auto;
+        // }
+    }
+}

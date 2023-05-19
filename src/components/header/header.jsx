@@ -1,6 +1,7 @@
 import searchIcon from '../../assets/icons/search.svg';
 import uploadIcon from '../../assets/icons/upload.svg';
 import brainLogo from '../../assets/logo/BrainFlix-logo.svg';
+import './Header.scss';
 
 function Header() {
 
@@ -33,6 +34,7 @@ function Header() {
         </div>
       </div>
     </header>
+
   );
 }
 

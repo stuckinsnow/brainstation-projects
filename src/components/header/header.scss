@@ -1,10 +1,23 @@
 @use "../../styles/Partials/colours" as *;
+@use "../../styles/Partials/m_&_f" as *;
 
+
+header {
+
+    @include tablet {
+        display: flex;
+        justify-content: space-around;
+    }
+}
 
 .brainlogo {
     text-align: center;
     padding: 1rem;
     padding-bottom: 0;
+
+    @include tablet {
+        margin-right: 10rem;
+    }
 }
 
 .header-container {
@@ -16,8 +29,17 @@
     align-items: center;
     justify-content: center;
 
+    @include tablet {
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+    }
+
     &__searchbar {
         width: calc(100% - 3.25rem);
+
+        @include tablet {
+            margin-right: 1rem;
+        }
     }
 
     &__searchform {
@@ -40,6 +62,7 @@
             background-color: transparent;
             color: $Pri-Dark;
         }
+
         input,
         input:focus {
             border-style: none;
@@ -47,31 +70,40 @@
         }
     }
 
-&__avatar {
-    background-image: url(../../assets/images/Mohan-muruge.jpg);
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    height: 2.25rem;
-    width: 2.25rem;
-    overflow: hidden;
-    border-radius: 3rem;
-}
-
-&__uploadbar {
-    width: 100%;
-    display: flex;
-    background-color: $Pri-Col;
-    border-radius: 0.25rem;
-    padding: 0.25rem;
-    color: $Pri-Light;
-    text-align: center;
-    text-transform: uppercase;
-    align-content: center;
-    align-items: center;
-
-    span {
-        width: 100%;
+    &__avatar {
+        background-image: url(../../assets/images/Mohan-muruge.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 2.25rem;
+        min-width: 2.25rem;
+        width: 2.25rem;
+        overflow: hidden;
+        border-radius: 3rem;
+        
+        @include tablet {
+            order: +1;
+        }
     }
-}
+
+    &__uploadbar {
+        width: 100%;
+        display: flex;
+        background-color: $Pri-Col;
+        border-radius: 0.25rem;
+        padding: 0.25rem;
+        color: $Pri-Light;
+        text-align: center;
+        text-transform: uppercase;
+        align-content: center;
+        align-items: center;
+
+        @include tablet {
+            width: 70%;
+        }
+
+        span {
+            width: 100%;
+        }
+    }
 
 }
