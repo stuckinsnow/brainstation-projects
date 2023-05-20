@@ -1,4 +1,3 @@
-// import mainVideo from "../../assets/data/video-details.json";
 import './VideoPlayer.scss';
 
 function VideoPlayer(props) {
@@ -9,8 +8,6 @@ function VideoPlayer(props) {
             <section className="hero">
 
   {/* Video controls src api_key=cats */}
-
-
 
                 <video controls className="hero__video" poster={props.activeVideo.image}>
                     <source src={props.activeVideo.video} type="video/mp4" />
