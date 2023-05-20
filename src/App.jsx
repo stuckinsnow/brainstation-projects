@@ -32,13 +32,9 @@ function App() {
       <Header />
       <main>
         <VideoPlayer activeVideo={activeVideo} />
-
-        <VideoInfo activeVideo={activeVideo} />
+        <VideoInfo activeVideo={activeVideo} formatDate={formatDate} />
         <CommentContainer activeVideo={activeVideo} formatDate={formatDate} CommentList={CommentList} />
-        <VideoList
-          videoList={videoListObj}
-          activeVideo={activeVideo}
-          handleChangeActiveVideo={handleChangeActiveVideo}
+        <VideoList videoList={videoListObj} activeVideo={activeVideo} formatDate={formatDate} handleChangeActiveVideo={handleChangeActiveVideo}
         />
       </main>
     </>

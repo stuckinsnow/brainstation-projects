@@ -1,6 +1,6 @@
 import './CommentList.scss';
 
-function CommentContainer(props) {
+function CommentContainer({CommentList, activeVideo, formatDate}) {
   return (
     <>
       <section className="com-container">
@@ -18,7 +18,7 @@ function CommentContainer(props) {
           </form>
         </div>
         <div id="commentsection" className="comments">
-          <props.CommentList activeVideo={props.activeVideo} formatDate={props.formatDate} />
+          <CommentList activeVideo={activeVideo} formatDate={formatDate} />
         </div>
       </section>
     </>

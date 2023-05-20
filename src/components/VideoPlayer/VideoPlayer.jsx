@@ -1,7 +1,7 @@
 import './VideoPlayer.scss';
 
-function VideoPlayer(props) {
-    console.log('ACTIVE VIDEO:', props.activeVideo);
+function VideoPlayer({activeVideo}) {
+    console.log('ACTIVE VIDEO:', activeVideo);
 
     return (
         <>
@@ -9,8 +9,8 @@ function VideoPlayer(props) {
 
   {/* Video controls src api_key=cats */}
 
-                <video controls className="hero__video" poster={props.activeVideo.image}>
-                    <source src={props.activeVideo.video} type="video/mp4" />
+                <video controls className="hero__video" poster={activeVideo.image}>
+                    <source src={activeVideo.video} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </section> 
