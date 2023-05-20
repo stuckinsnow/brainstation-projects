@@ -1,6 +1,7 @@
 import './CommentList.scss';
 
 function CommentContainer({CommentList, activeVideo, formatDate}) {
+
   return (
     <>
       <section className="com-container">

@@ -17,6 +17,16 @@ export function formatDate(timestamp) {
   });
 }
 
+export function countComments(videoDetails) {
+  let totalComments = 0;
+
+  for (let i = 0; i < videoDetails.length; i++) {
+    totalComments += videoDetails[i].comments.length;
+  }
+
+  return totalComments;
+}
+
 function App() {
   console.log('videoList: ', videoListObj);
 
@@ -26,13 +36,13 @@ function App() {
     const foundVideo = video.find((video) => video.id === id);
     setActiveVideo(foundVideo);
   }
-
+  
   return (
     <>
       <Header />
       <main>
         <VideoPlayer activeVideo={activeVideo} />
-        <VideoInfo activeVideo={activeVideo} formatDate={formatDate} />
+          <VideoInfo activeVideo={activeVideo} formatDate={formatDate} countComments={countComments}/>
         <CommentContainer activeVideo={activeVideo} formatDate={formatDate} CommentList={CommentList} />
         <VideoList videoList={videoListObj} activeVideo={activeVideo} formatDate={formatDate} handleChangeActiveVideo={handleChangeActiveVideo}
         />

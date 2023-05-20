@@ -5,7 +5,7 @@ function VideoPlayer({activeVideo}) {
 
     return (
         <>
-            <section className="hero">
+            <div className="hero">
 
   {/* Video controls src api_key=cats */}
 
@@ -13,7 +13,7 @@ function VideoPlayer({activeVideo}) {
                     <source src={activeVideo.video} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-            </section> 
+            </div> 
 
             </>
     );

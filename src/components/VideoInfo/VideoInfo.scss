@@ -1,0 +1,26 @@
+@use "../../styles/Partials/m_&_f" as *;
+
+.videoinfo {
+    font-family: 'AvenirNextLTPro-Regular';
+
+    &__title {
+        font-size: xx-large;
+    }
+
+    &__stats {
+
+        display: flex;
+        padding: 1rem 0;
+        justify-content: space-between;
+
+        &--author {
+            font-family: 'AvenirNextLTPro-Bold';
+        }
+    }
+
+    &__comments {
+        padding-top: 1rem;
+        font-size: large;
+        font-family: 'AvenirNextLTPro-Bold';
+    }
+}
