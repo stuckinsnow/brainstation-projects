@@ -8,6 +8,11 @@ header {
         display: flex;
         justify-content: space-around;
     }
+
+    @include desktop {
+        padding: 0 8rem;
+        justify-content: space-between;
+    }
 }
 
 .brainlogo {

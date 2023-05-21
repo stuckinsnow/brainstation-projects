@@ -2,10 +2,9 @@ import './VideoInfo.scss';
 import viewsIcon from '../../assets/icons/views.svg';
 import likesIcon from '../../assets/icons/likes.svg';
 
-function VideoInfo({ activeVideo, formatDate, countComments }) {
+function VideoInfo({ activeVideo, formatDate }) {
   const formattedDate = formatDate(activeVideo.timestamp);
 
-  const numberOfComments = countComments([activeVideo]);
 
   // console.log('date:', formattedDate);
 
@@ -24,7 +23,6 @@ function VideoInfo({ activeVideo, formatDate, countComments }) {
           </div>
         </div>
         <div className='videoinfo__description'>{activeVideo.description}</div>
-        <div className='videoinfo__comments'>{numberOfComments} Comments</div>
       </section>
     </>
   );

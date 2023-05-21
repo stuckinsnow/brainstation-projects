@@ -4,14 +4,10 @@
 .com-container {
     padding: 0 1rem;
 
-    h2 {
-        @include tablet {
-            padding-left: 1rem;
-        }
-
-        @include desktop {
-            padding-left: 6rem;
-        }
+    &__comments {
+        padding-top: 1rem;
+        font-size: large;
+        font-family: 'AvenirNextLTPro-Bold';
     }
 
     .newcomment {
@@ -210,3 +206,5 @@
         // }
     }
 }
+
+

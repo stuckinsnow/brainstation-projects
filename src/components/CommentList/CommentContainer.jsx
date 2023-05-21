@@ -2,12 +2,21 @@ import './CommentList.scss';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
 import button from '../../assets/icons/add_comment.svg';
 
-function CommentContainer({ CommentList, activeVideo, formatDate }) {
+function CommentContainer({ countComments, CommentList, activeVideo, formatDate }) {
+
+
+  const numberOfComments = countComments([activeVideo]);
+
+
 
   return (
     <>
       <section className="com-container">
-        <h2>Join the Conversation</h2>
+
+      <h2 className='com-container__comments'>{numberOfComments} Comments</h2>
+
+
+
         <div className="newcomment">
           <div className="newcomment__pic">
             <div><img src={avatar} alt="comment-pic" /></div>
@@ -26,6 +35,7 @@ function CommentContainer({ CommentList, activeVideo, formatDate }) {
         <div id="commentsection" className="comments">
           <CommentList activeVideo={activeVideo} formatDate={formatDate} />
         </div>
+
       </section>
     </>
   );

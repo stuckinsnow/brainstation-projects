@@ -34,6 +34,7 @@ code {}
   flex-direction: column;
 
   @include desktop {
+    padding: 0 8rem;
     flex-direction: row;
   }
 
