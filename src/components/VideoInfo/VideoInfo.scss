@@ -7,6 +7,8 @@
 
     &__title {
         font-size: xx-large;
+        margin: 0;
+        margin-bottom: 1rem;
     }
 
     &__stats {
@@ -17,16 +19,43 @@
         border-bottom: 2px solid $Pri-Mid;
         border-top: 2px solid $Pri-Mid;
 
+
+
         &--author {
             font-family: 'AvenirNextLTPro-Bold';
         }
 
+        &--date {
+
+            @include tablet {
+                margin-left: 2rem;
+            }
+        }
+
+        &--views {
+
+            @include tablet {
+                margin-right: 2rem;
+            }
+        }
+
+        &--spacer {
+
+            @include tablet {
+
+                display: flex;
+            }
+        }
+
         &--spacer article {
-            padding: 0.5rem 0rem; 
+            padding: 0.5rem 0rem;
+            display: flex;
+            align-items: center;
         }
 
         img {
             padding-right: 0.5rem;
+            height: 1.25rem;
         }
     }
 

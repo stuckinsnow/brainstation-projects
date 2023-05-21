@@ -1,13 +1,15 @@
+import React from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoList from './components/VideoList/VideoList';
-import videoListObj from "./assets/data/videos.json";
-import videoDetailsObj from "./assets/data/video-details.json";
+import VideoListObj from "./assets/data/videos.json";
+import VideoDetailsObj from "./assets/data/video-details.json";
 import { useState } from 'react';
 import CommentContainer from './components/CommentList/CommentContainer';
 import CommentList from './components/CommentList/CommentList';
 import VideoInfo from './components/VideoInfo/VideoInfo';
+import VideoListContainer from './components/VideoList/VideoListContainer';
 
 export function formatDate(timestamp) {
   return new Date(timestamp).toLocaleDateString("en-US", {
@@ -40,7 +42,7 @@ export function countComments(commentDetails) {
 
 export function withEllipsis(text) {
   const maxLength = 40;
-  const tabletWidth = 768; // Adjust this value according to your needs
+  const tabletWidth = 768;
 
   if (window.innerWidth < tabletWidth && text.length > maxLength) {
     const truncatedText = text.substring(0, maxLength);
@@ -48,32 +50,25 @@ export function withEllipsis(text) {
     const truncatedLastWord = truncatedText.substring(0, lastSpaceIndex);
     return truncatedLastWord + "...";
   }
-
   return text;
 }
 
 function App() {
-  // console.log('videoList: ', videoListObj);
-
-  const [video] = useState(videoDetailsObj);
-  const [activeVideo, setActiveVideo] = useState(videoDetailsObj[0]);
+  const [video] = useState(VideoDetailsObj);
+  const [activeVideo, setActiveVideo] = useState(VideoDetailsObj[0]);
   const handleChangeActiveVideo = (id) => {
     const foundVideo = video.find((video) => video.id === id);
     setActiveVideo(foundVideo);
   }
-  
+
   return (
     <>
       <Header />
       <main>
         <VideoPlayer activeVideo={activeVideo} />
-          <VideoInfo activeVideo={activeVideo} formatDate={formatDate} countComments={countComments}/>
+        <VideoInfo activeVideo={activeVideo} formatDate={formatDate} countComments={countComments} />
         <CommentContainer activeVideo={activeVideo} formatDate={formatDate} CommentList={CommentList} />
-
-        <div id="videolist-header">Next Videos</div>
-
-        <VideoList videoList={videoListObj} activeVideo={activeVideo} formatDate={formatDate} handleChangeActiveVideo={handleChangeActiveVideo} withEllipsis={withEllipsis}
-        />
+        <VideoListContainer VideoListComponent={VideoList} VideoListObj={VideoListObj} activeVideo={activeVideo} formatDate={formatDate} handleChangeActiveVideo={handleChangeActiveVideo} withEllipsis={withEllipsis} />
       </main>
     </>
   );

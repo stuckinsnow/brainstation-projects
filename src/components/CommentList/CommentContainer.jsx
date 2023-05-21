@@ -1,7 +1,8 @@
 import './CommentList.scss';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
+import button from '../../assets/icons/add_comment.svg';
 
-function CommentContainer({CommentList, activeVideo, formatDate}) {
+function CommentContainer({ CommentList, activeVideo, formatDate }) {
 
   return (
     <>
@@ -12,11 +13,16 @@ function CommentContainer({CommentList, activeVideo, formatDate}) {
             <div><img src={avatar} alt="comment-pic" /></div>
           </div>
           <form className="form">
-            {/* <label className="form__label" htmlFor="name">Name</label>
-            <textarea className="form__name" placeholder="Enter your name" name="nameTitle" id="name-submission"></textarea> */}
+            <div>
+
             <label className="form__label" htmlFor="content">Join the conversation</label>
             <textarea className="form__content" placeholder="Add a new comment" name="contentTitle" id="" cols="" rows=""></textarea>
-            <button className="btn" type="submit">Comment</button>
+
+            </div>
+            <button className="btn" type="submit">
+              <img src={button} />
+              <span>Comment</span>
+            </button>
           </form>
         </div>
         <div id="commentsection" className="comments">

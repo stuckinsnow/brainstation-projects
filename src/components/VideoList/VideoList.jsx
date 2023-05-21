@@ -1,13 +1,12 @@
-import React from 'react';
 import './VideoList.scss';
 import { withEllipsis } from '../../App';
 
-function VideoList({ videoList, activeVideo, handleChangeActiveVideo }) {
+function VideoList({ VideoListObj, activeVideo, handleChangeActiveVideo }) {
   // console.log('videoList:', videoList);
 
   return (
     <>
-      {videoList
+      {VideoListObj
         .filter((video) => video.id !== activeVideo.id)
         .map((video) => {
 

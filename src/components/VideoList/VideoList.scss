@@ -1,16 +1,27 @@
 @use "../../styles/Partials/m_&_f" as *;
 @use "../../styles/Partials/colours" as *;
 
-.video-list-item {
-    display: flex;
+
+.videocontainer {
     padding: 1rem;
-    padding-top: 0rem;
+    padding-top: 0;
+
+    &__title {
+        font-size: large;
+        color: $Pri-Mid;
+        text-transform: uppercase;
+    }
+}
+
+.video-list-item {
+    padding-top: 1rem;
+    display: flex;
 
     &__image {
         background: no-repeat center;
         background-size: cover;
-        width: 10rem;
-        min-width: 10rem;
+        width: 9rem;
+        min-width: 9rem;
         height: 5.5rem;
         border-radius: 0.5rem;
     }
@@ -18,8 +29,8 @@
     &__wrapper {
         display: flex;
         flex-direction: column;
-        padding: 0 1rem;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding-left: 1rem;
 
         &--title {
             // font-family: 'AvenirNextLTPro-Regular';
@@ -40,10 +51,11 @@
             font-size: 1.25rem;
             color: $Pri-Dark;
             font-weight: 900;
+
         }
 
         &--author {
-            padding-top: 1rem;
+            // line-height: 4rem;
         }
     }
 }

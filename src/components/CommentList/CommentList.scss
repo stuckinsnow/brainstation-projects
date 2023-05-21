@@ -3,10 +3,12 @@
 
 .com-container {
     padding: 0 1rem;
-    h2 { 
+
+    h2 {
         @include tablet {
             padding-left: 1rem;
         }
+
         @include desktop {
             padding-left: 6rem;
         }
@@ -19,12 +21,11 @@
         justify-content: flex-start;
 
         @include tablet {
-            width: 80%;
-            margin: auto;
+            // margin: auto;
         }
 
         @include desktop {
-            width: 50%;
+            // width: 50%;
         }
 
 
@@ -33,7 +34,11 @@
             flex-direction: column;
             align-items: stretch;
             flex: 80%;
-            color: red;
+
+            @include tablet {
+                flex-direction: row;
+                align-items: center;
+            }
 
             label {
                 color: $Pri-Mid;
@@ -41,24 +46,30 @@
             }
 
             label,
-            button {
+            .btn {
                 text-transform: uppercase;
             }
 
             textarea,
-            button {
+            .btn {
                 margin-bottom: 1rem;
             }
 
             label,
             textarea,
-            button {
+            .btn {
                 border-radius: 0.35rem;
             }
 
             textarea {
+                box-sizing: border-box;
                 padding: 1rem;
                 font-size: large;
+                width: 100%;
+
+                @include tablet {
+                    height: 4rem;
+                }
             }
 
             &__name {
@@ -75,11 +86,30 @@
                 color: $Pri-Light;
                 background-color: $Pri-Col;
                 border-style: none;
+                display: flex;
+                align-items: center;
+
+                @include tablet {
+                    margin: 0;
+                    margin-left: 1rem;
+                    width: 16rem;
+                }
+
+                img {
+                    margin-left: 1rem;
+                    margin-right: auto;
+                }
+
+                span {
+                    font-weight: bold;
+                    margin-left: -2rem;
+                    margin-right: auto;
+                }
             }
         }
 
         &__pic {
-            flex: 2.25rem;
+            margin-right: 1rem;
 
             div {
                 margin-top: 1.5rem;
@@ -111,9 +141,7 @@
         padding: 1rem 0;
 
         @include tablet {
-            
-            width: 80%;
-            margin: auto;
+            // margin: auto;
         }
 
         @include desktop {
@@ -135,7 +163,8 @@
         }
 
         &__pic {
-            flex: 2.25rem;
+            // flex: 2.25rem;
+            margin-right: 1rem;
 
             div {
                 height: 2.25rem;
@@ -143,7 +172,7 @@
                 overflow: hidden;
                 border-radius: 3rem;
             }
-            
+
             img {
                 height: 2.25rem;
                 min-width: 2.25rem;
