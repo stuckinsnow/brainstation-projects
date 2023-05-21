@@ -1,6 +1,12 @@
+@use "../../styles/Partials/m_&_f" as *;
+
 .hero__video {
     width: 100%;
     box-sizing: border-box;
     min-width: 100%;
-    height: 40vh;
+    height: 28vh;
+
+    @include tablet {
+        height: 40rem;
+    }
 }

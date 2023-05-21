@@ -1,7 +1,9 @@
 @use "../../styles/Partials/m_&_f" as *;
+@use "../../styles/Partials/colours" as *;
 
 .videoinfo {
     font-family: 'AvenirNextLTPro-Regular';
+    padding: 1rem;
 
     &__title {
         font-size: xx-large;
@@ -10,12 +12,26 @@
     &__stats {
 
         display: flex;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         justify-content: space-between;
+        border-bottom: 2px solid $Pri-Mid;
+        border-top: 2px solid $Pri-Mid;
 
         &--author {
             font-family: 'AvenirNextLTPro-Bold';
         }
+
+        &--spacer article {
+            padding: 0.5rem 0rem; 
+        }
+
+        img {
+            padding-right: 0.5rem;
+        }
+    }
+
+    &__description {
+        padding: 1rem 0;
     }
 
     &__comments {

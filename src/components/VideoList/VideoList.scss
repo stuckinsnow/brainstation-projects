@@ -1,4 +1,49 @@
-.videoList__image img {
-    width: 10rem;
-    height: 10rem;
+@use "../../styles/Partials/m_&_f" as *;
+@use "../../styles/Partials/colours" as *;
+
+.video-list-item {
+    display: flex;
+    padding: 1rem;
+    padding-top: 0rem;
+
+    &__image {
+        background: no-repeat center;
+        background-size: cover;
+        width: 10rem;
+        min-width: 10rem;
+        height: 5.5rem;
+        border-radius: 0.5rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+        justify-content: space-evenly;
+
+        &--title {
+            // font-family: 'AvenirNextLTPro-Regular';
+            // width: 12rem;
+            // font-size: 1.25rem;
+            // color: $Pri-Dark;
+            // font-weight: 900;
+            // overflow: hidden;
+            // display: -webkit-box;
+            // display: -moz-box;
+            // display: box;
+            // -webkit-line-clamp: 2;
+            // -webkit-box-orient: vertical;
+        }
+
+        &--title {
+            font-family: 'AvenirNextLTPro-Regular';
+            font-size: 1.25rem;
+            color: $Pri-Dark;
+            font-weight: 900;
+        }
+
+        &--author {
+            padding-top: 1rem;
+        }
+    }
 }

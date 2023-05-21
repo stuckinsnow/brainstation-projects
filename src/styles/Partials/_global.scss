@@ -2,9 +2,12 @@
 @use "colours" as *;
 @use "../../components/header/header.scss" as *;
 
+body, form, button, h6, h5, h4, h3, h2, h1, div, p, ul, li, textarea {
+  font-family: 'AvenirNextLTPro-Regular';
+}
+
 body {
   margin: 0;
-  font-family: 'AvenirNextLTPro-Regular';
 }
 
 code {

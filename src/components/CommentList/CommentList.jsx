@@ -6,7 +6,7 @@ function CommentList(props) {
       {props.activeVideo.comments.map((comment) => {
         const formattedDate = props.formatDate(comment.timestamp);
         return (
-          <div className="comment">
+          <div key={comment.id} className="comment">
             <div className="comment__wrapper">
               <div className="comment__info">
                 <div className="comment__name">{comment.name}</div>

@@ -1,22 +1,16 @@
 @use '../../styles/Partials/_colours.scss' as *;
 @use '../../styles/Partials/_m_&_f.scss' as *;
 
-
-
 .com-container {
-    padding: 1rem;
-
+    padding: 0 1rem;
     h2 { 
-
         @include tablet {
             padding-left: 1rem;
         }
-
         @include desktop {
             padding-left: 6rem;
         }
     }
-
 
     .newcomment {
         display: flex;
@@ -34,11 +28,12 @@
         }
 
 
-        form {
+        .form {
             display: flex;
             flex-direction: column;
             align-items: stretch;
             flex: 80%;
+            color: red;
 
             label {
                 color: $Pri-Mid;
@@ -61,20 +56,25 @@
                 border-radius: 0.35rem;
             }
 
-            button {
-
-                @include tablet {
-                    margin-left: auto;
-                    width: 10rem;
-                }
-            }
-
             textarea {
-                padding: 0.5rem;
+                padding: 1rem;
+                font-size: large;
             }
 
             &__name {
                 height: 1.25rem;
+            }
+
+            &__content {
+                height: 8rem;
+            }
+
+            .btn {
+                font-size: large;
+                height: 4rem;
+                color: $Pri-Light;
+                background-color: $Pri-Col;
+                border-style: none;
             }
         }
 
@@ -143,11 +143,13 @@
                 overflow: hidden;
                 border-radius: 3rem;
             }
-
+            
             img {
                 height: 2.25rem;
+                min-width: 2.25rem;
+                min-height: 2.25rem;
                 width: auto;
-                background-color: $Pri-Mid;
+                background-color: $Sec-Mid;
             }
         }
 

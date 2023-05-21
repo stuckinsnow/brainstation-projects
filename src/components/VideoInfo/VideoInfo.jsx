@@ -7,19 +7,18 @@ function VideoInfo({ activeVideo, formatDate, countComments }) {
 
   const numberOfComments = countComments([activeVideo]);
 
-  console.log('date:', formattedDate);
+  // console.log('date:', formattedDate);
 
   return (
     <>
       <section className='videoinfo'>
         <h1 className='videoinfo__title'>{activeVideo.title}</h1>
         <div className='videoinfo__stats'>
-          <div>
+          <div className='videoinfo__stats--spacer'>
             <article className='videoinfo__stats--author'>By {activeVideo.channel}</article>
             <article className='videoinfo__stats--date'>{formattedDate}</article>
           </div>
-          <div>
-
+          <div className='videoinfo__stats--spacer'>
             <article className='videoinfo__stats--views'><img src={viewsIcon} alt="views icon" />{activeVideo.views}</article>
             <article className='videoinfo__stats--likes'><img src={likesIcon} alt="likes icon" />{activeVideo.likes}</article>
           </div>

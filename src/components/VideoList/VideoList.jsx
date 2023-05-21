@@ -1,25 +1,37 @@
+import React from 'react';
 import './VideoList.scss';
+import { withEllipsis } from '../../App';
 
 function VideoList({ videoList, activeVideo, handleChangeActiveVideo }) {
-
-  console.log('videoList:', videoList);
+  // console.log('videoList:', videoList);
 
   return (
     <>
       {videoList
         .filter((video) => video.id !== activeVideo.id)
-        .map((video) => (
-          <div
-            key={video.id}
-            className="video-list__item"
-            onClick={() => handleChangeActiveVideo(video.id)}
-          >
-            {/* {video.id} */}
-            <div className='videoList__image'><img src={video.image} /></div>
-            <div>{video.title}</div>
-            <div>{video.channel}</div>
-          </div>
-        ))}
+        .map((video) => {
+
+          const videoTitleToEllipsis = withEllipsis(video.title);
+
+          const divStyle = {
+            backgroundImage: `url(${video.image})`, // used chatGPT for this line of code
+          };
+
+          return (
+            <div
+              key={video.id}
+              className="video-list-item"
+              onClick={() => handleChangeActiveVideo(video.id)}
+            >
+              {/* {video.id} */}
+              <div className='video-list-item__image' style={divStyle}></div>
+              <div className='video-list-item__wrapper'>
+                <div className='video-list-item__wrapper--title'>{videoTitleToEllipsis}</div>
+                <div className='video-list-item__wrapper--author'>{video.channel}</div>
+              </div>
+            </div>
+          );
+        })}
     </>
   );
 }
