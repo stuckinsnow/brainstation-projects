@@ -3,7 +3,6 @@
 
 .videoinfo {
     font-family: 'AvenirNextLTPro-Regular';
-    padding: 1rem;
 
     &__title {
         font-size: xx-large;
@@ -19,7 +18,9 @@
         border-bottom: 2px solid $Pri-Mid;
         border-top: 2px solid $Pri-Mid;
 
-
+        @include desktop {
+            padding-right: 1rem;
+        }
 
         &--author {
             font-family: 'AvenirNextLTPro-Bold';
@@ -61,6 +62,10 @@
 
     &__description {
         padding: 1rem 0;
+
+        @include desktop {
+            padding-right: 1rem;
+        }
     }
     
 }

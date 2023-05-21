@@ -3,12 +3,11 @@
 
 
 .videocontainer {
-    padding: 1rem;
-    padding-top: 0;
 
     &__title {
         font-size: large;
         color: $Pri-Mid;
+        margin-bottom: 0;
         text-transform: uppercase;
     }
 }

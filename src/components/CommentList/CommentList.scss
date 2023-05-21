@@ -2,7 +2,6 @@
 @use '../../styles/Partials/_m_&_f.scss' as *;
 
 .com-container {
-    padding: 0 1rem;
 
     &__comments {
         padding-top: 1rem;
@@ -38,6 +37,10 @@
             @include tablet {
                 flex-direction: row;
                 align-items: center;
+            }
+
+            @include desktop {
+                padding-right: 1rem;
             }
 
             label {
@@ -138,6 +141,7 @@
         justify-content: flex-start;
         border-top: 1px solid $Pri-Mid;
         padding: 1rem 0;
+        padding-right: 1rem;
 
         @include tablet {
             // margin: auto;
@@ -145,11 +149,6 @@
 
         @include desktop {
             // width: 50%;
-        }
-
-        &:last-child {
-            border-bottom: 1px solid $Pri-Mid;
-            margin-bottom: 1rem;
         }
 
         &__wrapper {
@@ -200,10 +199,6 @@
         &__date {
             color: $Pri-Mid;
         }
-
-        // &__wrapper div:last-child {
-        //     margin-top: auto;
-        // }
     }
 }
 

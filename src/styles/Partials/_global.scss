@@ -39,17 +39,27 @@ code {}
   }
 
   &__left {
-
+    padding: 1rem;
     @include desktop {
-      flex: 80%;
+      padding: 0;
+      padding-top: 1rem;
+      margin-right: -1rem;
+      flex: 75%;
     }
   }
 
   &__right {
+    margin: 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid $Pri-Mid;
 
     @include desktop {
+      border-top: none;
+      padding-left: 1rem;
       border-left-style: solid;
       border-left-color: $Pri-Mid;
+      flex: 25%;
+
     }
   }
 }
