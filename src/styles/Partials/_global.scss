@@ -2,7 +2,20 @@
 @use "colours" as *;
 @use "../../components/header/header.scss" as *;
 
-body, form, button, h6, h5, h4, h3, h2, h1, div, p, ul, li, textarea {
+body,
+form,
+button,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+div,
+p,
+ul,
+li,
+textarea {
   font-family: 'AvenirNextLTPro-Regular';
 }
 
@@ -10,9 +23,32 @@ body {
   margin: 0;
 }
 
-code {
-}
+code {}
 
 .App-header {
   color: $Pri-Dark;
+}
+
+.pagecontainer {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+  }
+
+  &__left {
+
+    @include desktop {
+      flex: 80%;
+    }
+  }
+
+  &__right {
+
+    @include desktop {
+      border-left-style: solid;
+      border-left-color: $Pri-Mid;
+    }
+  }
 }

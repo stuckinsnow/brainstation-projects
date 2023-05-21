@@ -65,10 +65,18 @@ function App() {
     <>
       <Header />
       <main>
+
         <VideoPlayer activeVideo={activeVideo} />
-        <VideoInfo activeVideo={activeVideo} formatDate={formatDate} countComments={countComments} />
-        <CommentContainer activeVideo={activeVideo} formatDate={formatDate} CommentList={CommentList} />
-        <VideoListContainer VideoListComponent={VideoList} VideoListObj={VideoListObj} activeVideo={activeVideo} formatDate={formatDate} handleChangeActiveVideo={handleChangeActiveVideo} withEllipsis={withEllipsis} />
+        <div className='pagecontainer'>
+          <div className='pagecontainer__left'>
+            <VideoInfo activeVideo={activeVideo} formatDate={formatDate} countComments={countComments} />
+            <CommentContainer activeVideo={activeVideo} formatDate={formatDate} CommentList={CommentList} />
+          </div>
+          <div className='pagecontainer__right'>
+            <VideoListContainer VideoListComponent={VideoList} VideoListObj={VideoListObj} activeVideo={activeVideo} formatDate={formatDate} handleChangeActiveVideo={handleChangeActiveVideo} withEllipsis={withEllipsis} />
+          </div>
+        </div>
+
       </main>
     </>
   );

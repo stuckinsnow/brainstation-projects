@@ -13,14 +13,12 @@ function CommentContainer({ CommentList, activeVideo, formatDate }) {
             <div><img src={avatar} alt="comment-pic" /></div>
           </div>
           <form className="form">
-            <div>
-
+            <div className='form__sub'>
             <label className="form__label" htmlFor="content">Join the conversation</label>
             <textarea className="form__content" placeholder="Add a new comment" name="contentTitle" id="" cols="" rows=""></textarea>
-
             </div>
             <button className="btn" type="submit">
-              <img src={button} />
+              <img src={button} alt="button-image"/>
               <span>Comment</span>
             </button>
           </form>

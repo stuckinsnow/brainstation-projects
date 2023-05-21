@@ -35,6 +35,10 @@
             align-items: stretch;
             flex: 80%;
 
+            &__sub {
+                width: 100%;
+            }
+
             @include tablet {
                 flex-direction: row;
                 align-items: center;
@@ -102,7 +106,6 @@
 
                 span {
                     font-weight: bold;
-                    margin-left: -2rem;
                     margin-right: auto;
                 }
             }
@@ -145,7 +148,7 @@
         }
 
         @include desktop {
-            width: 50%;
+            // width: 50%;
         }
 
         &:last-child {
