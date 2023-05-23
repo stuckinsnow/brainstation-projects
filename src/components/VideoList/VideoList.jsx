@@ -1,5 +1,5 @@
 import './VideoList.scss';
-import { withEllipsis } from '../../App';
+import { withEllipsis } from '../utils/utils';
 
 function VideoList({ VideoListObj, activeVideo, handleChangeActiveVideo }) {
   // console.log('videoList:', videoList);
