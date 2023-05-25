@@ -16,17 +16,6 @@ export function formatDate(timestamp) {
     return totalComments;
   }
   
-  // export function withEllipsis(text) {
-  //   if (text.length <= 40) {
-  //     return text;
-  //   } else {
-  //     return text.substring(0, 40) + "...";
-  //   }
-  // }
-  
-  // My original code is above, I used chatGPT to help render the last word of the truncation. I wasn't able to achieve this with css. I don't want to use anymore code from it, but it's not responsive, so isn't quite what I want
-  
-  
   export function withEllipsis(text) {
     const maxLength = 40;
     const tabletWidth = 768;

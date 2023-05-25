@@ -4,6 +4,10 @@
 
 header {
 
+    .btn {
+        margin-left: 0;
+    }
+
     @include tablet {
         display: flex;
         justify-content: space-around;
@@ -43,7 +47,7 @@ header {
         width: calc(100% - 3.25rem);
 
         @include tablet {
-            margin-right: 1rem;
+            margin-right: 0rem;
         }
     }
 
@@ -89,26 +93,4 @@ header {
             order: +1;
         }
     }
-
-    &__uploadbar {
-        width: 100%;
-        display: flex;
-        background-color: $Pri-Col;
-        border-radius: 0.25rem;
-        padding: 0.25rem;
-        color: $Pri-Light;
-        text-align: center;
-        text-transform: uppercase;
-        align-content: center;
-        align-items: center;
-
-        @include tablet {
-            width: 70%;
-        }
-
-        span {
-            width: 100%;
-        }
-    }
-
 }

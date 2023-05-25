@@ -5,12 +5,6 @@ import './Header.scss';
 
 function Header() {
 
-  // const handleFormSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log(event.target.title.value);
-  //   console.log(event.target.content.value);
-  // }
-
   return (
     <header className="header">
 
@@ -28,10 +22,10 @@ function Header() {
         </div>
         <div className="header-container__avatar">
         </div>
-        <div className="header-container__uploadbar" >
+        <button className="btn" >
           <img src={uploadIcon} alt="upload" />
           <span>Upload</span>
-        </div>
+        </button>
       </div>
     </header>
 

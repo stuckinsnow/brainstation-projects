@@ -48,8 +48,8 @@
                 margin-bottom: 0.25rem;
             }
 
-            label,
-            .btn {
+            label
+            {
                 text-transform: uppercase;
             }
 
@@ -59,19 +59,21 @@
             }
 
             label,
-            textarea,
-            .btn {
+            textarea
+            {
                 border-radius: 0.35rem;
             }
 
             textarea {
                 box-sizing: border-box;
+                resize: none;
                 padding: 1rem;
                 font-size: large;
                 width: 100%;
 
                 @include tablet {
-                    height: 4rem;
+                    padding: 0.5rem;
+                    height: 2.5rem;
                 }
             }
 
@@ -83,32 +85,8 @@
                 height: 8rem;
             }
 
-            .btn {
-                font-size: large;
-                height: 4rem;
-                color: $Pri-Light;
-                background-color: $Pri-Col;
-                border-style: none;
-                display: flex;
-                align-items: center;
-
-                @include tablet {
-                    margin: 0;
-                    margin-left: 1rem;
-                    width: 16rem;
-                }
-
-                img {
-                    margin-left: 1rem;
-                    margin-right: auto;
-                }
-
-                span {
-                    font-weight: bold;
-                    margin-right: auto;
-                }
-            }
         }
+        
 
         &__pic {
             margin-right: 1rem;

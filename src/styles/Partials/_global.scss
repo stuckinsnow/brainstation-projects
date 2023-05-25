@@ -40,6 +40,7 @@ code {}
 
   &__left {
     padding: 1rem;
+
     @include desktop {
       padding: 0;
       padding-top: 1rem;
@@ -61,5 +62,37 @@ code {}
       flex: 25%;
 
     }
+  }
+}
+
+.btn {
+  font-size: large;
+  width: 100%;
+  height: 2.5rem;
+  color: $Pri-Light;
+  background-color: $Pri-Col;
+  border-style: none;
+  display: flex;
+  padding: 0.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  align-items: center;
+  align-content: center;
+  border-radius: 0.25rem;
+
+  @include tablet {
+    margin: 0;
+    margin-left: 1rem;
+    width: 16rem;
+  }
+
+  img {
+    margin-left: 1rem;
+    margin-right: auto;
+  }
+
+  span {
+    font-weight: bold;
+    margin-right: auto;
   }
 }

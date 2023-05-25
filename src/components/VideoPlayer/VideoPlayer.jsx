@@ -7,7 +7,7 @@ function VideoPlayer({ activeVideo }) {
         <>
             <div className="hero">
                 <video controls className="hero__video" poster={activeVideo.image}>
-                    <source src={activeVideo.video + "?api_key=cats"} type="video/mp4" />
+                    <source src={activeVideo.video} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>

@@ -1,34 +1,47 @@
 import './VideoList.scss';
 import { withEllipsis } from '../utils/utils';
+import axios from 'axios';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-function VideoList({ VideoListObj, activeVideo, handleChangeActiveVideo }) {
-  // console.log('videoList:', videoList);
 
+function VideoList({ videoList, setVideoList, activeVideo, handleChangeActiveVideo  }) {
+  console.log('videoList:', videoList);
+
+
+  
+
+
+
+  
   return (
     <>
-      {VideoListObj
-        .filter((video) => video.id !== activeVideo.id)
-        .map((video) => {
+      {videoList
+        .filter((activeVideo) => activeVideo.id !== videoList.id)
+        .map((activeVideo) => {
 
-          const videoTitleToEllipsis = withEllipsis(video.title);
+          const videoTitleToEllipsis = withEllipsis(activeVideo.title);
 
           const divStyle = {
-            backgroundImage: `url(${video.image})`, // used chatGPT for this line of code
+            backgroundImage: `url(${activeVideo.image})`, // used chatGPT for this line of code
           };
 
           return (
-            <div
-              key={video.id}
+
+            
+            <Link
+              key={activeVideo.id}
               className="video-list-item"
-              onClick={() => handleChangeActiveVideo(video.id)}
+              to={`/videos/${activeVideo.id}`}
+              // onClick={() => handleChangeActiveVideo(activeVideo.id)}
             >
               {/* {video.id} */}
               <div className='video-list-item__image' style={divStyle}></div>
               <div className='video-list-item__wrapper'>
                 <div className='video-list-item__wrapper--title'>{videoTitleToEllipsis}</div>
-                <div className='video-list-item__wrapper--author'>{video.channel}</div>
+                <div className='video-list-item__wrapper--author'>{activeVideo.channel}</div>
               </div>
-            </div>
+            </Link>
           );
         })}
     </>
