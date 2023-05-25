@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/icons/search.svg';
 import uploadIcon from '../../assets/icons/upload.svg';
 import brainLogo from '../../assets/logo/BrainFlix-logo.svg';
@@ -8,7 +9,7 @@ function Header() {
   return (
     <header className="header">
 
-      <div className="brainlogo"><img src={brainLogo} alt="" /></div>
+      <Link to="/" className="brainlogo"><img src={brainLogo} alt="" /></Link>
 
       <div className="header-container">
         <div className="header-container__searchbar" >
@@ -22,10 +23,10 @@ function Header() {
         </div>
         <div className="header-container__avatar">
         </div>
-        <button className="btn" >
+        <Link to="/upload"><button className="btn" >
           <img src={uploadIcon} alt="upload" />
           <span>Upload</span>
-        </button>
+        </button></Link>
       </div>
     </header>
 

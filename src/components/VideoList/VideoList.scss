@@ -13,6 +13,7 @@
 }
 
 .video-list-item {
+    text-decoration: none;
     padding-top: 1rem;
     display: flex;
 
@@ -30,6 +31,7 @@
         flex-direction: column;
         justify-content: space-between;
         padding-left: 1rem;
+        text-decoration: none;
 
         &--title {
             // font-family: 'AvenirNextLTPro-Regular';

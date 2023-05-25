@@ -3,7 +3,7 @@ import './CommentList.scss';
 function CommentList(props) {
   return (
     <>
-      {props.activeVideo.comments.map((comment) => {
+      {props.activeVideo.comments?.map((comment) => {
         const formattedDate = props.formatDate(comment.timestamp);
         return (
           <div key={comment.id} className="comment">

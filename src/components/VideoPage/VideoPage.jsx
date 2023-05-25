@@ -83,7 +83,7 @@ function VideoPage() {
       <div className='pagecontainer'>
         <div className='pagecontainer__left'>
           <VideoInfo videoList={videoList} activeVideo={activeVideo} formatDate={formatDate} />
-          <CommentContainer countComments={countComments} activeVideo={activeVideo} formatDate={formatDate} CommentList={CommentList} />
+          <CommentContainer activeVideo={activeVideo} formatDate={formatDate} CommentList={CommentList} />
         </div>
         <div className='pagecontainer__right'>
           <VideoListContainer videoList={videoList} activeVideo={activeVideo} formatDate={formatDate} handleChangeActiveVideo={handleChangeActiveVideo} withEllipsis={withEllipsis} />
