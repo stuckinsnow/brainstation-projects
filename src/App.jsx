@@ -25,7 +25,3 @@ function App() {
 }
 
 export default App;
-
-// {
-//   "api_key": "92ff28cd-7e73-4069-852a-6a0708f75739"
-//   }

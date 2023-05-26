@@ -1,5 +1,4 @@
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
-// import VideoList from '../VideoList/VideoList';
 import { useEffect, useState } from 'react';
 import CommentContainer from '../CommentList/CommentContainer';
 import CommentList from '../CommentList/CommentList';
