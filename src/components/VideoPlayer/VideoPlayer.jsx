@@ -1,7 +1,6 @@
 import './VideoPlayer.scss';
 
 function VideoPlayer({ activeVideo }) {
-    // console.log('ACTIVE VIDEO:', activeVideo);
 
     return (
         <>

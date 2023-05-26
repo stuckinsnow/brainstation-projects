@@ -17,6 +17,10 @@
     padding-top: 1rem;
     display: flex;
 
+    @include tablet {
+        padding-top: 2rem;
+    }
+
     &__image {
         background: no-repeat center;
         background-size: cover;
@@ -32,6 +36,7 @@
         justify-content: space-between;
         padding-left: 1rem;
         text-decoration: none;
+        color: $Pri-Dark;
 
         &--title {
             // font-family: 'AvenirNextLTPro-Regular';

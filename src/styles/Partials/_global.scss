@@ -40,11 +40,17 @@ code {}
 
   &__left {
     padding: 1rem;
-
+    padding-bottom: 0;
+    
+    @include tablet {
+      padding: 2rem;
+      padding-bottom: 0;
+    }
+    
     @include desktop {
       padding: 0;
       padding-top: 1rem;
-      margin-right: -1rem;
+      margin-right: -2rem;
       flex: 75%;
     }
   }
@@ -54,12 +60,19 @@ code {}
     padding-top: 1rem;
     border-top: 1px solid $Pri-Mid;
 
+    @include tablet {
+
+    margin: 0 2rem;
+
+    }
+
     @include desktop {
       border-top: none;
-      padding-left: 1rem;
+      padding-left: 2rem;
       border-left-style: solid;
       border-left-color: $Pri-Mid;
-      flex: 25%;
+      // flex: 25%;
+      width: 30rem;
 
     }
   }
@@ -82,17 +95,31 @@ code {}
 
   @include tablet {
     margin: 0;
-    margin-left: 1rem;
-    width: 16rem;
+    margin-left: 2rem;
+    min-width: 14rem;
+    width: 14rem;
+  }
+
+  @include desktop {
+    // width: 14rem;
   }
 
   img {
-    margin-left: 1rem;
+    margin-left: 0.75rem;
     margin-right: auto;
+
+    @include tablet {
+
+      margin-right: 2rem;
+    }
   }
 
   span {
     font-weight: bold;
-    margin-right: auto;
+    margin-right: 2rem;
+
+    @include desktop {
+      margin-right: 1rem;
+    }
   }
 }

@@ -15,6 +15,13 @@
         flex-wrap: nowrap;
         justify-content: flex-start;
 
+        .btn {
+
+            @include tablet {
+                margin-top: 0.85rem;
+            }
+        }
+
         @include tablet {
             // margin: auto;
         }
@@ -28,39 +35,41 @@
             display: flex;
             flex-direction: column;
             align-items: stretch;
+            gap: 1rem;
             flex: 80%;
 
-            &__sub {
-                width: 100%;
-            }
-
             @include tablet {
+                gap: 0;
                 flex-direction: row;
                 align-items: center;
             }
 
             @include desktop {
-                padding-right: 1rem;
+                padding-right: 2rem;
             }
+
+
+            &__sub {
+                width: 100%;
+            }
+
 
             label {
                 color: $Pri-Mid;
                 margin-bottom: 0.25rem;
             }
 
-            label
-            {
+            label {
                 text-transform: uppercase;
             }
 
             textarea,
             .btn {
-                margin-bottom: 1rem;
+                // margin-bottom: 1rem;
             }
 
             label,
-            textarea
-            {
+            textarea {
                 border-radius: 0.35rem;
             }
 
@@ -86,7 +95,6 @@
             }
 
         }
-        
 
         &__pic {
             margin-right: 1rem;
@@ -110,6 +118,12 @@
     .comments {
         display: flex;
         flex-direction: column;
+        padding-top: 1.25rem;
+
+        @include tablet {
+
+            padding-top: 1.8rem;
+        }
     }
 
     .comment {
@@ -118,15 +132,20 @@
         flex-wrap: nowrap;
         justify-content: flex-start;
         border-top: 1px solid $Pri-Mid;
-        padding: 1rem 0;
-        padding-right: 1rem;
+        padding: 1rem 1rem 0 0;
 
         @include tablet {
             // margin: auto;
+
+            padding: 2rem 2rem 0 0;
+
+
         }
 
         @include desktop {
             // width: 50%;
+
+
         }
 
         &__wrapper {
@@ -179,5 +198,3 @@
         }
     }
 }
-
-

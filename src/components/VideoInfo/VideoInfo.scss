@@ -8,6 +8,10 @@
         font-size: xx-large;
         margin: 0;
         margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
     }
 
     &__stats {
@@ -18,8 +22,12 @@
         border-bottom: 2px solid $Pri-Mid;
         border-top: 2px solid $Pri-Mid;
 
+        @include tablet {
+            border-top: none;
+        }
+
         @include desktop {
-            padding-right: 1rem;
+            padding-right: 2rem;
         }
 
         &--author {
@@ -64,7 +72,7 @@
         padding: 1rem 0;
 
         @include desktop {
-            padding-right: 1rem;
+            padding-right: 2rem;
         }
     }
     
