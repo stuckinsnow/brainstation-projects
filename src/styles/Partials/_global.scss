@@ -15,15 +15,18 @@ div,
 p,
 ul,
 li,
-textarea {
-  font-family: 'AvenirNextLTPro-Regular';
+textarea,
+a {
+  font-family: 'AvenirNextLTPro';
 }
 
 body {
   margin: 0;
 }
 
-code {}
+textarea {
+  resize: none;
+}
 
 .App-header {
   color: $Pri-Dark;
@@ -107,6 +110,7 @@ code {}
   img {
     margin-left: 0.75rem;
     margin-right: auto;
+    position: absolute;
 
     @include tablet {
 
@@ -115,11 +119,7 @@ code {}
   }
 
   span {
+    width: 100%;
     font-weight: bold;
-    margin-right: auto;
-
-    @include desktop {
-      margin-right: 1rem;
-    }
   }
 }

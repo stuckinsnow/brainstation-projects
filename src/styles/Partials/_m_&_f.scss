@@ -1,15 +1,17 @@
 // Fonts
 
 @font-face {
-  font-family: "AvenirNextLTPro-Regular";
+  font-family: "AvenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: "AvenirNextLTPro-Bold";
-  font-weight: 700;
+  font-family: "AvenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
 }
+
 
 // Media queries
 
