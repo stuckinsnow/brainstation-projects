@@ -18,8 +18,8 @@
         display: flex;
         padding: 0.5rem 0;
         justify-content: space-between;
-        border-bottom: 2px solid $Pri-Mid;
-        border-top: 2px solid $Pri-Mid;
+        border-bottom: thin solid $Pri-Mid;
+        border-top: thin solid $Pri-Mid;
 
         @include tablet {
             border-top: none;

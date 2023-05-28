@@ -119,7 +119,7 @@
         flex-direction: row-reverse;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        border-top: 1px solid $Pri-Mid;
+        border-top: thin solid $Pri-Mid;
         padding: 1rem 1rem 0 0;
 
         @include tablet {

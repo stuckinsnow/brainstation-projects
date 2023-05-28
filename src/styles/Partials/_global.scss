@@ -61,7 +61,7 @@ textarea {
   &__right {
     margin: 0 1rem;
     padding-top: 1rem;
-    border-top: 1px solid $Pri-Mid;
+    border-top: thin solid $Pri-Mid;
 
     @include tablet {
 
@@ -72,9 +72,7 @@ textarea {
     @include desktop {
       border-top: none;
       padding-left: 2rem;
-      border-left-style: solid;
-      border-left-color: $Pri-Mid;
-      // flex: 25%;
+      border-left: thin solid $Pri-Mid;
       width: 30rem;
 
     }
@@ -121,5 +119,7 @@ textarea {
   span {
     width: 100%;
     font-weight: bold;
+    height: 100%;
+    line-height: 2.25rem;
   }
 }
