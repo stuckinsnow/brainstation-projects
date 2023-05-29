@@ -1,12 +1,21 @@
 const express = require('express');
 const app = express();
-const PORT = 8080;
+const videosRoutes = require('./routes/videos');
+
+
+require('dotenv').config();
+const PORT = process.env.PORT;  
+
+
 
 app.use(express());
 
+app.use('/videos', videosRoutes);
+
 // home route
 app.get('/', (req, res) => {
-  console.log('Working');
+  console.log('SHE WORK');
+  res.send('HE WORK');
 });
 
 app.listen(PORT, () => {
