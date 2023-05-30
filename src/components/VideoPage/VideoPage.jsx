@@ -14,16 +14,21 @@ function VideoPage() {
   const [videoList, setVideoList] = useState([]);
   const [activeVideo, setActiveVideo] = useState({});
 
+  const publicPath = 'http://localhost:8080'
+
+  
+
   useEffect(() => {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos/?api_key=92ff28cd-7e73-4069-852a-6a0708f75739`)
+      .get(publicPath + `/videos`)
       .then((response) => {
         setVideoList(response.data);
 
         if (!id) {
           axios
-            .get(`https://project-2-api.herokuapp.com/videos/${response.data[0].id}?api_key=92ff28cd-7e73-4069-852a-6a0708f75739`)
+            .get(publicPath + `/videos/${response.data[0].id}`)
             .then((response) => {
+              console.log('respnonse.data', response.data);
               setActiveVideo(response.data);
             })
         }
@@ -34,7 +39,7 @@ function VideoPage() {
 
     if (id) {
       axios
-        .get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=92ff28cd-7e73-4069-852a-6a0708f75739`)
+        .get(publicPath + `/videos/${id}`)
         .then((response) => {
           setActiveVideo(response.data);
         })
