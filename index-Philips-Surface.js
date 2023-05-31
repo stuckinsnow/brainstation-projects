@@ -12,8 +12,7 @@ app.use('/videos', videosRoutes);
 
 // home route
 app.get('/', (req, res) => {
-    console.log('SHE WORK');
-    res.send('HE WORK');
+    res.send('Working');
 });
 
 app.listen(PORT, () => {
