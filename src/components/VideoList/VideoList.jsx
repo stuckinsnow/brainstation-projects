@@ -3,26 +3,26 @@ import { withEllipsis } from '../utils/utils';
 import { Link } from 'react-router-dom';
 
 
-function VideoList({ videoList }) {
+function VideoList({ videoList, activeVideo }) {
   return (
     <>
       {videoList
-        .filter((activeVideo) => activeVideo.id !== videoList.id)
-        .map((activeVideo) => {
-          const videoTitleToEllipsis = withEllipsis(activeVideo.title);
+        .filter((video) => video.id !== activeVideo.id)
+        .map((video) => {
+          const videoTitleToEllipsis = withEllipsis(video.title);
           const divStyle = {
-            backgroundImage: `url(${activeVideo.image})`,
+            backgroundImage: `url(${video.image})`,
           };
           return (
             <Link
-              key={activeVideo.id}
+              key={video.id}
               className="video-list-item"
-              to={`/videos/${activeVideo.id}`}
+              to={`/videos/${video.id}`}
             >
               <div className='video-list-item__image' style={divStyle}></div>
               <div className='video-list-item__wrapper'>
                 <div className='video-list-item__wrapper--title'>{videoTitleToEllipsis}</div>
-                <div className='video-list-item__wrapper--author'>{activeVideo.channel}</div>
+                <div className='video-list-item__wrapper--author'>{video.channel}</div>
               </div>
             </Link>
           );

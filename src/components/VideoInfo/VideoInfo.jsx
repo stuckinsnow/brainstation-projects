@@ -5,9 +5,6 @@ import likesIcon from '../../assets/icons/likes.svg';
 function VideoInfo({ activeVideo, formatDate }) {
   const formattedDate = formatDate(activeVideo.timestamp);
 
-
-  // console.log('date:', formattedDate);
-
   return (
     <>
       <section className='videoinfo'>

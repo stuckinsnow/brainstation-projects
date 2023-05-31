@@ -16,8 +16,6 @@ function VideoPage() {
 
   const publicPath = 'http://localhost:8080'
 
-  
-
   useEffect(() => {
     axios
       .get(publicPath + `/videos`)
@@ -28,7 +26,6 @@ function VideoPage() {
           axios
             .get(publicPath + `/videos/${response.data[0].id}`)
             .then((response) => {
-              console.log('respnonse.data', response.data);
               setActiveVideo(response.data);
             })
         }

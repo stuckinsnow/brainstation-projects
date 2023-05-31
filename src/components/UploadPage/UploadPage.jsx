@@ -1,12 +1,20 @@
+import { useEffect, useState, useRef } from 'react';
 import './UploadPage.scss';
 import publishIcon from '../../assets/icons/publish.svg';
 import videoPreview from '../../assets/images/Upload-video-preview.jpg';
+import axios from 'axios';
+const publicPath = 'http://localhost:8080';
 
 function UploadPage() {
-  const submitForm = () => {
-    alert('Form submitted successfully!');
-    window.location.href = '/';
-  };
+  const formRef = useRef(null);
+  const submitForm = () => { 
+    axios
+    .post(publicPath + `/videos`, {title: formRef.current.videoTitle.value, description: formRef.current.videoDescription.value})
+    .then((response) => {
+         alert('Form submitted successfully!');
+         window.location.href = '/';
+      })
+    }
 
   const clickHandler = () => {
     submitForm();
@@ -24,13 +32,13 @@ function UploadPage() {
           <img src={videoPreview} alt="video-title" />
         </div>
 
-        <form className="up-wrap__form" onSubmit={submitForm}>
+        <form ref={formRef} className="up-wrap__form">
           <label className="up-wrap__form--titlelabel" htmlFor="video-title">
             Title your video </label>
-          <textarea className="up-wrap__form--titletext" id="video-title" name="video-title" placeholder="Add a title to your video"></textarea>
+          <textarea className="up-wrap__form--titletext" id="video-title" name="videoTitle" placeholder="Add a title to your video"></textarea>
 
           <label className='up-wrap__form--desclabel' htmlFor="video-description">
-            Add a video description </label> <textarea className="up-wrap__form--desctext" id="video-description" name="video-description" placeholder="Add a description to your video"></textarea>
+            Add a video description </label> <textarea className="up-wrap__form--desctext" id="video-description" name="videoDescription" placeholder="Add a description to your video"></textarea>
         </form>
 
         <div className="up-sub">
