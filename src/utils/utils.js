@@ -18,3 +18,10 @@ export function withEllipsis(text) {
   }
   return text;
 }
+
+// export function onresize(event) {
+
+//   console.log("HELLO");
+//   withEllipsis('');
+
+// };

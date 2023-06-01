@@ -15,9 +15,7 @@ function CommentList(props) {
               <div className="comment__miniwrapper">{comment.comment}</div>
             </div>
             <div className="comment__pic">
-              <div>
-                <img src="blank" />
-              </div>
+              <div></div>
             </div>
           </div>
         );

@@ -31,17 +31,22 @@
 
         &--author {
             font-weight: 700;
+            color: $Sec-Dark;
+        }
+
+        &--date,
+        &--views,
+        &--likes {
+            color: $Pri-Mid;
         }
 
         &--date {
-
             @include tablet {
                 margin-left: 2rem;
             }
         }
 
         &--views {
-
             @include tablet {
                 margin-right: 2rem;
             }
@@ -74,5 +79,5 @@
             padding-right: 2rem;
         }
     }
-    
+
 }

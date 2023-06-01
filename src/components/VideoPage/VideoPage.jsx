@@ -4,7 +4,7 @@ import CommentContainer from '../CommentList/CommentContainer';
 import CommentList from '../CommentList/CommentList';
 import VideoInfo from '../VideoInfo/VideoInfo';
 import VideoListContainer from '../VideoList/VideoListContainer';
-import { formatDate, withEllipsis } from '../utils/utils';
+import { formatDate, withEllipsis } from '../../utils/utils';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -22,13 +22,7 @@ function VideoPage() {
       .then((response) => {
         setVideoList(response.data);
 
-        if (!id) {
-          axios
-            .get(publicPath + `/videos/${response.data[0].id}`)
-            .then((response) => {
-              setActiveVideo(response.data);
-            })
-        }
+
       });
   }, []);
 
@@ -42,7 +36,15 @@ function VideoPage() {
         })
     }
 
-  }, [id]);
+   else if (videoList.length > 0) {
+      axios
+        .get(publicPath + `/videos/${videoList[0].id}`)
+        .then((response) => {
+          setActiveVideo(response.data);
+        })
+    }
+
+  }, [id, videoList]);
 
   const handleChangeActiveVideo = (id) => {
     const foundVideo = video.find((video) => video.id === id);

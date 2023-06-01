@@ -16,6 +16,10 @@
         @include tablet {
             height: 27rem;
         }
+        
+        @include desktop {
+            height: 30rem;
+        }
     }
 
 }

@@ -3,16 +3,18 @@ import './UploadPage.scss';
 import publishIcon from '../../assets/icons/publish.svg';
 import videoPreview from '../../assets/images/Upload-video-preview.jpg';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const publicPath = 'http://localhost:8080';
 
 function UploadPage() {
   const formRef = useRef(null);
+  const navigate = useNavigate();
   const submitForm = () => { 
     axios
     .post(publicPath + `/videos`, {title: formRef.current.videoTitle.value, description: formRef.current.videoDescription.value})
     .then((response) => {
          alert('Form submitted successfully!');
-         window.location.href = '/';
+         navigate("/");
       })
     }
 
