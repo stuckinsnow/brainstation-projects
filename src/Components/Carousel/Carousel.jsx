@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "./Carousel.scss";
 import { Navigation } from "swiper";
 
-export default function Carousel() {
+function Carousel() {
   return (
     <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -21,3 +21,5 @@ export default function Carousel() {
     </>
   );
 }
+
+export default Carousel;
