@@ -1,17 +1,10 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
 import "./Carousel.scss";
-
-// import required modules
 import { Navigation } from "swiper";
 
-export default function App() {
+export default function Carousel() {
   return (
     <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
