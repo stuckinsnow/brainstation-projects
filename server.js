@@ -4,57 +4,38 @@ const app = express();
 const cors = require('cors');
 const PORT = process.env.PORT || 5050;
 const multer = require('multer');
-const exifAsync = require('exif-async');
-const knex = require('knex')({
-  client: 'mysql2',
-  connection: {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-  },
+const photoRoutes = require("./routes/photoRoutes");
+const { uploadPhoto } = require('./controllers/photoController');
+
+const storage = multer.diskStorage({
+  destination: 'uploads/',
+  filename: function (_req, file, cb) {
+    cb(null, file.originalname); 
+  }
 });
 
-const upload = multer({ dest: 'uploads/' });
+const fileFilter = function (_req, file, cb) {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg') {
+    cb(null, true);
+  } else {
+    cb(new Error('Invalid filetype.'), false);
+  }
+};
+
+const upload = multer({ storage, fileFilter });
 
 app.use(express.json());
+
 app.use(cors());
 
 app.get('/', (_req, res) => {
   res.send('Welcome to my API');
 });
 
-app.post('/upload', upload.single('photo'), (req, res) => {
-  if (!req.file) {
-    res.status(400).json({ error: 'No file provided' });
-    return;
-  }
+app.post('/upload', upload.single('photo'), uploadPhoto);
 
-  const imagePath = req.file.path;
+app.use("/photos", photoRoutes);
 
-  exifAsync(imagePath)
-    .then((exifData) => {
-      exifData = exifData || {};
-
-      console.log('EXIF data:', exifData);
-
-      knex('photoalbum')
-        .insert({
-          filename: req.file.originalname,
-          exif_data: JSON.stringify(exifData),
-        })
-        .then(() => {
-          res.json({ message: 'Upload successful' });
-        })
-        .catch((error) => {
-          console.error(error);
-          res.status(500).json({ error: 'Internal server error' });
-        });
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).json({ error: 'Failed to read EXIF data' });
-    });
-});
+app.use('/uploads', express.static('uploads'));
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
