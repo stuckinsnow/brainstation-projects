@@ -6,7 +6,7 @@ function HomePage() {
 
       <>
         <Carousel />
-        <div className=''>BEEP BEEP</div>
+        <div className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis voluptates atque a reprehenderit eum nesciunt sapiente consectetur? Voluptas facilis magnam nam soluta. Sequi quo earum saepe facilis in dignissimos.</div>
       </>
 
     );
