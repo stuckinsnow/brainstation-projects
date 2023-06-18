@@ -5,7 +5,8 @@ const cors = require('cors');
 const PORT = process.env.PORT || 5050;
 const multer = require('multer');
 const photoRoutes = require("./routes/photoRoutes");
-const { uploadPhoto } = require('./controllers/photoController');
+const { uploadPhoto, deletePhoto, photo } = require('./controllers/photoController');
+// const { uploadPhoto  } = require('./controllers/photoController');
 
 const storage = multer.diskStorage({
   destination: 'uploads/',
@@ -32,7 +33,11 @@ app.get('/', (_req, res) => {
   res.send('Welcome to my API');
 });
 
+app.get('/photos/:id', photo);
+
 app.post('/upload', upload.single('photo'), uploadPhoto);
+
+app.delete('/delete/:id', deletePhoto);
 
 app.use("/photos", photoRoutes);
 
