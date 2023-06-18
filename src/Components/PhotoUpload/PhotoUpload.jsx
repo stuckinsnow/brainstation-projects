@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const PhotoUpload = () => {
@@ -18,6 +18,7 @@ const PhotoUpload = () => {
       axios.post('http://localhost:8080/upload', formData)
         .then((response) => {
           console.log(response.data);
+          window.location.reload(); // Reload the page after successful upload
         })
         .catch((error) => {
           console.error('Error:', error);

@@ -3,6 +3,7 @@ import Carousel from '../../Components/Carousel/Carousel';
 import PhotoUpload from '../../Components/PhotoUpload/PhotoUpload';
 
 function HomePage() {
+
     return (
 
       <>

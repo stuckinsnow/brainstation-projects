@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
+import { Navigation, Pagination } from "swiper";
+import { Link } from "react-router-dom";
+import { getImageUrl, formatExposureTime } from "../../utils/functions";
 import "./Carousel.scss";
-import { Navigation } from "swiper";
-import Fraction from "fraction.js";
 
 function Carousel() {
   const [photos, setPhotos] = useState([]);
   const [error, setError] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     fetchPhotos();
@@ -30,39 +30,41 @@ function Carousel() {
     return <p>Error: {error.message}</p>;
   }
 
-  // Construct the image URL based on the server's URL and image filename
-  const getImageUrl = (filename) => {
-    const serverBaseUrl = process.env.REACT_APP_API_URL;
-    return `${serverBaseUrl}/uploads/${filename}`;
-  };
-
-  const formatExposureTime = (exposureTime) => {
-    const fraction = new Fraction(exposureTime).toFraction();
-    return fraction;
+  const handleSlideChange = (swiper) => {
+    setActiveSlide(swiper.activeIndex);
   };
 
   return (
     <>
-      {/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper" loop={true}> */}
-      {photos.map((photo) => (
-        // <SwiperSlide key={photo.id}>
-        <div>
-          <img src={getImageUrl(photo.filename)} alt={photo.filename} />
-          <div>
-            <p>Latitude: {photo.exif_data.gps?.GPSLatitude}</p>
-            <p>Longitude: {photo.exif_data.gps?.GPSLongitude}</p>
-            <p>Date Taken: {photo.exif_data.exif.CreateDate}</p>
-            <p>SS: {formatExposureTime(photo.exif_data.exif.ExposureTime)}s</p>
-            <p>Lens: {photo.exif_data.exif.LensModel}</p>
-            <p>Focal Length: {photo.exif_data.exif.FocalLength}mm</p>
-            <p>Aperture: f/{photo.exif_data.exif.FNumber}</p>
-            <p>ISO: {photo.exif_data.exif.ISO}</p>
-          </div>
-        </div>
-        // </SwiperSlide>
-      ))}
-      {/* </Swiper> */}
+      <Swiper navigation={true} pagination={{ clickable: true }} modules={[Navigation, Pagination]} className="mySwiper" onSlideChange={handleSlideChange}>
+        {photos.map((photo) => (
+          <SwiperSlide key={photo.id}>
+            <Link to={`/photos/${photos[activeSlide].id}`}>
+              <img src={getImageUrl(photo.filename)} alt={photo.filename} />
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <div>
+        {photos.length > 0 && <SlideDetails photo={photos[activeSlide]} />}
+      </div>
     </>
+  );
+}
+
+function SlideDetails({ photo }) {
+  return (
+    <div className="exif-data">
+      <p>Latitude: {photo.exif_data.gps?.GPSLatitude}</p>
+      <p>Longitude: {photo.exif_data.gps?.GPSLongitude}</p>
+      <p>Date Taken: {photo.exif_data.exif.CreateDate}</p>
+      <p>Shutter Speed: {formatExposureTime(photo.exif_data.exif.ExposureTime)}s</p>
+      <p>Lens: {photo.exif_data.exif.LensModel}</p>
+      <p>Focal Length: {photo.exif_data.exif.FocalLength}mm</p>
+      <p>Aperture: f/{photo.exif_data.exif.FNumber}</p>
+      <p>ISO: {photo.exif_data.exif.ISO}</p>
+    </div>
   );
 }
 

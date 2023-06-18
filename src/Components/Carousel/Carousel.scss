@@ -1,6 +1,10 @@
+@use "swiper/css" as *;
+@use "swiper/css/navigation" as *;
+@use "swiper/css/pagination" as *;
+
 img {
-    height: 100px;
-    width: 200px;
+    height: 200px;
+    width: 400px;
 }
 
 .swiper {
@@ -19,9 +23,16 @@ img {
 
         img {
             display: block;
-            width: 20rem;
-            height: 10rem;
+            width: 30rem;
+            height: 20rem;
             object-fit: cover;
         }
     }
+}
+
+.exif-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
