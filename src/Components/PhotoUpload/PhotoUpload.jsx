@@ -5,6 +5,7 @@ import './PhotoUpload.scss';
 const PhotoUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [photoName, setPhotoName] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('');
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -18,6 +19,10 @@ const PhotoUpload = () => {
     }
   };
 
+  const handleRegionChange = (event) => {
+    setSelectedRegion(event.target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -25,6 +30,7 @@ const PhotoUpload = () => {
       const formData = new FormData();
       formData.append('photo', selectedFile);
       formData.append('photoName', photoName);
+      formData.append('selectedRegion', selectedRegion);
 
       axios
         .post(`${process.env.REACT_APP_API_URL}/upload`, formData)
@@ -47,6 +53,14 @@ const PhotoUpload = () => {
     <form onSubmit={handleSubmit} encType="multipart/form-data">
       <input type="file" name="photo" accept="image/*" onChange={handleFileChange} />
       <input type="text" name="photoName" placeholder="Photo Name" value={photoName} onChange={handleNameChange} />
+
+      <select name="selectedRegion" value={selectedRegion} onChange={handleRegionChange}>
+        <option value="">Select Region</option>
+        <option value="NorthAmerica">North America</option>
+        <option value="Europe">Europe</option>
+      </select>
+
+
       <button type="submit">Upload</button>
       {/* {error && <p>{error}</p>} */}
     </form>

@@ -50,14 +50,14 @@ const PhotoPage = ({ history }) => {
             <h2>Photo Information:</h2>
             <div>
               <strong>Photo Name:</strong> {photoData.photo_name}
+              <strong>Photo Region:</strong> {photoData.photo_region}
             </div>
             <hr />
             <h2>EXIF Data:</h2>
 
             <div className="exif-data">
               <p>
-                GPS:
-                <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer" > {formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
+                GPS: <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
               </p>
               <p>Date Taken: {photoData.exif_data.exif?.CreateDate}</p>
               <p>Shutter Speed: {formatExposureTime(photoData.exif_data.exif.ExposureTime)}s</p>
