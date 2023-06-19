@@ -41,11 +41,7 @@ function MyIsotope() {
     };
 
     fetchPhotos();
-
-    
-
     initializeIsotope();
-
 
   }, []);
 
@@ -78,7 +74,7 @@ function MyIsotope() {
       <hr />
       <ul className="filter-container">
         {photos.map((photo) => (
-          <div key={photo.id} className={`filter-item ${photo.photo_region}`}>
+          <div key={photo.id} className={`filter-item ${photo.photo_region.replace(/\s/g, '')}`}>
             <Link to={`/photos/${photo.id}`}>
               <img src={getImageUrl(photo.filename)} alt={photo.filename} />
             </Link>

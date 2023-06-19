@@ -56,7 +56,7 @@ const PhotoUpload = () => {
 
       <select name="selectedRegion" value={selectedRegion} onChange={handleRegionChange}>
         <option value="">Select Region</option>
-        <option value="NorthAmerica">North America</option>
+        <option value="North America">North America</option>
         <option value="Europe">Europe</option>
       </select>
 

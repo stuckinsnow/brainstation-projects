@@ -1,7 +1,6 @@
 import './HomePage.scss';
 import Carousel from '../../Components/Carousel/Carousel';
 import PhotoUpload from '../../Components/PhotoUpload/PhotoUpload';
-import MyIsotope from '../../Components/MyIsotope/MyIsotope';
 
 function HomePage() {
 
