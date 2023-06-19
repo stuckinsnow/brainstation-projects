@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { getImageUrl, formatExposureTime } from "../../utils/functions";
+import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
 
 const PhotoPage = ({ history }) => {
   const [photoData, setPhotoData] = useState(null);
@@ -32,8 +33,13 @@ const PhotoPage = ({ history }) => {
     }
   };
 
+  const pds = photoData?.exif_data.gps;
+  const googleA = 'https://www.google.com/maps/search/?api=1&query=';
+
   return (
+
     <>
+
       {photoData ? (
         <div>
           {/* <pre>{JSON.stringify(photoData, null, 2)}</pre> */}
@@ -49,8 +55,10 @@ const PhotoPage = ({ history }) => {
             <h2>EXIF Data:</h2>
 
             <div className="exif-data">
-              <p>Latitude: {photoData.exif_data.gps?.GPSLatitude}</p>
-              <p>Longitude: {photoData.exif_data.gps?.GPSLongitude}</p>
+              <p>
+                GPS:
+                <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer" > {formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
+              </p>
               <p>Date Taken: {photoData.exif_data.exif?.CreateDate}</p>
               <p>Shutter Speed: {formatExposureTime(photoData.exif_data.exif.ExposureTime)}s</p>
               <p>Lens: {photoData.exif_data.exif.LensModel}</p>

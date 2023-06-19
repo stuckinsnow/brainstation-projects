@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
-import { getImageUrl, formatExposureTime } from "../../utils/functions";
+import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
 import "./Carousel.scss";
 
 function Carousel() {
@@ -54,10 +54,17 @@ function Carousel() {
 }
 
 function SlideDetails({ photo }) {
+
+  const pds = photo?.exif_data.gps;
+  const googleA = 'https://www.google.com/maps/search/?api=1&query=';
+
   return (
     <div className="exif-data">
-      <p>Latitude: {photo.exif_data.gps?.GPSLatitude}</p>
-      <p>Longitude: {photo.exif_data.gps?.GPSLongitude}</p>
+      <p>
+        GPS: 
+        <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer" > {formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}
+        </Link>
+      </p>
       <p>Date Taken: {photo.exif_data.exif.CreateDate}</p>
       <p>Shutter Speed: {formatExposureTime(photo.exif_data.exif.ExposureTime)}s</p>
       <p>Lens: {photo.exif_data.exif.LensModel}</p>
