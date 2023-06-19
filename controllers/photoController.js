@@ -26,13 +26,14 @@ uploadPhoto = (req, res) => {
     .then((exifData) => {
       exifData = exifData || {};
 
-      // console.log('EXIF data:', exifData);
+      console.log('EXIF data:', exifData);
 
       knex('photoalbum')
         .insert({
           filename: req.file.originalname,
           exif_data: JSON.stringify(exifData),
-          photo_name: req.body.photoName  
+          photo_name: req.body.photoName,
+          photo_region: req.body.selectedRegion
         })
         .then(() => {
           res.json({ message: 'Success!' });
@@ -54,31 +55,29 @@ deletePhoto = async (req, res) => {
   try {
     const photo = await knex('photoalbum').where({ id }).first();
 
-    if (photo) {
-      const imagePath = path.join(__dirname, '..', 'uploads', photo.filename);
-
-      // Delete the file from the filesystem
-      fs.unlink(imagePath, (err) => {
-        if (err) {
-          console.error(err);
-          res.status(500).json({ error: 'Failed to delete the file' });
-        } else {
-          // If the file deletion is successful, delete the photo from the database
-          knex('photoalbum')
-            .where({ id })
-            .del()
-            .then(() => {
+    // Delete the photo from the database
+    knex('photoalbum')
+      .where({ id })
+      .del()
+      .then(() => {
+        if (photo && photo.filename) {
+          const imagePath = path.join(__dirname, '..', 'uploads', photo.filename); 
+          fs.unlink(imagePath, (err) => {
+            if (err) {
+              console.error(err);
+              res.status(500).json({ error: 'Failed to delete the file' });
+            } else {
               res.json({ message: 'Photo deleted successfully' });
-            })
-            .catch((error) => {
-              console.error(error);
-              res.status(500).json({ error: 'Internal server error' });
-            });
+            }
+          });
+        } else {
+          res.json({ message: 'Photo deleted successfully' });
         }
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
       });
-    } else {
-      res.status(404).json({ error: 'Photo not found' });
-    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
