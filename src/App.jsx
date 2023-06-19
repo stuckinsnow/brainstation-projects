@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import HomePage from './Pages/HomePage/HomePage'; 
 import ContactPage from './Pages/ContactPage/ContactPage';
 import PhotoPage from './Pages/PhotoPage/PhotoPage';
+import DeletePage from './Pages/DeletePage/DeletePage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/photos/:id" element={<PhotoPage />} />
+          <Route path="/deletepage/" element={<DeletePage />} />
         </Routes>
       </BrowserRouter>
     </>

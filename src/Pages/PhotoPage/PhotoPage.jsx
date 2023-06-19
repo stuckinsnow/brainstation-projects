@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { getImageUrl, formatExposureTime } from "../../utils/functions";
 
 const PhotoPage = ({ history }) => {
   const [photoData, setPhotoData] = useState(null);
@@ -17,11 +18,13 @@ const PhotoPage = ({ history }) => {
   const handleDelete = () => {
     if (photoData && photoData.id) {
       const idToDelete = photoData.id;
+      const currentDomain = window.location.origin;
+      window.location.href = `${currentDomain}/deletePage`;
       axios
         .delete(`${process.env.REACT_APP_API_URL}/delete/${idToDelete}`)
         .then((response) => {
+          console.log("File successfully deleted");
           console.log(response.data);
-          history.push('/');
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -33,7 +36,29 @@ const PhotoPage = ({ history }) => {
     <>
       {photoData ? (
         <div>
-          <pre>{JSON.stringify(photoData, null, 2)}</pre>
+          {/* <pre>{JSON.stringify(photoData, null, 2)}</pre> */}
+
+          <img src={getImageUrl(photoData.filename)} alt={photoData.filename} />
+
+          <div>
+            <h2>Photo Information:</h2>
+            <div>
+              <strong>Photo Name:</strong> {photoData.photo_name}
+            </div>
+            <hr />
+            <h2>EXIF Data:</h2>
+
+            <div className="exif-data">
+              <p>Latitude: {photoData.exif_data.gps?.GPSLatitude}</p>
+              <p>Longitude: {photoData.exif_data.gps?.GPSLongitude}</p>
+              <p>Date Taken: {photoData.exif_data.exif?.CreateDate}</p>
+              <p>Shutter Speed: {formatExposureTime(photoData.exif_data.exif.ExposureTime)}s</p>
+              <p>Lens: {photoData.exif_data.exif.LensModel}</p>
+              <p>Focal Length: {photoData.exif_data.exif.FocalLength}mm</p>
+              <p>Aperture: f/{photoData.exif_data.exif.FNumber}</p>
+              <p>ISO: {photoData.exif_data.exif.ISO}</p>
+            </div>
+          </div>
         </div>
       ) : (
         <div>Loading...</div>
