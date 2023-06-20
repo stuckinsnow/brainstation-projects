@@ -13,23 +13,19 @@ function MyIsotope() {
   const [activePhoto] = useState(0);
 
   useEffect(() => {
-
-
     const initializeIsotope = () => {
-      isotope.current = new Isotope('.filter-container', {
-        itemSelector: '.filter-item',
+      isotope.current = new Isotope('.isotope', {
+        itemSelector: '.isotope__card',
         layoutMode: 'fitRows',
       });
     };
-
-
     const fetchPhotos = async () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/photos/`);
         const data = await response.json();
 
         setPhotos(data);
- 
+
         if (isotope.current) {
           isotope.current.reloadItems();
           isotope.current.arrange();
@@ -72,29 +68,46 @@ function MyIsotope() {
         <li onClick={() => handleFilterKeyChange('NorthAmerica')}>North America</li>
       </ul>
       <hr />
-      <ul className="filter-container">
-        {photos.map((photo) => (
-          <div key={photo.id} className={`filter-item ${photo.photo_region.replace(/\s/g, '')}`}>
-            <Link to={`/photos/${photo.id}`}>
-              <img src={getImageUrl(photo.filename)} alt={photo.filename} />
-            </Link>
+      <section className="isotope">
 
-            <div className="exif-data">
+        <h1 className='isotope__title'>Photo Gallery</h1>
+
+        {photos.map((photo) => (
+          <article key={photo.id} className={`isotope__card ${photo.photo_region.replace(/\s/g, '')}`}>
+            <img src={getImageUrl(photo.filename)} alt={photo.filename} />
+
+
+            <div className="iso-exif">
               {photos.length > 0 && (
                 <>
-                  <p>GPS:{' '} <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)}{' '}{formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link></p>
+
+                  <h2 className='iso-exif__title'>
+                    <Link to={`/photos/${photo.id}`}>
+                      {photo.photo_name}
+                    </Link>
+                  </h2>
+
+
+                  <div className='iso-exif__writing'>
+
+                  <p className='gps'>GPS:{' '} <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)}{' '}{formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link></p>
                   <p>Date Taken: {photo.exif_data.exif.CreateDate}</p>
                   <p>Shutter Speed: {formatExposureTime(photo.exif_data.exif.ExposureTime)}s</p>
+                  <p>Camera: {photo.exif_data.image.Model}</p>
                   <p>Lens: {photo.exif_data.exif.LensModel}</p>
+                  <p>Software: {photo.exif_data.image.Software}</p>
                   <p>Focal Length: {photo.exif_data.exif.FocalLength}mm</p>
                   <p>Aperture: f/{photo.exif_data.exif.FNumber}</p>
                   <p>ISO: {photo.exif_data.exif.ISO}</p>
+
+                  </div>
+
                 </>
               )}
             </div>
-          </div>
+          </article>
         ))}
-      </ul>
+      </section>
     </>
   );
 }

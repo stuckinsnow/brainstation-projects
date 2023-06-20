@@ -7,7 +7,7 @@ import ContactPage from './Pages/ContactPage/ContactPage';
 import PhotoPage from './Pages/PhotoPage/PhotoPage';
 import DeletePage from './Pages/DeletePage/DeletePage';
 import PhotoGallery from './Pages/PhotoGallery/PhotoGallery';
-import './styles/_global.scss';
+import './styles/global.scss';
 
 function App() {
   return (
