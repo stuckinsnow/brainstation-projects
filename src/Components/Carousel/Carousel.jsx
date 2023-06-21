@@ -33,12 +33,22 @@ function Carousel() {
   const handleSlideChange = (swiper) => {
     setActiveSlide(swiper.activeIndex);
   };
+  
 
   return (
     <>
-      <Swiper navigation={true} pagination={{ clickable: true }} modules={[Navigation, Pagination]} className="mySwiper" onSlideChange={handleSlideChange}>
+      <Swiper
+        navigation={true}
+        pagination={{ clickable: true }}
+        modules={[Navigation, Pagination]}
+        className="swiper"
+        onSlideChange={handleSlideChange}
+        slidesPerView='auto' 
+        spaceBetween={6} 
+        loop={true} 
+      >
         {photos.map((photo) => (
-          <SwiperSlide key={photo.id}>
+          <SwiperSlide className="swiper__slide" key={photo.id}>
             <Link to={`/photos/${photos[activeSlide].id}`}>
               <img src={getImageUrl(photo.filename)} alt={photo.filename} />
             </Link>

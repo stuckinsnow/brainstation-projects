@@ -9,6 +9,7 @@ import DeletePage from './Pages/DeletePage/DeletePage';
 import PhotoGallery from './Pages/PhotoGallery/PhotoGallery';
 import './styles/global.scss';
 
+
 function App() {
   return (
     <>
