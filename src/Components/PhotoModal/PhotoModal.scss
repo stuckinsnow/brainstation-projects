@@ -1,0 +1,49 @@
+
+@use "../../styles/mixins.scss" as *;
+
+@use "../../styles/colours.scss" as *;
+
+.lightbox {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.435);
+    opacity: 1;
+    z-index: 9;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transition: opacity 2s ease;
+    pointer-events: none;
+    opacity: 0;
+
+    &--open {
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+}
+
+.image__container {
+    display: flex;
+    background-color: red;
+    // position: fixed;
+    // top: 0;
+    // height: 50vh;
+    // width: 50vw;
+    flex-direction: column;
+    z-index: 10;
+    width: 50%;
+}
+
+.image__file {
+    height: auto;
+    width: 100%;
+    margin-top: auto;
+}
+
+
+
+ 

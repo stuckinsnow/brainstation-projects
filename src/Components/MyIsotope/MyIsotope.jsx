@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import Isotope from 'isotope-layout';
 import './MyIsotope.scss';
 import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
+import PhotoModal from '../PhotoModal/PhotoModal';
 
 function MyIsotope() {
 
+  const [modalOpen, setModalOpen] = useState(false)
+  const [currentImage, setCurrentImage] = useState('');
   const isotope = useRef(null);
   const [filterKey, setFilterKey] = useState('*');
   const [photos, setPhotos] = useState([]);
@@ -19,7 +22,22 @@ function MyIsotope() {
       itemSelector: '.isotope__card',
       layoutMode: 'fitRows',
     });
+    // console.log('isotope finished loading');
+    setTimeout(() => {
+      isotope.current.shuffle();
+    }, 1000);
+
   };
+
+  // modal code
+  useEffect(() => {
+    // console.log(modalOpen)
+  }, [modalOpen])
+
+  const handleModalClick = (imageFileName) => {
+    setCurrentImage(imageFileName)
+    setModalOpen(prev => !prev)
+  }
 
   const fetchPhotos = async () => {
     try {
@@ -43,6 +61,8 @@ function MyIsotope() {
     fetchPhotos();
   }, []);
 
+
+
   useEffect(() => {
     if (filterKey === '*') {
       isotope.current.arrange({ filter: '*' });
@@ -65,21 +85,37 @@ function MyIsotope() {
         <li onClick={() => handleFilterKeyChange('*')}>Show Both</li>
         <li onClick={() => handleFilterKeyChange('Europe')}>England</li>
         <li onClick={() => handleFilterKeyChange('NorthAmerica')}>North America</li>
+
+        <li onClick={() => isotope.current.shuffle()}>Shuffle</li>
+
+
       </ul>
+
+      <PhotoModal modalOpen={modalOpen} currentImage={currentImage} 
+      handleModalClick={handleModalClick}
+      />
+      
 
       <section className="isotope">
         <h1 className='isotope__title'>Photo Gallery</h1>
-        {photos.map((photo, index) => (
+        {photos.map((photo) => (
+
           <article key={photo.id} className={`isotope__card ${photo.photo_region.replace(/\s/g, '')}`}>
             <Link
               to={getImageUrl(photo.filename)}
-              onClick={(event) => {
-                event.preventDefault();
-                // LIGHTBOX CODE HERE
+              onClick={(e) => {
+                e.preventDefault()
+                handleModalClick(getImageUrl((photo.filename)))
+                // console.log(getImageUrl(photo.filename))
+                // alert(getImageUrl(photo.filename))
               }}
             >
+
+
               <img src={getImageUrl(photo.filename)} alt={photo.filename} />
             </Link>
+
+
 
             <div className="iso-exif">
               {photos.length > 0 && (
@@ -90,9 +126,14 @@ function MyIsotope() {
                     </Link>
                   </h2>
                   <div className='iso-exif__writing'>
-                    <p><span className='iso-exif__writing--category'>GPS: </span>
-                      <Link id='gpsstuff' className='iso-exif__writing--gps' to={`${googleA}${formatGpsData(photo.exif_data.gps?.GPSLatitude, photo.exif_data.gps?.GPSLatitudeRef)},${formatGpsData(photo.exif_data.gps?.GPSLongitude, photo.exif_data.gps?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">GPS</Link>
+
+                    <p><span className='iso-exif__writing--category'>GPS:</span>
+                      <Link id='gps-info' className='iso-exif__writing--gps' to={`${googleA}${encodeURIComponent(formatGpsData(photo.exif_data.gps?.GPSLatitude, photo.exif_data.gps?.GPSLatitudeRef))},${encodeURIComponent(formatGpsData(photo.exif_data.gps?.GPSLongitude, photo.exif_data.gps?.GPSLongitudeRef))}`} target="_blank" rel="noopener noreferrer">
+                        GPS
+                      </Link>
                     </p>
+
+
                     <p>
                       <span className='iso-exif__writing--category'>Date Taken: </span>
                       {photo.exif_data.exif.CreateDate}

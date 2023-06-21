@@ -79,7 +79,7 @@
     }
 }
 
-#gpsstuff {
+#gps-info {
 
     color: red;
     position: absolute;
@@ -87,5 +87,6 @@
     right: 0;
     margin-right: 4rem;
     margin-bottom: 1rem;
+    z-index: 99;
 
 }
