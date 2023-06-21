@@ -3,8 +3,6 @@ import "./PhotoModal.scss"
 
 const PhotoModal = ({ currentImage, modalOpen, handleModalClick }) => {
 
-    // console.log(currentImage)
-    // console.log('model state', modalOpen)
     return (
         
         <>

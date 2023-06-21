@@ -2,7 +2,6 @@ import "./PhotoModal.scss";
 
 const PhotoModalContent = ({currentImage, modalOpen, handleModalClick}) => {
 
-    // console.log(currentImage.currentImage)
     return (
 
       
@@ -12,7 +11,6 @@ const PhotoModalContent = ({currentImage, modalOpen, handleModalClick}) => {
 
             <div onClick={handleModalClick}>
                 <img className="image__file" src={currentImage} alt="" />
-
 
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla quis provident, impedit, mollitia quam quia deleniti qui doloribus illo consectetur fugit iste, fuga eveniet voluptates obcaecati eius quaerat incidunt sit?</p>
 

@@ -8,7 +8,7 @@ import PhotoPage from './Pages/PhotoPage/PhotoPage';
 import DeletePage from './Pages/DeletePage/DeletePage';
 import PhotoGallery from './Pages/PhotoGallery/PhotoGallery';
 import './styles/global.scss';
-
+import AdminPage from './Pages/AdminPage/AdminPage';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Route path="/photos/:id" element={<PhotoPage />} />
           <Route path="/deletepage/" element={<DeletePage />} />
           <Route path="/photogallery/" element={<PhotoGallery />} />
+          <Route path="/admin/" element={<AdminPage />} />
         </Routes>
       </BrowserRouter>
     </>

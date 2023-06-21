@@ -49,9 +49,9 @@ function Carousel() {
       >
         {photos.map((photo) => (
           <SwiperSlide className="swiper__slide" key={photo.id}>
-            <Link to={`/photos/${photos[activeSlide].id}`}>
+            {/* <Link to={`/photos/${photos[activeSlide].id}`}> */}
               <img src={getImageUrl(photo.filename)} alt={photo.filename} />
-            </Link>
+            {/* </Link> */}
           </SwiperSlide>
         ))}
       </Swiper>
@@ -65,21 +65,23 @@ function Carousel() {
 
 function SlideDetails({ photo }) {
 
-  const pds = photo?.exif_data.gps;
-  const googleA = 'https://www.google.com/maps/search/?api=1&query=';
+  // const pds = photo?.exif_data.gps;
+  // const googleA = 'https://www.google.com/maps/search/?api=1&query=';
 
   return (
-    <div className="exif-data">
-      <p>
-        GPS: <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
-      </p>
-      <p>Date Taken: {photo.exif_data.exif.CreateDate}</p>
-      <p>Shutter Speed: {formatExposureTime(photo.exif_data.exif.ExposureTime)}s</p>
-      <p>Lens: {photo.exif_data.exif.LensModel}</p>
-      <p>Focal Length: {photo.exif_data.exif.FocalLength}mm</p>
-      <p>Aperture: f/{photo.exif_data.exif.FNumber}</p>
-      <p>ISO: {photo.exif_data.exif.ISO}</p>
-    </div>
+    // <div className="exif-data">
+    //   <p>
+    //     GPS: <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
+    //   </p>
+    //   <p>Date Taken: {photo.exif_data.exif.CreateDate}</p>
+    //   <p>Shutter Speed: {formatExposureTime(photo.exif_data.exif.ExposureTime)}s</p>
+    //   <p>Lens: {photo.exif_data.exif.LensModel}</p>
+    //   <p>Focal Length: {photo.exif_data.exif.FocalLength}mm</p>
+    //   <p>Aperture: f/{photo.exif_data.exif.FNumber}</p>
+    //   <p>ISO: {photo.exif_data.exif.ISO}</p>
+    // </div>
+
+    <></>
   );
 }
 

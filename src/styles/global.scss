@@ -1,3 +1,11 @@
+@use './colours.scss' as *;
+@use './fonts.scss' as *;
+@use './mixins.scss' as *;
+
 * {
     color: blueviolet;
+}
+
+body {
+    background-color: $page;
 }
