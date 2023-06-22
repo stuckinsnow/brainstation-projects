@@ -3,8 +3,9 @@
 @use "swiper/css/pagination" as *;
 
 .swiper {
-    width: 100%;
+    background-color: red;
     height: 100%;
+    flex-basis: 60%;
 
     &__slide {
         text-align: center;
@@ -16,12 +17,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: auto !important;
+        // width: auto;
+        max-width: 100%;
+        // min-width: 100vw;
         // pointer-events: none;
 
         img {
             display: block;
-            // width: auto;
             height: 30rem;
             object-fit: cover;
         }
@@ -34,4 +36,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
+}
+
+img {
+    // height: 60px;
+    // width: 100px;
+    // max-height: 300px;
 }

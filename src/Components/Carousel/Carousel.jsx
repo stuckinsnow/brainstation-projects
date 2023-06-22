@@ -45,7 +45,7 @@ function Carousel() {
         onSlideChange={handleSlideChange}
         slidesPerView='1' 
         spaceBetween={6}
-        loop={false} 
+        loop={true} 
       >
         {photos.map((photo) => (
           <SwiperSlide className="swiper__slide" key={photo.id}>

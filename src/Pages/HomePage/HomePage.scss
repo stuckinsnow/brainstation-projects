@@ -1,0 +1,9 @@
+.maindiv {
+    display: flex;
+    background-color: red;
+
+    &__left {
+        flex-basis: 40%;
+        background-color: chartreuse;
+    }
+}
