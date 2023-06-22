@@ -5,6 +5,11 @@ import './MyIsotope.scss';
 import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
 import PhotoModal from '../PhotoModal/PhotoModal';
 
+// Icons
+
+import gpsIcon from '../../assets/images/location.svg';
+import magnifyIcon from '../../assets/images/zoom.svg';
+
 function MyIsotope() {
 
   const [modalOpen, setModalOpen] = useState(false)
@@ -94,17 +99,8 @@ function MyIsotope() {
         {photos.map((photo) => (
 
           <article key={photo.id} className={`isotope__card ${photo.photo_region.replace(/\s/g, '')}`}>
-            <Link
-              to={getImageUrl(photo.filename)}
-              onClick={(e) => {
-                e.preventDefault()
-                handleModalClick(getImageUrl((photo.filename)))
-                // console.log(getImageUrl(photo.filename))
-                // alert(getImageUrl(photo.filename))
-              }}>
 
-              <img src={getImageUrl(photo.filename)} alt={photo.filename} />
-            </Link>
+            <img src={getImageUrl(photo.filename)} alt={photo.filename} />
 
             <div className="iso-exif">
               {photos.length > 0 && (
@@ -116,9 +112,21 @@ function MyIsotope() {
                   </h2>
                   <div className='iso-exif__writing'>
 
-                    <p><span className='iso-exif__writing--category'>GPS:</span>
-                      <Link id='gps-info' className='iso-exif__writing--gps' to={`${googleA}${encodeURIComponent(formatGpsData(photo.exif_data.gps?.GPSLatitude, photo.exif_data.gps?.GPSLatitudeRef))},${encodeURIComponent(formatGpsData(photo.exif_data.gps?.GPSLongitude, photo.exif_data.gps?.GPSLongitudeRef))}`} target="_blank" rel="noopener noreferrer">
-                        GPS
+                    <p className='iso-exif__writing--icons'>
+                      {/* <span className='iso-exif__writing--category'>GPS:</span> */}
+                      <Link className='iso-exif__writing--gps' to={`${googleA}${encodeURIComponent(formatGpsData(photo.exif_data.gps?.GPSLatitude, photo.exif_data.gps?.GPSLatitudeRef))},${encodeURIComponent(formatGpsData(photo.exif_data.gps?.GPSLongitude, photo.exif_data.gps?.GPSLongitudeRef))}`} target="_blank" rel="noopener noreferrer">
+
+                        <img src={gpsIcon} alt="GPS Icon" />
+
+                      </Link>
+                      <Link to={getImageUrl(photo.filename)} onClick={(e) => {
+                        e.preventDefault()
+                        handleModalClick(getImageUrl((photo.filename)))
+                        // console.log(getImageUrl(photo.filename))
+                        // alert(getImageUrl(photo.filename))
+                      }}>
+
+                        <img src={magnifyIcon} alt="Magnify Icon"/>
                       </Link>
                     </p>
 

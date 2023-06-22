@@ -16,7 +16,15 @@
 
     &__card {
         margin: 0.5rem;
+        display: flex;
         width: auto;
+        border-style: solid;
+        background-color: $isoitem-title-bg;
+        // padding-bottom: 0.3rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-color: grey;
+        box-shadow: #646464 0.1rem 0.02rem 1rem 0.01rem;
 
         img {
             height: 14rem;
@@ -80,25 +88,76 @@
         }
 
         &--category {
-            color: chartreuse;
+            color: $category-writing;
+        }
+
+        &--icons {
+            position: absolute;
+            display: flex;
+            width: 6rem;
+            right: 1rem;
+            bottom: 1rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            pointer-events: all;
+            
+            
+            img {
+                padding: 0.5rem;
+                border-style: solid;
+                width: 1rem;
+                height: 1rem;
+                background-color: $isoitem-title-bg;
+                border-color: white;
+                transition: background-color 0.125s ease-in-out;
+
+                &:hover {
+                    background-color: $active;
+                }
+            }
         }
 
         &--gps {
-            color: white !important;
-            text-decoration: none;
-            font-weight: bold;
-        }
+            // color: white !important;
+            // text-decoration: none;
+            // font-weight: bold;
+            // color: red;
+            // // position: absolute;
+            // // bottom: 0;
+            // // right: 0;
+            // // margin-right: 4rem;
+            // // margin-bottom: 1rem;
+            // // // z-index: 99;
+            // // pointer-events: all;
+            // // color: chartreuse;
+
+            // img {
+            //     width: 1rem;
+            //     height: 1rem;
+            //     border-style: solid;
+            //     padding: 0.5rem;
+            //     transition: all 125ms ease-in-out;
+            // }
+
+            // img:hover {
+            //     background-color: aqua;
+            // }
+        }        
     }
 }
 
-#gps-info {
 
-    color: red;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 4rem;
-    margin-bottom: 1rem;
-    z-index: 99;
+// .myClass {
+//     svg{
+        
+//         &:hover {
+//             color: red;
+//             fill: red;
+//         }
+//     }
+        
+// }
 
-}
+// import ZoomInIcon from '@mui/icons-material/ZoomIn';

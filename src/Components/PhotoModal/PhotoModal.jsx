@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './PhotoModal.scss';
 
+import closeIcon from '../../assets/images/close.svg';
+
 const PhotoModal = ({ currentImage, modalOpen, handleModalClick }) => {
   const [isOpenClassAdded, setIsOpenClassAdded] = useState(false);
   const [isRendered, setIsRendered] = useState(false);
@@ -9,8 +11,6 @@ const PhotoModal = ({ currentImage, modalOpen, handleModalClick }) => {
     setIsRendered(true);
   }, []);
 
-
-  
   useEffect(() => {
     if (modalOpen && isRendered) {
       const timer = setTimeout(() => {
@@ -21,6 +21,7 @@ const PhotoModal = ({ currentImage, modalOpen, handleModalClick }) => {
     } else {
       setIsOpenClassAdded(false);
     }
+
   }, [modalOpen, isRendered]);
 
   const handleCloseModal = () => {
@@ -37,7 +38,7 @@ const PhotoModal = ({ currentImage, modalOpen, handleModalClick }) => {
           <div className="lightbox__content">
             {/* <div onClick={handleCloseModal}> */}
               
-              <p>
+              {/* <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis provident, impedit, mollitia quam quia
                 deleniti qui doloribus illo consectetur fugit iste, fuga eveniet voluptates obcaecati eius quaerat incidunt
                 sit?
@@ -46,11 +47,13 @@ const PhotoModal = ({ currentImage, modalOpen, handleModalClick }) => {
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus cumque maiores quod omnis hic ipsa
                 tenetur, ducimus quis similique eos nobis. Facilis dicta voluptatum ad tempora, perferendis eaque expedita
                 tenetur.
-              </div>
+              </div> */}
 
-              <img src={currentImage} alt="" />
+              <img className="lightbox__content--image" src={currentImage} alt="" />
             {/* </div> */}
-            <button onClick={handleCloseModal}>Close</button>
+            <div className='lightbox__content--subsection'>
+            <img className="lightbox__content--close" src={closeIcon} onClick={handleCloseModal} />
+            </div>
           </div>
         </div>
       )}

@@ -43,9 +43,9 @@ function Carousel() {
         modules={[Navigation, Pagination]}
         className="swiper"
         onSlideChange={handleSlideChange}
-        slidesPerView='auto' 
-        spaceBetween={6} 
-        loop={true} 
+        slidesPerView='1' 
+        spaceBetween={6}
+        loop={false} 
       >
         {photos.map((photo) => (
           <SwiperSlide className="swiper__slide" key={photo.id}>
@@ -56,19 +56,19 @@ function Carousel() {
         ))}
       </Swiper>
 
-      <div>
+      {/* <div>
         {photos.length > 0 && <SlideDetails photo={photos[activeSlide]} />}
-      </div>
+      </div> */}
     </>
   );
 }
 
-function SlideDetails({ photo }) {
+// function SlideDetails({ photo }) {
 
   // const pds = photo?.exif_data.gps;
   // const googleA = 'https://www.google.com/maps/search/?api=1&query=';
 
-  return (
+  // return (
     // <div className="exif-data">
     //   <p>
     //     GPS: <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
@@ -81,8 +81,8 @@ function SlideDetails({ photo }) {
     //   <p>ISO: {photo.exif_data.exif.ISO}</p>
     // </div>
 
-    <></>
-  );
-}
+    // <></>
+//   );
+// }
 
 export default Carousel;
