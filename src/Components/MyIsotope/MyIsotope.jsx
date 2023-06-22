@@ -61,8 +61,6 @@ function MyIsotope() {
     fetchPhotos();
   }, []);
 
-
-
   useEffect(() => {
     if (filterKey === '*') {
       isotope.current.arrange({ filter: '*' });
@@ -81,21 +79,16 @@ function MyIsotope() {
 
   return (
     <>
-      <ul>
-        <li onClick={() => handleFilterKeyChange('*')}>Show Both</li>
+      <ul className='iso-buttons'>
+        <li onClick={() => handleFilterKeyChange('*')}>All</li>
         <li onClick={() => handleFilterKeyChange('Europe')}>England</li>
         <li onClick={() => handleFilterKeyChange('NorthAmerica')}>North America</li>
 
         <li onClick={() => isotope.current.shuffle()}>Shuffle</li>
 
-
       </ul>
 
-      <PhotoModal modalOpen={modalOpen} currentImage={currentImage} 
-      handleModalClick={handleModalClick}
-      />
-      
-
+      <PhotoModal modalOpen={modalOpen} currentImage={currentImage} handleModalClick={handleModalClick} />
       <section className="isotope">
         <h1 className='isotope__title'>Photo Gallery</h1>
         {photos.map((photo) => (
@@ -108,14 +101,10 @@ function MyIsotope() {
                 handleModalClick(getImageUrl((photo.filename)))
                 // console.log(getImageUrl(photo.filename))
                 // alert(getImageUrl(photo.filename))
-              }}
-            >
-
+              }}>
 
               <img src={getImageUrl(photo.filename)} alt={photo.filename} />
             </Link>
-
-
 
             <div className="iso-exif">
               {photos.length > 0 && (
@@ -132,7 +121,6 @@ function MyIsotope() {
                         GPS
                       </Link>
                     </p>
-
 
                     <p>
                       <span className='iso-exif__writing--category'>Date Taken: </span>

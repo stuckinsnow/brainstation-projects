@@ -1,5 +1,17 @@
 @use '../../styles/colours.scss' as *;
 
+.iso-buttons {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+
+    li {
+        width: 8rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
 .isotope {
 
     &__card {
