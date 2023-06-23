@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
+import './PhotoPage.scss';
 
-const PhotoPage = ({ history }) => {
+const PhotoPage = () => {
   const [photoData, setPhotoData] = useState(null);
 
   useEffect(() => {
@@ -39,9 +40,8 @@ const PhotoPage = ({ history }) => {
     <>
       {photoData ? (
         <div>
-          {/* <pre>{JSON.stringify(photoData, null, 2)}</pre> */}
 
-          <img src={getImageUrl(photoData.filename)} alt={photoData.filename} />
+          <img id="delete-photo" src={getImageUrl(photoData.filename)} alt={photoData.filename} />
 
           <div>
             <h2>Photo Information:</h2>
