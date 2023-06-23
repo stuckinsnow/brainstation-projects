@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className='head'>
+    <div className='head hidden'>
       <Link id="head-logo" to={"/"}>Portfolio</Link>
       <nav>
         <ul className='navbar-container'>

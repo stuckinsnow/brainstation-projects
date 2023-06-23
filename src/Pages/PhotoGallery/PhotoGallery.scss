@@ -1,0 +1,36 @@
+@use '../../styles/colours.scss' as *;
+@use '../../styles/global.scss' as *;
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+
+    &__title {
+        font-size: large;
+        text-transform: uppercase;
+    }
+}
+
+.iso-buttons {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    margin-bottom: 0;
+
+    li {
+        width: auto;
+        color: black;
+        border-radius: 0.25rem;
+        text-align: center;
+        // text-transform: uppercase;
+        background-color: $category-writing;
+        border: thin solid black;
+        margin: 0.25rem;
+        padding: 0 0.5rem;
+    }
+}
+
+#page-leaf {
+    padding: 1rem;
+    box-shadow: $pretty-shadow-top;
+}

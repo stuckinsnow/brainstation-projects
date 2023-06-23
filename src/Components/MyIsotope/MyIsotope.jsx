@@ -1,107 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
-import Isotope from 'isotope-layout';
-import './MyIsotope.scss';
 import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
-import PhotoModal from '../PhotoModal/PhotoModal';
 
 // Icons
-
 import gpsIcon from '../../assets/images/location.svg';
 import magnifyIcon from '../../assets/images/zoom.svg';
 
-function MyIsotope() {
-
-  const [modalOpen, setModalOpen] = useState(false)
-  const [currentImage, setCurrentImage] = useState('');
-  const isotope = useRef(null);
-  const [filterKey, setFilterKey] = useState('*');
-  const [photos, setPhotos] = useState([]);
-  const [error, setError] = useState(null);
-  // const [activePhoto] = useState(0);
-  // const pds = photos[activePhoto]?.exif_data.gps;
-  const googleA = 'https://www.google.com/maps/search/?api=1&query=';
-
-  const initializeIsotope = () => {
-    isotope.current = new Isotope('.isotope', {
-      itemSelector: '.isotope__card',
-      layoutMode: 'fitRows',
-    });
-    // console.log('isotope finished loading');
-    setTimeout(() => {
-      isotope.current.shuffle();
-    }, 1000);
-
-  };
-
-  // modal code
-  useEffect(() => {
-    // console.log(modalOpen)
-  }, [modalOpen])
-
-  const handleModalClick = (imageFileName) => {
-    setCurrentImage(imageFileName)
-    setModalOpen(prev => !prev)
-  }
-
-  const fetchPhotos = async () => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/photos/`);
-      const data = await response.json();
-
-      setPhotos(data);
-
-      if (isotope.current) {
-        isotope.current.reloadItems();
-        isotope.current.arrange();
-      }
-    } catch (error) {
-      console.error(error);
-      setError(error);
-    }
-  };
-
-  useEffect(() => {
-    initializeIsotope();
-    fetchPhotos();
-  }, []);
-
-  useEffect(() => {
-    if (filterKey === '*') {
-      isotope.current.arrange({ filter: '*' });
-    } else {
-      isotope.current.arrange({ filter: `.${filterKey}` });
-    }
-  }, [filterKey]);
-
-  const handleFilterKeyChange = (key) => {
-    setFilterKey(key);
-  };
-
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
-
+function MyIsotope({ isToggled, photos, googleA, handleModalClick }) {
   return (
     <>
-      <ul className='iso-buttons'>
-        <li onClick={() => handleFilterKeyChange('*')}>All</li>
-        <li onClick={() => handleFilterKeyChange('Europe')}>England</li>
-        <li onClick={() => handleFilterKeyChange('NorthAmerica')}>North America</li>
-
-        <li onClick={() => isotope.current.shuffle()}>Shuffle</li>
-
-      </ul>
-
-      <PhotoModal modalOpen={modalOpen} currentImage={currentImage} handleModalClick={handleModalClick} />
-      <section className="isotope">
-        <h1 className='isotope__title'>Photo Gallery</h1>
+      <div className={`isotope ${isToggled ? 'toggled-on' : ''}`}>
         {photos.map((photo) => (
-
           <article key={photo.id} className={`isotope__card ${photo.photo_region.replace(/\s/g, '')}`}>
-
             <img src={getImageUrl(photo.filename)} alt={photo.filename} />
-
             <div className="iso-exif">
               {photos.length > 0 && (
                 <>
@@ -111,25 +21,17 @@ function MyIsotope() {
                     </Link>
                   </h2>
                   <div className='iso-exif__writing'>
-
                     <p className='iso-exif__writing--icons'>
-                      {/* <span className='iso-exif__writing--category'>GPS:</span> */}
                       <Link className='iso-exif__writing--gps' to={`${googleA}${encodeURIComponent(formatGpsData(photo.exif_data.gps?.GPSLatitude, photo.exif_data.gps?.GPSLatitudeRef))},${encodeURIComponent(formatGpsData(photo.exif_data.gps?.GPSLongitude, photo.exif_data.gps?.GPSLongitudeRef))}`} target="_blank" rel="noopener noreferrer">
-
                         <img src={gpsIcon} alt="GPS Icon" />
-
                       </Link>
                       <Link to={getImageUrl(photo.filename)} onClick={(e) => {
-                        e.preventDefault()
-                        handleModalClick(getImageUrl((photo.filename)))
-                        // console.log(getImageUrl(photo.filename))
-                        // alert(getImageUrl(photo.filename))
+                        e.preventDefault();
+                        handleModalClick(getImageUrl(photo.filename));
                       }}>
-
-                        <img src={magnifyIcon} alt="Magnify Icon"/>
+                        <img src={magnifyIcon} alt="Magnify Icon" />
                       </Link>
                     </p>
-
                     <p>
                       <span className='iso-exif__writing--category'>Date Taken: </span>
                       {photo.exif_data.exif.CreateDate}
@@ -168,8 +70,7 @@ function MyIsotope() {
             </div>
           </article>
         ))}
-      </section>
-
+      </div>
     </>
   );
 }

@@ -36,23 +36,9 @@ const PhotoModal = ({ currentImage, modalOpen, handleModalClick }) => {
       {modalOpen && isRendered && (
         <div id="lightbox" className={`lightbox ${isRendered && isOpenClassAdded ? 'lightbox--open' : 'lightbox--closed'}`}>
           <div className="lightbox__content">
-            {/* <div onClick={handleCloseModal}> */}
-              
-              {/* <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis provident, impedit, mollitia quam quia
-                deleniti qui doloribus illo consectetur fugit iste, fuga eveniet voluptates obcaecati eius quaerat incidunt
-                sit?
-              </p>
-              <div>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus cumque maiores quod omnis hic ipsa
-                tenetur, ducimus quis similique eos nobis. Facilis dicta voluptatum ad tempora, perferendis eaque expedita
-                tenetur.
-              </div> */}
-
-              <img className="lightbox__content--image" src={currentImage} alt="" />
-            {/* </div> */}
+            <img className="lightbox__content--image" src={currentImage} alt="Modal" />
             <div className='lightbox__content--subsection'>
-            <img className="lightbox__content--close" src={closeIcon} onClick={handleCloseModal} />
+              <img className="lightbox__content--close" src={closeIcon} onClick={handleCloseModal} alt="Close Icon" />
             </div>
           </div>
         </div>

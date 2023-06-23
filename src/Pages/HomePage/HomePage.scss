@@ -1,9 +1,51 @@
 .maindiv {
     display: flex;
-    background-color: red;
+    // background-color: red;
 
     &__left {
         flex-basis: 40%;
         background-color: chartreuse;
     }
 }
+
+
+.site-leaf1, .site-leaf2 {
+    box-shadow: 0;
+    height: 0%;
+    width: 100%;
+    transform: translate3d(0, 0, 0);
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -10;
+}
+
+
+
+
+.home .site-inner {
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-qug);
+}
+.toggled-on .site-leaf2 {
+    width: 90%;
+    height: 50%;
+    margin: 0 auto;
+    background-color: var(--color-qug);
+    position: absolute;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+    transform: translate3d(5%, -10vh, -1vh);
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+.toggled-on .site-leaf1 {
+    width: 95%;
+    height: 50%;
+    background-color: var(--color-qug);
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+    transform: translate3d(2.5%, -5vh, 1px);
+    z-index: -1;
+    opacity: 0.9;
+}
+

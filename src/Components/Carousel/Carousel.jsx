@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import { Link } from "react-router-dom";
-import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
+import { getImageUrl } from "../../utils/functions";
 import "./Carousel.scss";
 
 function Carousel() {
   const [photos, setPhotos] = useState([]);
   const [error, setError] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
+
+  console.log(activeSlide);
 
   useEffect(() => {
     fetchPhotos();
@@ -38,14 +39,14 @@ function Carousel() {
   return (
     <>
       <Swiper
-        navigation={true}
+        navigation={false}
         pagination={{ clickable: true }}
         modules={[Navigation, Pagination]}
         className="swiper"
         onSlideChange={handleSlideChange}
         slidesPerView='1' 
         spaceBetween={6}
-        loop={true} 
+        loop={true}  
       >
         {photos.map((photo) => (
           <SwiperSlide className="swiper__slide" key={photo.id}>
@@ -54,35 +55,9 @@ function Carousel() {
             {/* </Link> */}
           </SwiperSlide>
         ))}
-      </Swiper>
-
-      {/* <div>
-        {photos.length > 0 && <SlideDetails photo={photos[activeSlide]} />}
-      </div> */}
+      </Swiper> 
     </>
   );
-}
-
-// function SlideDetails({ photo }) {
-
-  // const pds = photo?.exif_data.gps;
-  // const googleA = 'https://www.google.com/maps/search/?api=1&query=';
-
-  // return (
-    // <div className="exif-data">
-    //   <p>
-    //     GPS: <Link to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
-    //   </p>
-    //   <p>Date Taken: {photo.exif_data.exif.CreateDate}</p>
-    //   <p>Shutter Speed: {formatExposureTime(photo.exif_data.exif.ExposureTime)}s</p>
-    //   <p>Lens: {photo.exif_data.exif.LensModel}</p>
-    //   <p>Focal Length: {photo.exif_data.exif.FocalLength}mm</p>
-    //   <p>Aperture: f/{photo.exif_data.exif.FNumber}</p>
-    //   <p>ISO: {photo.exif_data.exif.ISO}</p>
-    // </div>
-
-    // <></>
-//   );
-// }
+} 
 
 export default Carousel;
