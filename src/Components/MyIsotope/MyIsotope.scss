@@ -20,13 +20,13 @@
         background-color: $isoitem-title-bg;
         padding-bottom: 0;
         margin-bottom: 0;
-        border-color: white;
+        border-color: $iso-card-border;
         box-shadow: $pretty-shadow;
         transition: border 0.125s ease-in-out;
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.6);
-            border-color: rgba(0, 0, 0, 0.1);
+            border-color: $iso-card-border-hover;
         }
 
         &:hover .iso-exif {
@@ -113,7 +113,7 @@
                 width: 1rem;
                 height: 1rem;
                 background-color: $isoitem-title-bg;
-                border-color: $color-e;
+                border-color: $iso-card-icon;
                 transition: background-color 0.125s ease-in-out;
 
                 &:hover {
@@ -125,5 +125,5 @@
 }
 
 .active-filter {
-    color: red !important;
+    color: $category-writing-hover !important;
 }

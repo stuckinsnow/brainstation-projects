@@ -3,7 +3,7 @@
 @use './mixins.scss' as *;
 
 * {
-    color: blueviolet;
+    color: $main-bg-light;
 }
 
 body {

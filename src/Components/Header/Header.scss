@@ -33,11 +33,20 @@
             text-decoration: none;
             font-size: 0.875rem;
             width: 100%;
+            transition: color 0.25s ease-in-out;
+        }
+
+        a:hover {
+            color: $category-writing-hover;
         }
 
         .active {
             color: $active;
             height: 1rem;
+
+            &:hover {
+                color: $active;
+            }
         }
     }
 }
