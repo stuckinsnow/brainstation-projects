@@ -6,11 +6,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    height: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 #head-logo {
     // margin-left: auto;
-    font-size: 1.25rem;
+    // font-size: 1.25rem;
     text-transform: uppercase;
     font-weight: bold;
     color: $header-writing;
@@ -26,10 +29,9 @@
         padding: 1rem;
         
         a {
-            color: $header-writing;
+            color: $category-writing;
             text-decoration: none;
-            text-transform: uppercase;
-            font-size: 1.5rem;
+            font-size: 0.875rem;
             width: 100%;
         }
 

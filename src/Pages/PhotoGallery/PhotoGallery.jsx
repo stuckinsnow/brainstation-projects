@@ -6,6 +6,11 @@ import PhotoModal from '../../Components/PhotoModal/PhotoModal';
 import MyIsotope from '../../Components/MyIsotope/MyIsotope'; 
 import './PhotoGallery.scss';
 
+import cameraIcon from '../../assets/images/camera.svg';
+
+// https://www.svgrepo.com/page/licensing#MIT
+
+
 function PhotoGallery() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
@@ -74,15 +79,30 @@ function PhotoGallery() {
     setModalOpen((prev) => !prev);
   };
 
+
+
+
+
+
+  
+
   return (
     <>
-      <section className='photo-gallery'></section>
+      <section className='photo-gallery'>
 
-      <button onClick={handleToggle}>Toggle</button>
+         
+      <div className={`toggle-btn ${isToggled ? 'toggle-btn--toggled' : ''}`} onClick={handleToggle}>
+      <img className="camera-icon" src={cameraIcon} alt='camera' />
+      </div>
+   
+
+
+
+      
 
       {/* <div id="page-leaf"> */}
 
-        <ul className='iso-buttons'>
+        <ul className={`iso-buttons ${isToggled ? 'iso-buttons--toggled' : ''}`}>
           <li className={`iso-buttons--all ${filterKey === '*' ? 'active-filter' : ''}`} onClick={() => handleFilterKeyChange('*')}>
             All
           </li>
@@ -99,6 +119,10 @@ function PhotoGallery() {
 
         <MyIsotope isToggled={isToggled} photos={photos} googleA={googleA} handleModalClick={handleModalClick} />
       {/* </div> */}
+
+      </section>
+
+
     </>
   );
 }
