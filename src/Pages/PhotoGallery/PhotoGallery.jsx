@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import Isotope from 'isotope-layout';
-// import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
 import '../../Components/MyIsotope/MyIsotope.scss';
 import PhotoModal from '../../Components/PhotoModal/PhotoModal';
-import MyIsotope from '../../Components/MyIsotope/MyIsotope'; 
+import MyIsotope from '../../Components/MyIsotope/MyIsotope';
 import './PhotoGallery.scss';
 
 import cameraIcon from '../../assets/images/camera.svg';
 
 // https://www.svgrepo.com/page/licensing#MIT
 
-
+ 
 function PhotoGallery() {
+ 
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
   const isotope = useRef(null);
@@ -33,6 +33,8 @@ function PhotoGallery() {
   };
 
   useEffect(() => {
+    
+    document.title = 'Portfolio - Gallery'; 
     initializeIsotope();
     fetchPhotos();
   }, []);
@@ -79,28 +81,18 @@ function PhotoGallery() {
     setModalOpen((prev) => !prev);
   };
 
-
-
-
-
-
-  
-
   return (
     <>
+
+<title>Gallery</title>
+
+
       <section className='photo-gallery'>
 
-         
-      <div className={`toggle-btn ${isToggled ? 'toggle-btn--toggled' : ''}`} onClick={handleToggle}>
-      <img className="camera-icon" src={cameraIcon} alt='camera' />
-      </div>
-   
 
-
-
-      
-
-      {/* <div id="page-leaf"> */}
+        <div className={`toggle-btn ${isToggled ? 'toggle-btn--toggled' : ''}`} onClick={handleToggle}>
+          <img className="camera-icon" src={cameraIcon} alt='camera' />
+        </div>
 
         <ul className={`iso-buttons ${isToggled ? 'iso-buttons--toggled' : ''}`}>
           <li className={`iso-buttons--all ${filterKey === '*' ? 'active-filter' : ''}`} onClick={() => handleFilterKeyChange('*')}>
@@ -118,7 +110,6 @@ function PhotoGallery() {
         <PhotoModal modalOpen={modalOpen} currentImage={currentImage} handleModalClick={handleModalClick} />
 
         <MyIsotope isToggled={isToggled} photos={photos} googleA={googleA} handleModalClick={handleModalClick} />
-      {/* </div> */}
 
       </section>
 

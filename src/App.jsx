@@ -1,8 +1,7 @@
-// import logo from './logo.svg';
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
-import HomePage from './Pages/HomePage/HomePage'; 
+import HomePage from './Pages/HomePage/HomePage';
 import ContactPage from './Pages/ContactPage/ContactPage';
 import PhotoPage from './Pages/PhotoPage/PhotoPage';
 import DeletePage from './Pages/DeletePage/DeletePage';
@@ -15,6 +14,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -24,8 +24,8 @@ function App() {
           <Route path="/photogallery/" element={<PhotoGallery />} />
           <Route path="/admin/" element={<AdminPage />} />
         </Routes>
-
         <Footer />
+
       </BrowserRouter>
     </>
   );

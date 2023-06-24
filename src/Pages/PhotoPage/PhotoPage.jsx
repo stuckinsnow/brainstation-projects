@@ -6,16 +6,16 @@ import './PhotoPage.scss';
 
 const PhotoPage = () => {
   const [photoData, setPhotoData] = useState(null);
+  const pathName = window.location.pathname;
+  const url = `${process.env.REACT_APP_API_URL}${pathName}`;
 
   useEffect(() => {
-    const pathname = window.location.pathname;
-    const url = `${process.env.REACT_APP_API_URL}${pathname}`;
-
+    document.title = 'Portfolio - Photo ' + (photoData?.photo_name || 'Loading...');
     fetch(url)
       .then(response => response.json())
       .then(data => setPhotoData(data))
       .catch(error => console.error(error));
-  }, []);
+  }, [photoData, url]);
 
   const handleDelete = () => {
     const idToDelete = photoData?.id;
@@ -42,7 +42,6 @@ const PhotoPage = () => {
         <div>
 
           <img id="delete-photo" src={getImageUrl(photoData.filename)} alt={photoData.filename} />
-
           <div>
             <h2>Photo Information:</h2>
             <div>

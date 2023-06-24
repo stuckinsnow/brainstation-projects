@@ -1,7 +1,8 @@
 import './Header.scss';
 import { Link, NavLink } from 'react-router-dom';
 
-function Header() {
+function Header() { 
+
   return (
     <div className='head hidden'>
       <Link id="head-logo" to={"/"}>Portfolio</Link>

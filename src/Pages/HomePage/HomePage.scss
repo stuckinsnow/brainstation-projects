@@ -1,10 +1,17 @@
+@use '../../styles/colours.scss' as *;
+
 .maindiv {
     display: flex;
     // background-color: red;
 
     &__left {
         flex-basis: 40%;
-        // background-color: chartreuse;
+        flex-basis: 40%;
+        background-color: grey;
+        margin: 1rem;
+        border-style: solid;
+        border: thin solid $category-writing-hover;;
+        box-sizing: border-box;
     }
 }
 
