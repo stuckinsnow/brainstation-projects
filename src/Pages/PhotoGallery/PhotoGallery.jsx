@@ -9,9 +9,8 @@ import cameraIcon from '../../assets/images/camera.svg';
 
 // https://www.svgrepo.com/page/licensing#MIT
 
- 
+
 function PhotoGallery() {
- 
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
   const isotope = useRef(null);
@@ -33,8 +32,6 @@ function PhotoGallery() {
   };
 
   useEffect(() => {
-    
-    document.title = 'Portfolio - Gallery'; 
     initializeIsotope();
     fetchPhotos();
   }, []);
@@ -83,10 +80,6 @@ function PhotoGallery() {
 
   return (
     <>
-
-<title>Gallery</title>
-
-
       <section className='photo-gallery'>
 
 
