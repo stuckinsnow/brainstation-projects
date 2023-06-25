@@ -39,19 +39,22 @@ const PhotoPage = () => {
   return (
     <>
       {photoData ? (
-        <div>
+        <div className='delete-photo'>
 
-          <img id="delete-photo" src={getImageUrl(photoData.filename)} alt={photoData.filename} />
-          <div>
-            <h2>Photo Information:</h2>
-            <div>
-              <strong>Photo Name:</strong> {photoData.photo_name}
-              <strong>Photo Region:</strong> {photoData.photo_region}
+          <img src={getImageUrl(photoData.filename)} alt={photoData.filename} />
+          <div className='delete-photo__writing'>
+            <h2 className='delete-photo__title'>Photo Information</h2>
+            <div className='delete-photo__about'>
+              <p>
+                <strong>Name:</strong> {photoData.photo_name}
+                </p>
+              <p>
+                <strong>Region:</strong> {photoData.photo_region}
+                </p>
             </div>
-            <hr />
-            <h2>EXIF Data:</h2>
 
-            <div className="exif-data">
+            <h2 className='delete-photo__title delete-photo__title--margin'>EXIF Data</h2>
+            <div className="delete-photo__exif-data">
               <p>
                 GPS: <Link className="gps" to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
               </p>
@@ -68,9 +71,9 @@ const PhotoPage = () => {
         <div>Loading...</div>
       )}
 
-      <div>
+      <div className="delete-function">
         {photoData && (
-          <button onClick={handleDelete}>Delete</button>
+          <div className='delete-function__btn' onClick={handleDelete}>Delete</div>
         )}
       </div>
     </>

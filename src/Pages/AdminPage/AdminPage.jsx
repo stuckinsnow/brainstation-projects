@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import PhotoUpload from '../../Components/PhotoUpload/PhotoUpload'; 
+import PhotoUpload from '../../Components/PhotoUpload/PhotoUpload';
+import './AdminPage.scss';
 
 function AdminPage() {
   const [contactData, setContactData] = useState([]);

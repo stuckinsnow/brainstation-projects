@@ -1,5 +1,74 @@
 @import '../../styles/colours';
 
 .contact-area {
-    color: $main-bg-light;
+  color: $main-bg-light;
+
+  h2 {
+    color: $contact-label;
+    font-size: large;
+  }
+}
+
+.contact-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  form {
+    width: 50%;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+
+      label {
+        margin-bottom: 5px;
+        color: $contact-label;
+      }
+
+      input[type="email"],
+      input[type="text"],
+      textarea {
+        padding: 0.5rem;
+        border: thin solid $contact-border;
+        border-radius: 0.25rem;
+        background-color: $main-bg-dark;
+
+        color: $contact-label;
+      }
+
+      input[type="email"]:focus,
+      textarea:focus,
+      input:focus {
+        border-color: $form-active-bg;
+        outline: $form-active-bg;
+      }
+    }
+
+    button[type="submit"] {
+      padding: 0.5rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    &--writing {
+      height: 20rem;
+      resize: none;
+    }
+  }
+}
+
+#contactform {
+  background-color: $main-bg-dark;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: thin solid $contact-border;
+  box-shadow: $pretty-shadow;
 }
