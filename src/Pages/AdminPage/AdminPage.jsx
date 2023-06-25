@@ -34,24 +34,31 @@ function AdminPage() {
 
   return (
     <>
-      <PhotoUpload />
-      <div>
-        {contactData.map((contact) => (
-          <div key={contact.id}>
-            <div>
-              Email: {contact.email}
-            </div>
-            <div>
-              Subject: {contact.subject}
-            </div>
-            <div>
-              Content: {contact.content}
-            </div> <button onClick={() => handleDeleteContact(contact.id)} >
-              Delete
-            </button>
-          </div>
-        ))}
-      </div>
+      
+      
+        <div className='admin-page'>
+        <PhotoUpload />
+        <section className='messages'>
+          {contactData.map((contact) => (
+            <article className="messages__message" key={contact.id}>
+              <div className='messages__content'>
+              <div>
+                Email: {contact.email}
+              </div>
+              <div>
+                Subject: {contact.subject}
+              </div>
+              <div>
+                Content: {contact.content}
+              </div> 
+              </div>
+              <div className='delete-btn btn' onClick={() => handleDeleteContact(contact.id)} >
+                Delete
+              </div>
+            </article>
+          ))}
+      </section>
+        </div>
     </>
   );
 }

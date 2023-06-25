@@ -9,22 +9,22 @@ function Header() {
       <nav>
         <ul className='navbar-container'>
           <li className='navbar-container__item'>
-            <NavLink exact to="/" activeClassName="active">
+            <NavLink to="/" activeclassname="active">
               Home
             </NavLink>
           </li>
           <li className='navbar-container__item'>
-            <NavLink exact to="/photogallery/" activeClassName="active">
+            <NavLink to="/photogallery/" activeclassname="active">
               Gallery
             </NavLink>
           </li>
           <li className='navbar-container__item'>
-            <NavLink exact to="/admin" activeClassName="active">
+            <NavLink to="/admin" activeclassname="active">
               Admin
             </NavLink>
           </li>
           <li className='navbar-container__item'>
-            <NavLink exact to="/contact" activeClassName="active">
+            <NavLink to="/contact" activeclassname="active">
               Contact
             </NavLink>
           </li>
