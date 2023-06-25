@@ -44,8 +44,8 @@ function Carousel() {
         modules={[Navigation, Pagination]}
         className="swiper"
         onSlideChange={handleSlideChange}
-        slidesPerView='1' 
-        spaceBetween={6}
+        slidesPerView='2' 
+        spaceBetween={1}
         loop={true}  
       >
         {photos.map((photo) => (

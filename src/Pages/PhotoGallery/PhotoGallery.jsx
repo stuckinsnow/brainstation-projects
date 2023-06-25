@@ -11,6 +11,13 @@ import cameraIcon from '../../assets/images/camera.svg';
 
 
 function PhotoGallery() {
+
+  
+  useEffect(() => {
+    document.title = 'Portfolio - Gallery'; 
+  }, []);
+
+
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
   const isotope = useRef(null);
