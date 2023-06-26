@@ -54,8 +54,6 @@ deletePhoto = async (req, res) => {
 
   try {
     const photo = await knex('photoalbum').where({ id }).first();
-
-    // Delete the photo from the database
     knex('photoalbum')
       .where({ id })
       .del()
