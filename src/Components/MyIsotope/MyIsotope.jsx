@@ -37,24 +37,24 @@ function MyIsotope({ isToggled, photos, googleA, handleModalClick }) {
                       {photo.exif_data.exif.CreateDate}
                     </p>
                     <p>
-                      <span className='iso-exif__writing--category'>Shutter Speed: </span>
-                      {formatExposureTime(photo.exif_data.exif.ExposureTime)}s
-                    </p>
-                    <p>
                       <span className='iso-exif__writing--category'>Camera: </span>
                       {photo.exif_data.image.Model}
-                    </p>
-                    <p>
-                      <span className='iso-exif__writing--category'>Lens: </span>
-                      {photo.exif_data.exif.LensModel}
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Software: </span>
                       {photo.exif_data.image.Software}
                     </p>
                     <p>
+                      <span className='iso-exif__writing--category'>Lens: </span>
+                      {photo.exif_data.exif.LensModel}
+                    </p>
+                    <p>
                       <span className='iso-exif__writing--category'>Focal Length: </span>
                       {photo.exif_data.exif.FocalLength}mm
+                    </p>
+                    <p>
+                      <span className='iso-exif__writing--category'>Shutter Speed: </span>
+                      {formatExposureTime(photo.exif_data.exif.ExposureTime)}s
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Aperture: </span>

@@ -59,19 +59,8 @@
     padding: 1rem;
 
     &__btn {
-        color: $form-active-bg;
-        width: 100%;
-        padding: 1rem;
-        margin-right: 1rem;
-        box-sizing: border-box;
-        border-style: solid;
-        border-color: white;
-        transition: all 0.45s ease-in-out;
-        text-transform: uppercase;
-
-        &:hover {
-            color: $form-bg;
-            background-color: $category-writing-hover;
-        }
+        width: 12rem;
+        margin-left: auto;
+        transition: all 0.25s ease-in-out;
     }
 }

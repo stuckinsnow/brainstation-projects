@@ -59,9 +59,9 @@ const PhotoPage = () => {
                 GPS: <Link className="gps" to={`${googleA}${formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)},${formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}`} target="_blank" rel="noopener noreferrer">{formatGpsData(pds?.GPSLatitude, pds?.GPSLatitudeRef)} {formatGpsData(pds?.GPSLongitude, pds?.GPSLongitudeRef)}</Link>
               </p>
               <p>Date Taken: {photoData.exif_data.exif?.CreateDate}</p>
-              <p>Shutter Speed: {formatExposureTime(photoData.exif_data.exif?.ExposureTime)}s</p>
               <p>Lens: {photoData.exif_data.exif?.LensModel}</p>
               <p>Focal Length: {photoData.exif_data.exif?.FocalLength}mm</p>
+              <p>Shutter Speed: {formatExposureTime(photoData.exif_data.exif?.ExposureTime)}s</p>
               <p>Aperture: f/{photoData.exif_data.exif?.FNumber}</p>
               <p>ISO: {photoData.exif_data.exif?.ISO}</p>
             </div>
@@ -73,7 +73,7 @@ const PhotoPage = () => {
 
       <div className="delete-function">
         {photoData && (
-          <div className='delete-function__btn' onClick={handleDelete}>Delete</div>
+          <div className='delete-function__btn btn' onClick={handleDelete}>Delete</div>
         )}
       </div>
     </>

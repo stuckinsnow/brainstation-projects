@@ -52,6 +52,10 @@ const PhotoUpload = () => {
 
   return (
     <div className="form-container">
+
+{uploadSuccess && <p className="success-message">File uploaded successfully!</p>}
+
+
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <input type="file" name="photo" accept="image/*" onChange={handleFileChange} />
         <input type="text" name="photoName" placeholder="Photo Name" value={photoName} onChange={handleNameChange} />
@@ -63,8 +67,6 @@ const PhotoUpload = () => {
         </select>
 
         <button type="submit">Upload</button>
-
-        {uploadSuccess && <p className="success-message">File uploaded successfully!</p>}
       </form>
     </div>
   );

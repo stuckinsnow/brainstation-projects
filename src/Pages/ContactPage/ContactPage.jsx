@@ -31,8 +31,7 @@ function ContactPage() {
         console.log(response.data);
       })
       .catch((error) => {
-        console.error('Error:', error);
-        // Needs more here, for the status messages
+        console.error('Error:', error); 
       });
 
     setFormData({

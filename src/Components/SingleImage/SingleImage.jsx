@@ -31,7 +31,7 @@ function SingleImage() {
     return (
         <>
             {photo && (
-                <div>
+                <div className="maindiv__single">
                     <img id="single-image" src={getImageUrl(photo.filename)} alt={photo.filename} />
                 </div>
             )}

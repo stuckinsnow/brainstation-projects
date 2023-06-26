@@ -2,59 +2,69 @@
 @use '../../styles/colours.scss' as *;
 
 .error {
-    border-color: red;
+  border-color: red;
 }
 
 .error-2 {
-    color: red;
-} 
+  color: red;
+}
 
 .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.2rem;
+  width: 63%;
+  margin: auto;
+
+  form {
+    padding: 1rem;
+    border-style: solid;
+    border-radius: 0.25rem;
+    margin: 1rem;
+    background-color: #21272E;
+    border: thin solid #373e47;
+    box-shadow: 0 -0.0625rem 0.625rem rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
+    width: 100%;
     justify-content: center;
-    margin-top: 20px;
 
-    form {
-      padding: 1rem;
-      border-style: solid;
-      border-radius: 0.25rem;
-      margin: 1rem;
-      background-color: $isotope-bg;
-      border: thin solid $contact-border;
-      box-shadow: $pretty-shadow;
-    }
-  
-    input[type="file"] {
-      width: 16rem;
-      padding: 0;
-      margin: 0;
-      height: 2rem;
-      border-radius: 0.25rem;
-      color: $isoitem-title;
-    }
-  
-    input[type="text"],
-    select {
-      margin: 1rem; 
-      width: 8rem;
-      border: 1px solid #ccc;
-      border-radius: 0.25rem; 
-      padding: 0.5rem;
+
+  }
+
+  input[type="file"] {
+    width: 16rem;
+    padding: 0;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    margin: 0;
+    height: 2rem;
+    border-radius: 0.25rem;
+    color: $isoitem-title;
+  }
+
+  input[type="text"],
+  select {
+    margin: 1rem;
+    width: 8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    color: $isoitem-title-bg;
+
+    option {
       color: $isoitem-title-bg;
-
-      option {
-        color: $isoitem-title-bg;
-      }
-    }
-    
-    .error {
-      border-color: red;
-    }
-  
-    .error-2 {
-      border-color: red;
     }
   }
-  
+
+  .error {
+    border-color: red;
+  }
+
+  .error-2 {
+    border-color: red;
+  }
+}
