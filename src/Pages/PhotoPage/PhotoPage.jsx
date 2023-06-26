@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { getImageUrl, formatExposureTime, formatGpsData } from "../../utils/functions";
 import './PhotoPage.scss';
@@ -8,6 +8,7 @@ const PhotoPage = () => {
   const [photoData, setPhotoData] = useState(null);
   const pathName = window.location.pathname;
   const url = `${process.env.REACT_APP_API_URL}${pathName}`;
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = 'Portfolio - Photo ' + (photoData?.photo_name || 'Loading...');
@@ -15,18 +16,17 @@ const PhotoPage = () => {
       .then(response => response.json())
       .then(data => setPhotoData(data))
       .catch(error => console.error(error));
-  }, [photoData, url]);
+  }, []);
 
   const handleDelete = () => {
-    const idToDelete = photoData?.id;
-    const currentDomain = window.location.origin;
-    window.location.href = `${currentDomain}/deletePage`;
-
+  
+    const idToDelete = photoData?.id;    
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/delete/${idToDelete}`)
-      .then((response) => {
-        console.log("Entry successfully deleted");
-        console.log(response.data);
+    .delete(`${process.env.REACT_APP_API_URL}/delete/${idToDelete}`)
+    .then((response) => {
+      console.log("Entry successfully deleted");
+      console.log(response.data);
+      navigate("/photogallery");
       })
       .catch((error) => {
         console.error('Error:', error);

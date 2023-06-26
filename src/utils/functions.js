@@ -10,23 +10,6 @@ export const formatExposureTime = (exposureTime) => {
   return fraction;
 };
 
-// export const formatGpsData = (latitude, longitude) => {
-//   const latitudeDegrees = latitude[0];
-//   const latitudeMinutes = latitude[1];
-//   const latitudeSeconds = latitude[2];
-//   const latitudeFormatted = `${latitudeDegrees}° ${latitudeMinutes}' ${latitudeSeconds}"`;
-
-//   const longitudeDegrees = longitude[0];
-//   const longitudeMinutes = longitude[1];
-//   const longitudeSeconds = longitude[2];
-//   const longitudeFormatted = `${longitudeDegrees}° ${longitudeMinutes}' ${longitudeSeconds}"`;
-
-//   return {
-//     latitude: latitudeFormatted,
-//     longitude: longitudeFormatted,
-//   };
-// };
-
 export const formatGpsData = (gpsData, gpsRef) => {
   if (Array.isArray(gpsData) && gpsData.length === 3 && gpsRef) {
     const degrees = gpsData[0];
