@@ -1,8 +1,8 @@
 @use '../../styles/colours.scss' as *;
+@use '../../styles/global.scss' as *;
 
 .maindiv {
     display: flex;
-    // background-color: red;
 
     &__left {
         flex-basis: 40%;
@@ -26,9 +26,6 @@
     position: absolute;
     z-index: -10;
 }
-
-
-
 
 .home .site-inner {
     box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);

@@ -18,7 +18,6 @@
     top: -1.5rem;
 
     &:hover {
-        // border-color: red;
         background-color: $active;
     }
 
@@ -37,18 +36,9 @@
     height: 100%;
 }
 
-// .toggled-on {
-
-//     transform: translateY(80%) translateZ(-5rem);
-//     scale: 0.85;
-//     transition-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
-
-// }
-
 .toggled-on {
 
     transform: translateY(3rem) translateZ(-5rem);
-    // scale: 0.85;
     transition-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
 
 }
@@ -79,11 +69,9 @@
 
     &--toggled {
         opacity: 1;
-        // transition: opacity 0.125s;
     }
 
     li {
-        /* width: auto; */
         color: $iso-button-title; 
         border-radius: 0.25rem;
         text-align: center;

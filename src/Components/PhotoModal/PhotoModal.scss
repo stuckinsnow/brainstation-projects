@@ -19,11 +19,9 @@
 
     &__content {
         display: flex;
-        // background-color: red;
         flex-direction: column;
         z-index: 10;
         width: 50%;
-        // box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 
         &--image {
             border: medium solid white;

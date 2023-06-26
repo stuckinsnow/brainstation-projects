@@ -51,9 +51,7 @@ function Carousel() {
       >
         {photos.map((photo) => (
           <SwiperSlide className="swiper__slide" key={photo.id}>
-            {/* <Link to={`/photos/${photos[activeSlide].id}`}> */}
             <img src={getImageUrl(photo.filename)} alt={photo.filename} />
-            {/* </Link> */}
           </SwiperSlide>
         ))}
       </Swiper>

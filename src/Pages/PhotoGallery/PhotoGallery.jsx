@@ -89,7 +89,6 @@ function PhotoGallery() {
     <>
       <section className='photo-gallery'>
 
-
         <div className={`toggle-btn ${isToggled ? 'toggle-btn--toggled' : ''}`} onClick={handleToggle}>
           <img className="camera-icon" src={cameraIcon} alt='camera' />
         </div>
@@ -112,7 +111,6 @@ function PhotoGallery() {
         <MyIsotope isToggled={isToggled} photos={photos} googleA={googleA} handleModalClick={handleModalClick} />
 
       </section>
-
 
     </>
   );

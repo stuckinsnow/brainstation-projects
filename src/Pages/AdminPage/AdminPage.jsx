@@ -35,7 +35,6 @@ function AdminPage() {
   return (
     <>
       
-      
         <div className='admin-page'>
         <PhotoUpload />
         <section className='messages'>

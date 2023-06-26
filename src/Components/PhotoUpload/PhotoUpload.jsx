@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './PhotoUpload.scss';
 
+
 const PhotoUpload = () => {
+  const navigate = useNavigate();
   const [selectedFile, setSelectedFile] = useState(null);
   const [photoName, setPhotoName] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
@@ -24,7 +27,10 @@ const PhotoUpload = () => {
     setSelectedRegion(event.target.value);
   };
 
+
+
   const handleSubmit = (event) => {
+    const happyButton = document.querySelector('.form-container__button')
     event.preventDefault();
 
     if (selectedFile && photoName.trim() !== '') {
@@ -33,11 +39,18 @@ const PhotoUpload = () => {
       formData.append('photoName', photoName);
       formData.append('selectedRegion', selectedRegion);
 
+      happyButton.classList.add('hidden');
+
       axios
         .post(`${process.env.REACT_APP_API_URL}/upload`, formData)
         .then((response) => {
           console.log(response.data);
           setUploadSuccess(true);
+
+          setTimeout(() => {
+            navigate("/photogallery");
+          }, 2000);
+
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -45,6 +58,7 @@ const PhotoUpload = () => {
     } else {
       const photoField = document.querySelector('input[name="photo"]');
       const photoNameField = document.querySelector('input[name="photoName"]');
+      happyButton.classList.remove('hidden');
       photoField.classList.add('error-2');
       photoNameField.classList.add('error');
     }
@@ -53,7 +67,7 @@ const PhotoUpload = () => {
   return (
     <div className="form-container">
 
-{uploadSuccess && <p className="success-message">File uploaded successfully!</p>}
+      {uploadSuccess && <p className="success-message">File uploaded successfully!</p>}
 
 
       <form onSubmit={handleSubmit} encType="multipart/form-data">
@@ -66,7 +80,7 @@ const PhotoUpload = () => {
           <option value="Europe">Europe</option>
         </select>
 
-        <button type="submit">Upload</button>
+        <button type="submit" className='form-container__button'>Upload</button>
       </form>
     </div>
   );
