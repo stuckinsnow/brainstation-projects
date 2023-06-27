@@ -10,7 +10,7 @@
 
 ## Project Details
 
-I am a photographer as well as a developer, and as my final project for BrainStation, I created this to display photographs. Photographers can be curious what settings were used for a particular photograph, and so I created a feature which displays the shutter speed, aperture, ISO, etc.
+As a final project for BrainStation, I combined my passions to create a photography portfolio. This project allows a photographer to showcase their work, while also catering to curious photographers who want to know the settings used for each image. To achieve this, I incorporated a unique feature that presents crucial details such as shutter speed, aperture, ISO, and more.
 
 ## Getting Started 
 
@@ -67,3 +67,5 @@ https://github.com/stuckinsnow/brainstation-capstone-backend
 # Important Notes
 
 For the exif data to be read, a photograph will need to be exported from Adobe Lightroom / Capture One with ALL exif data enabled. Most images from online will not have exif data included.
+
+Included is a sample photograph.
