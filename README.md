@@ -10,7 +10,7 @@
 
 ## Project Details
 
-As a final project for BrainStation, I combined my passions to create a photography portfolio. This project allows a photographer to showcase their work, while also catering to curious photographers who want to know the settings used for each image. To achieve this, I incorporated a unique feature that presents crucial details such as shutter speed, aperture, ISO, and more.
+I am a photographer as well as a developer, and as my final project for BrainStation, I created a full stack photography portfolio. Aspiring photographers are often curious as to which settings were used for a particular photograph, and so I created a feature which displays exif data. This is available upon mouseover in the photo gallery page.
 
 ## Getting Started 
 
@@ -28,6 +28,20 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### `Features`
+
+- Photo carousel 
+- Photo modal (no libraries used)
+- Page scroll down effect (no libraries used)
+- Photograph upload
+   - Photograph EXIF data
+- Form upload
+   - With response from API
+- Photograph animations
+   - Includes filtering and shuffling
+- Photograph GPS location
+- Photograph and message delete
 
 ### `Technologies` 
 
@@ -60,12 +74,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Backend
 
-SQL will need to be configured using the .env sample. A seeds file is not required or implemented as the database will auto populate when a photograph is uploaded.
+SQL will need to be configured using the .env sample. A seeds file is not required or implemented as the database will auto populate when a photograph is uploaded. An "uploads" folder will need to be created in the root directory of the backend (not the front end).
 
 https://github.com/stuckinsnow/brainstation-capstone-backend
 
 # Important Notes
 
 For the exif data to be read, a photograph will need to be exported from Adobe Lightroom / Capture One with ALL exif data enabled. Most images from online will not have exif data included.
-
-Included is a sample photograph.
