@@ -57,9 +57,13 @@
       }
     }
 
-    button[type="submit"] {
+    .btn, button[type="submit"] {
       margin-left: auto;
-      width: 33%;
+      width: 33%; 
+    }
+
+    .btn {
+      pointer-events: none;
     }
 
 

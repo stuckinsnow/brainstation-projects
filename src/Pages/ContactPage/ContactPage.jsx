@@ -33,6 +33,8 @@ function ContactPage() {
     }));
   };
 
+  const submitBtn = document.querySelector('.submit-btn');
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -42,6 +44,7 @@ function ContactPage() {
 
         if (response.data.message === 'Success!') {
           setMessageSuccess(true);
+          submitBtn.classList.add('hidden');
 
           setTimeout(() => {
             navigate('/');
@@ -58,6 +61,7 @@ function ContactPage() {
       content: ''
     });
   };
+
 
   return (
     <>
@@ -78,13 +82,8 @@ function ContactPage() {
               <textarea className='contact-form__content--writing' name="content" value={formData.content} onChange={handleChange} placeholder='Write your message here' required />
             </div>
 
-            {/* {messageSuccess == true ? <p className="success-message">Message sent successfully!</p> : null} */}
-            {/* Use this for a null return */}
-
-            {messageSuccess && <p className="success-message">Message sent successfully!</p>}
-
             <div>
-              <button type="submit">Submit</button>
+              {messageSuccess === true ? <div className='btn' type="submit">Success</div> : <button className='submit-btn' type="submit">Submit</button>}
             </div>
           </form>
         </div>
