@@ -10,7 +10,7 @@
 
 ## Project Details
 
-I am a photographer as well as a developer, and as my final project for BrainStation, I created this to display photographs. Photographers can be curious what settings were used for a particular photograph, and so I created a feature which displays the shutter speed, aperture, ISO, etc.
+I am a photographer as well as a developer, and as my final project for BrainStation, I created this to display photographs. Aspiring photographers are often curious as to which settings were used for a particular photograph, and so I created a feature providing said information. This is available upon mouseover in the photo gallery page.
 
 ## Getting Started 
 
@@ -60,10 +60,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Backend
 
-SQL will need to be configured using the .env sample. A seeds file is not required or implemented as the database will auto populate when a photograph is uploaded.
+SQL will need to be configured using the .env sample. A seeds file is not required or implemented as the database will auto populate when a photograph is uploaded. An "uploads" folder will need to be created in the root directory of the backend (not the front end).
 
 https://github.com/stuckinsnow/brainstation-capstone-backend
 
 # Important Notes
 
-For the exif data to be read, a photograph will need to be exported from Adobe Lightroom / Capture One with ALL exif data enabled. Most images from online will not have exif data included.
+For the exif data to be read, a photograph will need to be exported from Adobe Lightroom / Capture One with ALL exif data enabled. Most images from online will not have exif data included. Smartphones are capable of this but may have disabled GPS tagging for security purposes.
