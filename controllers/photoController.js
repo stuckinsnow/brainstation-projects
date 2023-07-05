@@ -31,7 +31,7 @@ uploadPhoto = (req, res) => {
       knex('photoalbum')
         .insert({
           filename: req.file.originalname,
-          exif_data: JSON.stringify(exifData),
+          exif_data: exifData,
           photo_name: req.body.photoName,
           photo_region: req.body.selectedRegion
         })
