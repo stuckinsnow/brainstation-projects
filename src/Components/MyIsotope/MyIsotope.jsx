@@ -34,35 +34,35 @@ function MyIsotope({ isToggled, photos, googleA, handleModalClick }) {
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Date Taken: </span>
-                      {photo.exif_data.exif.CreateDate}
+                      {photo.exif_data.exif?.CreateDate}
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Camera: </span>
-                      {photo.exif_data.image.Model}
+                      {photo.exif_data.image?.Model}
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Software: </span>
-                      {photo.exif_data.image.Software}
+                      {photo.exif_data.image?.Software}
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Lens: </span>
-                      {photo.exif_data.exif.LensModel}
+                      {photo.exif_data.exif?.LensModel}
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Focal Length: </span>
-                      {photo.exif_data.exif.FocalLength}mm
+                      {photo.exif_data.exif?.FocalLength}mm
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Shutter Speed: </span>
-                      {formatExposureTime(photo.exif_data.exif.ExposureTime)}s
+                      {formatExposureTime(photo.exif_data.exif?.ExposureTime)}s
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>Aperture: </span>
-                      f/{photo.exif_data.exif.FNumber}
+                      f/{photo.exif_data.exif?.FNumber}
                     </p>
                     <p>
                       <span className='iso-exif__writing--category'>ISO: </span>
-                      {photo.exif_data.exif.ISO}
+                      {photo.exif_data.exif?.ISO}
                     </p>
                   </div>
                 </>
