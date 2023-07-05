@@ -7,7 +7,12 @@ const multer = require('multer');
 index = (_req, res) => {
   knex('photoalbum')
     .then((data) => {
-      res.status(200).json(data);
+      const photos = data.map((photo) => {
+        const exifData = JSON.parse(photo.exif_data);
+        photo.exif_data = exifData;
+        return photo;
+      });
+      res.status(200).json(photos);
     })
     .catch((err) => {
       res.status(400).send(`Error retrieving photos: ${err}`);
