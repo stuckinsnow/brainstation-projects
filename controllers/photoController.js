@@ -89,6 +89,9 @@ photo = async (req, res) => {
     const photo = await knex('photoalbum').where({ id }).first();
 
     if (photo) {
+      const exifData = JSON.parse(photo.exif_data);
+      photo.exif_data = exifData;
+
       res.json(photo);
     } else {
       res.status(404).json({ error: 'Photo not found' });
@@ -98,6 +101,7 @@ photo = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
+
 
 fileFilter = function (_req, file, cb) {
   if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg') {
