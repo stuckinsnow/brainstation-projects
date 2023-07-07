@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import HomePage from './Pages/HomePage/HomePage';
 import ContactPage from './Pages/ContactPage/ContactPage';
@@ -12,19 +12,19 @@ import './styles/global.scss';
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <Router>
 
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/photos/:id" element={<PhotoPage />} />
-          <Route path="/photogallery/" element={<PhotoGallery />} />
-          <Route path="/admin/" element={<AdminPage />} />
+          <Route path="/pp/" element={<HomePage />} />
+          <Route path="/pp/contact" element={<ContactPage />} />
+          <Route path="/pp/photos/:id" element={<PhotoPage />} />
+          <Route path="/pp/photogallery" element={<PhotoGallery />} />
+          <Route path="/pp/admin" element={<AdminPage />} />
         </Routes>
         <Footer />
 
-      </BrowserRouter>
+      </Router>
     </>
   );
 }

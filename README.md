@@ -12,9 +12,11 @@
 
 I am a photographer as well as a developer, and as my final project for BrainStation, I created a full stack photography portfolio. Aspiring photographers are often curious as to which settings were used for a particular photograph, and so I created a feature which displays exif data. This is available upon mouseover in the photo gallery page.
 
-## Getting Started 
+## Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project has been deployed at [https://amzn1.lswr.net/pp/](https://amzn1.lswr.net/pp/). This was hosted using Amazon Web Services - LightSail, on a debian based instance. The back end is using port 8080, but has a reserve proxy set up to redirect to port 443.
+
+The mySQL database, backend and frontend are all on the same server.
 
 ### `npm install`
 

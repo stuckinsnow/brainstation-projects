@@ -47,7 +47,7 @@ function ContactPage() {
           submitBtn.classList.add('hidden');
 
           setTimeout(() => {
-            navigate('/');
+            navigate('/pp/');
           }, 2000);
         }
       })

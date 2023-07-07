@@ -5,26 +5,26 @@ function Header() {
 
   return (
     <div className='head'>
-      <Link id="head-logo" to={"/"}>Portfolio</Link>
+      <Link id="head-logo" to={"/pp/"}>Portfolio</Link>
       <nav>
         <ul className='navbar-container'>
           <li className='navbar-container__item'>
-            <NavLink to="/" activeclassname="active">
+            <NavLink to="/pp/" activeclassname="active">
               Home
             </NavLink>
           </li>
           <li className='navbar-container__item'>
-            <NavLink to="/photogallery/" activeclassname="active">
+            <NavLink to="/pp/photogallery/" activeclassname="active">
               Gallery
             </NavLink>
           </li>
-          <li className='navbar-container__item'>
-            <NavLink to="/admin" activeclassname="active">
+          {/* <li className='navbar-container__item'>
+            <NavLink to="/pp/admin" activeclassname="active">
               Admin
             </NavLink>
-          </li>
+          </li> */}
           <li className='navbar-container__item'>
-            <NavLink to="/contact" activeclassname="active">
+            <NavLink to="/pp/contact" activeclassname="active">
               Contact
             </NavLink>
           </li>
