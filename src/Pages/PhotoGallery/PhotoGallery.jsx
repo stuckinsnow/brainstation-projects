@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Isotope from 'isotope-layout';
+import imagesLoaded from 'imagesloaded';
 import '../../Components/MyIsotope/MyIsotope.scss';
 import PhotoModal from '../../Components/PhotoModal/PhotoModal';
 import MyIsotope from '../../Components/MyIsotope/MyIsotope';
@@ -7,16 +8,10 @@ import './PhotoGallery.scss';
 
 import cameraIcon from '../../assets/images/camera.svg';
 
-// https://www.svgrepo.com/page/licensing#MIT
-
-
 function PhotoGallery() {
-
-  
   useEffect(() => {
-    document.title = 'Portfolio - Gallery'; 
+    document.title = 'Portfolio - Gallery';
   }, []);
-
 
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
@@ -32,10 +27,6 @@ function PhotoGallery() {
       itemSelector: '.isotope__card',
       layoutMode: 'fitRows',
     });
-
-    setTimeout(() => {
-      isotope.current.shuffle();
-    }, 1000);
   };
 
   useEffect(() => {
@@ -47,19 +38,27 @@ function PhotoGallery() {
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/photos/`);
       const data = await response.json();
-
+  
       setPhotos(data);
-
-      if (isotope.current) {
-        isotope.current.reloadItems();
-        isotope.current.arrange();
-      }
+  
+      const imgLoad = imagesLoaded('.isotope');
+      imgLoad.on('always', () => {
+        if (imgLoad.isComplete) {
+          if (isotope.current) {
+            isotope.current.reloadItems();
+            isotope.current.arrange();
+            setTimeout(() => {
+              isotope.current.shuffle();
+            }, 1000);
+          }
+        }
+      });
     } catch (error) {
       console.error(error);
       setError(error);
     }
   };
-
+  
   useEffect(() => {
     if (filterKey === '*') {
       isotope.current.arrange({ filter: '*' });
@@ -88,7 +87,6 @@ function PhotoGallery() {
   return (
     <>
       <section className='photo-gallery'>
-
         <div className={`toggle-btn ${isToggled ? 'toggle-btn--toggled' : ''}`} onClick={handleToggle}>
           <img className="camera-icon" src={cameraIcon} alt='camera' />
         </div>
