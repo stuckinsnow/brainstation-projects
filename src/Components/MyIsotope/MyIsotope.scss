@@ -1,20 +1,25 @@
 @use '../../styles/colours.scss' as *;
 @use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
 
 .isotope {
-    padding: 0.5rem;
+    // padding: 0.5rem;
     padding-top: 0.25rem;
     padding-bottom: 1rem;
     box-shadow: $pretty-shadow;
     scale: 1;
-    transition: transform 0.45s, scale 0.45s; 
+    transition: transform 0.45s, scale 0.45s;
     min-height: 80vh;
     margin-top: -2rem;
     background-color: $isotope-bg;
 
+    @include tablet {
+        padding: 0.5rem;
+    }
+
     &__card {
         margin: 0.5rem;
-        margin-top: 0.75rem;
+        // margin-top: 0.75rem;
         display: flex;
         width: auto;
         border-style: solid;
@@ -24,6 +29,10 @@
         border-color: $iso-card-border;
         box-shadow: $pretty-shadow;
         transition: border 0.125s ease-in-out;
+
+        @include tablet {
+            margin-top: 0.75rem;
+        }
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.6);
@@ -36,8 +45,14 @@
         }
 
         img {
-            height: 14rem;
-            width: auto;
+
+            width: 100%;
+
+            @include tablet {
+                height: 14rem;
+                width: auto;
+            }
+
         }
 
         img:hover {
@@ -45,7 +60,7 @@
         }
     }
 
-    
+
 }
 
 .iso-exif {
@@ -88,8 +103,8 @@
         p {
             color: $isoitem-writing;
             margin: 0;
-            
-        animation-delay: 1s;
+
+            animation-delay: 1s;
         }
 
         &--category {

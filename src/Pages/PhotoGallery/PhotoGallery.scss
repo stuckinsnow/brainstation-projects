@@ -1,9 +1,10 @@
 @use '../../styles/colours.scss' as *;
 @use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
 
 .toggle-btn {
-    margin: 1rem;
     text-transform: uppercase;
+    margin: 0 auto 1rem auto;
     cursor: pointer;
     user-select: none;
     width: 1rem;
@@ -13,9 +14,13 @@
     background-color: $isoitem-title-bg;
     border-color: $iso-card-icon;
     transition: all 0.125s;
-
-    position: absolute;
     top: -1.5rem;
+
+    
+    @include tablet {
+        margin: 1rem;
+        position: absolute;
+    }
 
     &:hover {
         background-color: $active;
@@ -57,7 +62,7 @@
 .iso-buttons {
     display: flex;
     list-style: none;
-    justify-content: flex-end;
+    justify-content: center;
     margin-bottom: 0;
     cursor: pointer;
     user-select: none;
@@ -66,6 +71,10 @@
     transition-timing-function: cubic-bezier(1, -0.23, 1, 1.03);
     margin-top: 0;
     margin-right: 1.5rem;
+
+    @include tablet {
+        justify-content: flex-end;
+    }
 
     &--toggled {
         opacity: 1;
