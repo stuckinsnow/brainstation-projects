@@ -16,7 +16,8 @@ function MyIsotope({ isToggled, photos, googleA, handleModalClick }) {
               {photos.length > 0 && (
                 <>
                   <h2 className='iso-exif__title'>
-                    <Link to={`/pp/photos/${photo.id}`}>
+                    {/* <Link to={`/pp/photos/${photo.id}`}> */}
+                      <Link to={`/pp/`}> 
                       {photo.photo_name}
                     </Link>
                   </h2>
