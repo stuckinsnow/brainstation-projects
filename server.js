@@ -3,6 +3,7 @@ require('dotenv').config();
 const app = express();
 const cors = require('cors');
 const PORT = process.env.PORT || 5050;
+const HOST = process.env.DB_HOST;
 const multer = require('multer');
 const siteRoutes = require('./routes/siteRoutes');
 const photoController = require('./controllers/photoController');
@@ -21,15 +22,15 @@ const apiKeyMiddleware = (req, res, next) => {
   }
 };
 
-app.post('/upload', upload.single('photo'), apiKeyMiddleware, photoController.uploadPhoto);
+app.post('/pp/upload', upload.single('photo'), apiKeyMiddleware, photoController.uploadPhoto);
 
-app.use('/delete', siteRoutes);
-app.use('/', siteRoutes);
-app.use('/photos', siteRoutes);
-app.use('/uploads', express.static('uploads'));
+app.use('/pp/delete', siteRoutes);
+app.use('/pp/', siteRoutes);
+app.use('/pp/photos', siteRoutes);
+app.use('/pp/uploads', express.static('uploads'));
 
-app.get('/', (_req, res) => {
+app.get('/pp', (_req, res) => {
   res.send('Welcome to my API');
 });
 
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running at https://${HOST}/${PORT}`));
