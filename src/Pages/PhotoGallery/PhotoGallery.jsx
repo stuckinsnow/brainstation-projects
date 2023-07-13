@@ -36,7 +36,7 @@ function PhotoGallery() {
 
   const fetchPhotos = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/pp/photos/`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/photos/`);
       const data = await response.json();
   
       setPhotos(data);
