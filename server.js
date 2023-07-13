@@ -22,14 +22,14 @@ const apiKeyMiddleware = (req, res, next) => {
   }
 };
 
-app.post('/pp/upload', upload.single('photo'), apiKeyMiddleware, photoController.uploadPhoto);
+app.post('/upload', upload.single('photo'), apiKeyMiddleware, photoController.uploadPhoto);
 
-app.use('/pp/delete', siteRoutes);
-app.use('/pp/', siteRoutes);
-app.use('/pp/photos', siteRoutes);
-app.use('/pp/uploads', express.static('uploads'));
+app.use('/delete', siteRoutes);
+app.use('/', siteRoutes);
+app.use('/photos', siteRoutes);
+app.use('/uploads', express.static('uploads'));
 
-app.get('/pp', (_req, res) => {
+app.get('/', (_req, res) => {
   res.send('Welcome to my API');
 });
 
