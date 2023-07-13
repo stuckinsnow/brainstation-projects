@@ -21,7 +21,6 @@ export const formatGpsData = (gpsData, gpsRef) => {
   }
 };
 
-
 export const useDocumentTitle = (title) => {
   useEffect(() => {
     document.title = title;
