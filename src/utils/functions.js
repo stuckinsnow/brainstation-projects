@@ -1,4 +1,5 @@
 import Fraction from "fraction.js";
+import { useEffect } from "react";
 
 export const getImageUrl = (filename) => {
   const serverBaseUrl = process.env.REACT_APP_API_URL;
@@ -20,3 +21,9 @@ export const formatGpsData = (gpsData, gpsRef) => {
   }
 };
 
+
+export const useDocumentTitle = (title) => {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+};

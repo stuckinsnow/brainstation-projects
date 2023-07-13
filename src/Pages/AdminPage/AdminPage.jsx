@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import PhotoUpload from '../../Components/PhotoUpload/PhotoUpload';
 import './AdminPage.scss';
+import { useDocumentTitle } from '../../utils/functions';
 
 function AdminPage() {
   const [contactData, setContactData] = useState([]);
 
-  useEffect(() => {
-    document.title = 'Portfolio - Admin';
+  useDocumentTitle('Portfolio - Admin'); 
 
+  useEffect(() => { 
     axios
       .get(`${process.env.REACT_APP_API_URL}/emails/`)
       .then((response) => {

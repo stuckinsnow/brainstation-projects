@@ -3,11 +3,12 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './ContactPage.scss';
 import SingleImage from '../../Components/SingleImage/SingleImage';
+import { useDocumentTitle } from '../../utils/functions';
 
-function ContactPage() {
-  useEffect(() => {
-    document.title = 'Portfolio - Contact';
-  }, []);
+function ContactPage() { 
+  useDocumentTitle('Portfolio - Contact'); 
+
+
   const [messageSuccess, setMessageSuccess] = useState(false);
   // const messageSuccessRef = useRef(messageSuccess);
 

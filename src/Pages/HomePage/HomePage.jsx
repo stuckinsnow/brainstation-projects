@@ -1,11 +1,10 @@
 import './HomePage.scss';
 import Carousel from '../../Components/Carousel/Carousel';
-import { useEffect } from 'react';
+import { useDocumentTitle } from '../../utils/functions';
 
 function HomePage() { 
-  useEffect(() => {
-    document.title = 'Portfolio'; 
-  }, []);
+
+  useDocumentTitle('Portfolio'); 
 
   return (
 

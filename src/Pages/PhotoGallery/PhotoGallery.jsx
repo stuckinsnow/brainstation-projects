@@ -5,13 +5,13 @@ import '../../Components/MyIsotope/MyIsotope.scss';
 import PhotoModal from '../../Components/PhotoModal/PhotoModal';
 import MyIsotope from '../../Components/MyIsotope/MyIsotope';
 import './PhotoGallery.scss';
+import { useDocumentTitle } from '../../utils/functions';
 
 import cameraIcon from '../../assets/images/camera.svg';
 
-function PhotoGallery() {
-  useEffect(() => {
-    document.title = 'Portfolio - Gallery';
-  }, []);
+function PhotoGallery() { 
+  
+  useDocumentTitle('Portfolio - Gallery');
 
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
