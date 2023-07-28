@@ -93,13 +93,3 @@ https://github.com/stuckinsnow/brainstation-capstone-backend
 # Important Notes
 
 For the exif data to be read, a photograph will need to be exported from Adobe Lightroom / Capture One with ALL exif data enabled. Most images from online will not have exif data included.
-
-## Backend
-
-SQL will need to be configured using the .env sample. A seeds file is not required or implemented as the database will auto populate when a photograph is uploaded. An "uploads" folder will need to be created in the root directory of the backend (not the front end).
-
-https://github.com/stuckinsnow/brainstation-capstone-backend
-
-# Important Notes
-
-For the exif data to be read, a photograph will need to be exported from Adobe Lightroom / Capture One with ALL exif data enabled. Most images from online will not have exif data included.
