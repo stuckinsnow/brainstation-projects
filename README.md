@@ -1,5 +1,11 @@
 <h1 align="center">Photography Portfolio</h1> 
 
+<img src="https://i.imgur.com/8hBrdFd.jpg" />
+<img src="https://i.imgur.com/wgfeqSs.jpg" />
+<img src="https://i.imgur.com/DT1V12X.jpg" />
+<img src="https://i.imgur.com/Qa2jrDP.jpg" />
+
+
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=stuckinsnow&label=Profile%20views&color=0e75b6&style=flat" alt="stuckinsnow" /> </p>
 
 
@@ -10,11 +16,11 @@
 
 ## Project Details
 
-I am a photographer as well as a developer, and as my final project for BrainStation, I created a full stack photography portfolio. Aspiring photographers are often curious as to which settings were used for a particular photograph, and so I created a feature which displays exif data. This is available upon mouseover in the photo gallery page.
+I enjoy photography as well as developing; for my final project at BrainStation, I created a full stack photography portfolio. Aspiring photographers are often curious as to which settings have been used for a particular photograph, and so I created a feature which grabs data from the photograph, saves it into a databsae, and then shows the exif data on mouseover. It also outputs the GPS location, and you can click a link, taking you where the photograph was taken, on Google maps!
 
 ## Getting Started
 
-This project has been deployed at [https://amzn1.lswr.net/pp/](https://amzn1.lswr.net/pp/). This was hosted using Amazon Web Services - LightSail, on a debian based instance. The back end is using port 8080, but has a reserve proxy set up to redirect to port 443.
+This project has been deployed at [https://amzn1.lswr.net/pp/](https://amzn1.lswr.net/pp/). Using Amazon Web Services - LightSail, on a debian based instance. I have had to change some features for security purposes. The back end is using port 8080, but has a reverse proxy set up to redirect to port 443.
 
 The mySQL database, backend and frontend are all on the same server.
 
