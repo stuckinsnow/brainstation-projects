@@ -1,6 +1,8 @@
 <h1 align="center">🥑 BrainFlix 🥑</h1>
 
-<p>This projected was created while at BrainStation. The challenge statement was to create a "...new video streaming platform called BrainFlix"</p> Mockups were provided.
+## BrainStation project
+
+<p>This projected was created while at BrainStation. The challenge statement was to create a "...new video streaming platform called BrainFlix" and mockups were provided</p>.
 
 <img src="https://i.imgur.com/L3e27rg.jpg" />
 
