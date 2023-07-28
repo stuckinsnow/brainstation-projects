@@ -6,8 +6,7 @@ I enjoy photography as well as developing; for my final project at BrainStation,
 
 Other features of the project include a minimal amount of libraries as I wanted to extend my knowledge to the maximum amount possible given the short time frame. 
 
-
-## Getting Started
+## Live URL
 
 This project has been deployed at [https://amzn1.lswr.net/pp/](https://amzn1.lswr.net/pp/). Using Amazon Web Services - LightSail, on a debian based instance. I have had to change some features for security purposes. The back end is using port 8080, but has a reverse proxy set up to redirect to port 443.
 
