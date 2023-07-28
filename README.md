@@ -1,4 +1,4 @@
-<h1 align="center">Photography Portfolio</h1> 
+<h1 align="center">🥑 Photography Portfolio 🥑</h1> 
 
 ## Project Details
 
@@ -11,6 +11,32 @@ Other features of the project include a minimal amount of libraries as I wanted 
 This project has been deployed at [https://amzn1.lswr.net/pp/](https://amzn1.lswr.net/pp/). Using Amazon Web Services - LightSail, on a debian based instance. I have had to change some features for security purposes. The back end is using port 8080, but has a reverse proxy set up to redirect to port 443.
 
 The mySQL database, backend and frontend are all on the same server.
+
+### Features
+
+- Photo carousel 
+- Photo modal (no libraries used)
+- Page scroll down effect (no libraries used)
+- Photograph upload
+   - Photograph EXIF data
+- Form upload
+   - With response from API
+- Photograph animations
+   - Includes filtering and shuffling
+- Photograph GPS location
+- Photograph and message delete
+
+### 👽 Technology 👽 
+
+- Axios
+- Sql
+- Knex
+- Node.js
+- JavaScript
+- HTML5
+- SASS
+- CSS
+- Api Key
 
 ## Screenshots 
 
@@ -41,32 +67,6 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `Features`
-
-- Photo carousel 
-- Photo modal (no libraries used)
-- Page scroll down effect (no libraries used)
-- Photograph upload
-   - Photograph EXIF data
-- Form upload
-   - With response from API
-- Photograph animations
-   - Includes filtering and shuffling
-- Photograph GPS location
-- Photograph and message delete
-
-### `Technologies` 
-
-- Axios
-- Sql
-- Knex
-- Node.js
-- JavaScript
-- HTML5
-- SASS
-- CSS
-
-
 ### `Dependencies`
 
    - @babel/plugin-proposal-private-property-in-object: "7.21.11"
@@ -83,6 +83,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
    - sass: "^1.63.4"
    - swiper: "^9.4.1"
    - web-vitals: "^2.1.4"
+
+## Backend
+
+SQL will need to be configured using the .env sample. A seeds file is not required or implemented as the database will auto populate when a photograph is uploaded. An "uploads" folder will need to be created in the root directory of the backend (not the front end).
+
+https://github.com/stuckinsnow/brainstation-capstone-backend
+
+# Important Notes
+
+For the exif data to be read, a photograph will need to be exported from Adobe Lightroom / Capture One with ALL exif data enabled. Most images from online will not have exif data included.
 
 ## Backend
 
