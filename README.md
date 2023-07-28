@@ -1,6 +1,6 @@
 <h1 align="center">🥑 Band Site 🥑</h1>
 
-<p>I created this project as part of my BrainStation bootcamp.
+<p>I created this project as part of my BrainStation bootcamp. It was a fun way to learn SASS and JavaScript better.</p>
 
 
 <img src="https://i.imgur.com/DZRDIwe.jpg" />
