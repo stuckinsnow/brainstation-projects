@@ -2,10 +2,7 @@
 
 ## BrainStation project
 
-<p>This projected was created while at BrainStation. The challenge statement was to create a "...new video streaming platform called BrainFlix" and mockups were provided</p>.
-
-<img src="https://i.imgur.com/L3e27rg.jpg" />
-
+<p>This projected was created while at BrainStation. The challenge statement was to create a "...new video streaming platform called BrainFlix" and mockups were provided.</p>
 
 ## Features✨
 
@@ -16,9 +13,6 @@
    <li>Select active video from the right</li>
    <li>Responsive -- mobile, tablet and desktop</li>
 </ul>
-
-<img src="https://i.imgur.com/Opnn346.jpg" />
-
 
 ## 👽 Technology 👽
 
@@ -37,9 +31,15 @@
    <li>Postman</li>
 </ul>
 
+<img src="https://i.imgur.com/L3e27rg.jpg" />
+
 
 ## Set up and installation
 
 1. Clone the repo to your local directory 
 2. Run npm install & npm start  
 2. For the backend, run node server.js
+
+<img src="https://i.imgur.com/Opnn346.jpg" />
+
+
