@@ -56,7 +56,7 @@ The mySQL database, backend and frontend are all on the same server.
 
 ### `npm install`
 
-Please run "npm I" to install the node modules.
+If you don't wish to click the URL where it is deployed, you can download the project. Please run "npm I" to install the node modules.
 
 ## Available Scripts
 
