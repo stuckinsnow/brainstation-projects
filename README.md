@@ -8,7 +8,7 @@ Other features of the project include a minimal amount of libraries as I wanted 
 
 ## Live URL
 
-This project has been deployed at [https://amzn1.lswr.net/pp/](https://amzn1.lswr.net/pp/). Using Amazon Web Services - LightSail, on a debian based instance. I have had to change some features for security purposes. The back end is using port 8080, but has a reverse proxy set up to redirect to port 443.
+This project has been deployed at [[https://amzn1.lswr.net/pp/]([https://amzn1.lswr.net/pp/](https://lswr.net/pp/))](https://lswr.net/pp/). Using Amazon Web Services - LightSail, on a debian based instance. I have had to change some features for security purposes. The back end is using port 8080, but has a reverse proxy set up to redirect to port 443.
 
 The mySQL database, backend and frontend are all on the same server.
 
