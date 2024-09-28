@@ -1,0 +1,37 @@
+// Fonts
+
+@font-face {
+  font-family: "AvenirNextLTPro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "AvenirNextLTPro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+// Media queries
+
+$tablet-width: 768px;
+$desktop-width: 1280px;
+$highres-width: 1600px;
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin highres {
+  @media (min-width: $highres-width) {
+    @content;
+  }
+}

@@ -1,0 +1,149 @@
+@use "../../styles/Partials/m_&_f" as *;
+@use "../../styles/Partials/colours" as *;
+
+
+#upload-page {
+
+    padding: 1rem;
+    padding-top: 0;
+    border-top-style: solid;
+    color: $Pri-Mid;
+    border-width: thin;
+
+    @include tablet {
+        padding: 0 2rem;
+    }
+
+    @include desktop {
+        padding: 0 8rem;
+    }
+
+}
+
+.up-head h1 {
+
+    color: $Pri-Dark;
+    font-weight: bold;
+
+    @include tablet {
+        padding-bottom: 1rem;
+        border-bottom-style: solid;
+        border-bottom-color: $Pri-Mid;
+        border-width: thin;
+    }
+
+    @include desktop {
+        padding-left: 1rem;
+    }
+}
+
+.up-wrap {
+
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__video {
+
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            flex-basis: 35%;
+        }
+
+        span {
+            color: $Pri-Mid;
+
+            @include desktop {
+                padding-left: 1rem;
+            }
+        }
+
+        img {
+            max-width: 100%;
+
+            @include tablet {
+                max-width: 50%;
+            }
+
+            @include desktop {
+                max-width: 100%;
+                padding: 1rem;
+            }
+        }
+    }
+
+    &__form {
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        @include desktop {
+            flex-basis: 65%;
+        }
+
+        &--titlelabel {
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+
+        &--titletext {
+            height: 1rem;
+            padding: 1rem;
+        }
+
+        &--desclabel {
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+        
+        &--desctext {
+            height: 8rem;
+            padding: 1rem;
+        }
+
+        &--titletext, &--desctext {
+            background-color: $Sec-Light;
+            border-color: $Pri-Mid;
+            border-radius: 0.25rem;
+        }
+    }
+
+}
+
+
+.up-sub {
+    width: 100%;
+    @include tablet {
+        display: flex;
+        justify-content: flex-end;
+        border-color: transparent;
+        border-top-style: solid;
+        border-top-color: $Pri-Mid;
+        border-top-width: thin;
+        margin-top: 1rem;
+    }
+
+    &__publish {
+        margin-top: 1rem;
+    }
+
+    &__cancel {
+        margin-top: 1rem;
+        text-transform: uppercase;
+        color: $Pri-Col;
+        background-color: $Pri-Light;
+
+        @include tablet {
+            order: -1;
+        }
+
+        span {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

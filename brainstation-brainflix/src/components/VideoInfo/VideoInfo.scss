@@ -1,0 +1,83 @@
+@use "../../styles/Partials/m_&_f" as *;
+@use "../../styles/Partials/colours" as *;
+
+.videoinfo {
+
+    &__title {
+        font-size: xx-large;
+        margin: 0;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__stats {
+
+        display: flex;
+        padding: 0.5rem 0;
+        justify-content: space-between;
+        border-bottom: thin solid $Pri-Mid;
+        border-top: thin solid $Pri-Mid;
+
+        @include tablet {
+            border-top: none;
+        }
+
+        @include desktop {
+            padding-right: 2rem;
+        }
+
+        &--author {
+            font-weight: 700;
+            color: $Sec-Dark;
+        }
+
+        &--date,
+        &--views,
+        &--likes {
+            color: $Pri-Mid;
+        }
+
+        &--date {
+            @include tablet {
+                margin-left: 2rem;
+            }
+        }
+
+        &--views {
+            @include tablet {
+                margin-right: 2rem;
+            }
+        }
+
+        &--spacer {
+
+            @include tablet {
+
+                display: flex;
+            }
+        }
+
+        &--spacer article {
+            padding: 0.5rem 0rem;
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            padding-right: 0.5rem;
+            height: 1.25rem;
+        }
+    }
+
+    &__description {
+        padding: 1rem 0;
+
+        @include desktop {
+            padding-right: 2rem;
+        }
+    }
+
+}

@@ -1,0 +1,25 @@
+@use "../../styles/Partials/m_&_f" as *;
+
+
+.hero {
+
+    width: 100%;
+    min-width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+
+    &__video {
+        box-sizing: border-box;
+        height: 14rem;
+    
+        @include tablet {
+            height: 27rem;
+        }
+        
+        @include desktop {
+            height: 30rem;
+        }
+    }
+
+}

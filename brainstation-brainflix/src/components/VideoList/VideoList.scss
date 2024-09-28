@@ -1,0 +1,52 @@
+@use "../../styles/Partials/m_&_f" as *;
+@use "../../styles/Partials/colours" as *;
+
+
+.videocontainer {
+
+    &__title {
+        font-size: large;
+        color: $Pri-Mid;
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
+}
+
+.video-list-item {
+    text-decoration: none;
+    padding-top: 1rem;
+    display: flex;
+
+    @include tablet {
+        padding-top: 2rem;
+    }
+
+    &__image, img {
+        background: no-repeat center;
+        background-size: cover;
+        width: 9rem;
+        min-width: 9rem;
+        height: 5.5rem;
+        border-radius: 0.5rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 1rem;
+        text-decoration: none;
+        color: $Pri-Dark;
+
+        &--title {
+            font-size: 1.25rem;
+            color: $Pri-Dark;
+            font-weight: 900;
+            transition: color .100s ease-in-out;
+        }
+
+        &--title:hover {
+            color: $Sec-Dark;
+        }
+    }
+}

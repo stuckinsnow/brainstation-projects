@@ -1,0 +1,172 @@
+@use '../../styles/Partials/_colours.scss' as *;
+@use '../../styles/Partials/_m_&_f.scss' as *;
+
+.com-container {
+
+    &__comments {
+        padding-top: 1rem;
+        font-size: large;
+        font-family: 'AvenirNextLTPro';
+        font-weight: 700;
+    }
+
+    .newcomment {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        .btn {
+
+            @include tablet {
+                margin-top: 1rem;
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1rem;
+            flex: 80%;
+
+            @include tablet {
+                gap: 0;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            @include desktop {
+                padding-right: 2rem;
+            }
+
+
+            &__sub {
+                width: 100%;
+            }
+
+
+            label {
+                color: $Pri-Mid;
+                margin-bottom: 0.25rem;
+            }
+
+            label {
+                text-transform: uppercase;
+            }
+
+            label,
+            textarea {
+                border-radius: 0.35rem;
+            }
+
+            textarea {
+                box-sizing: border-box;
+                resize: none;
+                margin-top: 0.25rem;
+                padding: 1rem;
+                font-size: large;
+                width: 100%;
+
+                @include tablet {
+                    padding: 0.5rem;
+                    height: 2.5rem;
+                }
+            }
+
+            &__name {
+                height: 1.25rem;
+            }
+
+            &__content {
+                height: 8rem;
+            }
+
+        }
+
+        &__pic {
+            margin-right: 1rem;
+
+            div {
+                margin-top: 1.5rem;
+                height: 2.25rem;
+                width: 2.25rem;
+                overflow: hidden;
+                border-radius: 3rem;
+            }
+
+            img {
+                height: 2.25rem;
+                width: auto;
+                background-color: $Pri-Mid;
+            }
+        }
+    }
+
+    .comments {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.25rem;
+
+        @include tablet {
+
+            padding-top: 1.8rem;
+        }
+    }
+
+    .comment {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        border-top: thin solid $Pri-Mid;
+        padding: 1rem 1rem 0 0;
+
+        @include tablet {
+            padding: 2rem 2rem 0 0;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex: 80%;
+        }
+
+        &__pic {
+            margin-right: 1rem;
+
+            div {
+                height: 2.25rem;
+                width: 2.25rem;
+                overflow: hidden;
+                border-radius: 3rem;
+                min-width: 2.25rem;
+                min-height: 2.25rem;
+                width: auto;
+                background-color: #e1e1e1;
+            }
+        }
+
+        &__info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0.5rem;
+        }
+
+        &__info div {
+            margin: 0;
+        }
+
+        &__name {
+            color: $Pri-Dark;
+            font-weight: 900;
+        }
+
+        &__date {
+            color: $Pri-Mid;
+        }
+    }
+}
