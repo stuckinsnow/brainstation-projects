@@ -1,0 +1,51 @@
+@use './colours.scss' as *;
+@use './mixins.scss' as *;
+
+* {
+    color: $iso-button-title;
+}
+
+body {
+    background-color: $page;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+ul,
+li,
+div,
+button,
+p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+button[type="submit"],
+.btn {
+    width: 8rem;
+    padding: 0.5rem;
+    background-color: $button;
+    color: $isoitem-writing;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+        color: $button;
+        background-color: $isoitem-writing;
+    }
+
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

@@ -1,0 +1,98 @@
+@use '../../styles/colours.scss' as *;
+@use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.toggle-btn {
+    text-transform: uppercase;
+    margin: 0 auto 1rem auto;
+    cursor: pointer;
+    user-select: none;
+    width: 1rem;
+    height: 1rem;
+    padding: 0.5rem;
+    border-style: solid;
+    background-color: $isoitem-title-bg;
+    border-color: $iso-card-icon;
+    transition: all 0.125s;
+    top: -1.5rem;
+
+    
+    @include tablet {
+        margin: 1rem;
+        position: absolute;
+    }
+
+    &:hover {
+        background-color: $active;
+    }
+
+    &--toggled {
+        border-color: chartreuse;
+    }
+
+    &--toggled:hover {
+        border-color: chartreuse;
+    }
+
+}
+
+.camera-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.toggled-on {
+
+    transform: translateY(3rem) translateZ(-5rem);
+    transition-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &__title {
+        font-size: large;
+        text-transform: uppercase;
+    }
+}
+
+.iso-buttons {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-bottom: 0;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-timing-function: cubic-bezier(1, -0.23, 1, 1.03);
+    margin-top: 0;
+    margin-right: 1.5rem;
+
+    @include tablet {
+        justify-content: flex-end;
+    }
+
+    &--toggled {
+        opacity: 1;
+    }
+
+    li {
+        color: $iso-button-title; 
+        border-radius: 0.25rem;
+        text-align: center;
+        padding: 0.25rem 0.5rem;
+        margin: 0.25rem 0.5rem; 
+        gap: 4px;
+        font-size: 12px;
+        background-color: $iso-button;
+    }
+}
+
+#page-leaf {
+    padding: 1rem;
+    box-shadow: $pretty-shadow-top;
+}

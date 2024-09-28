@@ -1,0 +1,100 @@
+@use '../../styles/colours' as *;
+@use '../../styles/global.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+
+.maindiv {
+  align-items: center;
+
+  &__single {
+    display: none;
+  }
+
+  @include tablet {
+    &__single {
+      display: flex;
+    }
+  }
+}
+
+.contact-container {
+  display: flex;
+  color: $main-bg-light;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  flex-wrap: wrap;
+  align-content: center;
+
+  @include tablet {
+    width: 50%;
+    flex-wrap: nowrap;
+  }
+
+  
+
+  h2 {
+    color: $contact-label;
+    font-size: small;
+    text-transform: uppercase;
+  }
+
+  .contact-form {
+    width: 100%;
+    background-color: $main-bg-dark;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: thin solid $contact-border;
+    box-sizing: border-box;
+    
+
+    div {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+
+      label {
+        margin-bottom: 1rem;
+        color: $contact-label;
+      }
+
+      input[type="email"],
+      input[type="text"],
+      textarea {
+        padding: 0.5rem;
+        border: thin solid $contact-border;
+        border-radius: 0.25rem;
+        background-color: $main-bg-dark;
+
+        color: $contact-label;
+      }
+
+      input[type="email"]:focus,
+      textarea:focus,
+      input:focus {
+        border-color: $form-active-bg;
+        outline: $form-active-bg;
+      }
+    }
+
+    .btn, button[type="submit"] {
+      margin-left: auto;
+      width: 33%; 
+    }
+
+    .btn {
+      pointer-events: none;
+    }
+
+
+    &__content {
+      &--writing {
+        height: 100%;
+        resize: none;
+        height: 7rem;
+      }
+    }
+  }
+}

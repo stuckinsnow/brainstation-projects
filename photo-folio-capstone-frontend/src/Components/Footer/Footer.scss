@@ -1,0 +1,20 @@
+@use '../../styles/colours.scss' as *;
+@use '../../styles/global.scss' as *;
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: $active;
+        text-decoration: none;
+        transition: color 0.125s ease-in-out;
+
+        &:hover {
+            color: $category-writing-hover;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+@use './styles/colours.scss' as *;
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+  scrollbar-width: thin; /* Set the width of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Set the border radius of the scrollbar thumb */
+}
+
+/* For other browsers */
+/* Note: Some newer versions of Firefox and Edge support the standard CSS scrollbar properties. */
+/* You can use those instead of the vendor-specific properties below. */
+/* See the updated CSS code after this example. */
+
+/* Firefox */
+/* Please note that older versions of Firefox may not support these styles */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Edge and Internet Explorer */
+/* Please note that Edge legacy (older versions) do not support these styles */
+/* Edge Chromium and newer versions of Internet Explorer may support these styles */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+} 

@@ -1,0 +1,58 @@
+@use '../../styles/colours.scss' as *;
+@use '../../styles/global.scss' as *;
+
+.head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#head-logo {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $header-writing;
+    text-decoration: none;
+}
+
+.navbar-container {
+    display: flex;
+    list-style: none;
+    padding-bottom: 0;
+    margin: 0;
+
+    &__item {
+        flex-basis: 20%;
+        margin: 1rem;
+        
+        
+        a {
+            color: $category-writing;
+            text-decoration: none;
+            font-size: 0.875rem;
+            width: 100%;
+            transition: color 0.25s ease-in-out;
+            padding: 0.25rem;
+        }
+
+        a:hover {
+            color: $category-writing-hover;
+        }
+
+        .active {
+            color: $active;
+            height: 1rem;
+
+            &:hover {
+                color: $active;
+            }
+        }
+    }
+}
+
+.active {
+    color: red;
+}

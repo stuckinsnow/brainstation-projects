@@ -1,0 +1,66 @@
+@use '../../styles/colours.scss' as *;
+@use '../../styles/fonts.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.delete-photo {
+
+    display: flex;
+    align-items: row;
+    flex-direction: row;
+
+    &__title {
+        margin: auto;
+        margin-bottom: 1rem;
+        font-size: x-large;
+        margin: 0;
+
+        &--margin {
+            margin-top: 2rem;
+        }
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin: 0.25rem 0;
+        }
+    }
+
+    img {
+        padding: 1rem;
+        width: 50%;
+    }
+
+    &__writing {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem; 
+    }
+
+    &__exif-data {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        p {
+            flex-basis: 50%;
+            margin: 0.25rem 0;
+        }
+    }
+}
+
+.delete-function {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+
+    &__btn {
+        width: 12rem;
+        margin-left: auto;
+        transition: all 0.25s ease-in-out;
+    }
+}
