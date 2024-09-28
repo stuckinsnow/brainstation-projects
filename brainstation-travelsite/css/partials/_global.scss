@@ -1,0 +1,238 @@
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+// Colours
+
+/* 
+AP = Active Page
+BG = Background
+TT = Title and Text
+ST = Subtitles */
+
+$ap: #db7a4e;
+$bg: #fefaf5;
+$tt: #335576;
+$st: #db7a4e;
+
+body {
+	background-color: $bg;
+}
+
+main {
+	background-color: #ffffff;
+}
+
+// end of colours */
+
+/* h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+   Write them in this order
+} */
+
+p,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1
+// Should P be at the top of this list? I assume so because h6 is smaller than h1, and I think the order for those is correct.
+{
+	color: $tt;
+}
+
+#nav__logo,
+.body__navbar a {
+	color: #335576;
+	transition: .1s ease-in-out;
+	border: solid;
+	border-top: 0;
+	border-right: 0;
+	border-bottom-width: 0.3em;
+	border-left: 0;
+	border-color: transparent;
+}
+
+.body__navbar a:hover {
+	color: $ap;
+	border-color: #db7a4e20;
+}
+
+// "The navigation bar must be fixed to the top of the page"
+
+#nav__logo {
+	order: -1;
+	margin-right: auto;
+	font-weight: 900;
+	margin-left: 5rem;
+	
+	a {
+		color: $tt;
+		border-style: none;
+	}
+
+}
+
+.body__navbar {
+	width: 100%;
+	position: fixed;
+	background-color: #ffffff;
+	top: 0;
+
+	ul {
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 9rem;
+	}
+
+	#ul__currentpage a {
+		text-decoration: none;
+		border: solid;
+		border-color: $ap;
+		border-top: 0;
+		border-right: 0;
+		border-bottom-width: 0.3em;
+		border-left: 0;
+	}
+
+	li {
+		margin: 1em;
+	}
+
+	ul li a {
+		padding-bottom: 0.5rem;
+		text-decoration: none;
+		color: black;
+	}
+
+	ul li a:active {
+		color: $ap;
+	}
+}
+
+.main__title {
+	margin-left: 7rem;
+}
+
+.main__card-container {
+	display: flex;
+	gap: 2rem;
+	// width: 67vw;
+	margin: auto;
+	padding-bottom: 5rem;
+	padding-top: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
+
+
+	a {
+		width: auto;
+		height: auto;
+	}
+
+	h2 {
+		width: 100%;
+		float: left;
+	}
+
+	img {
+		width: auto;
+		border-radius: 5px;
+		height: 100%
+	}
+}
+
+.section__card {
+	//     The border radius of the cards must be 5px
+	// o The border of the cards must be 1px solid black with an opacity of 20%
+	// o The box shadow of the cards must be:
+	//  Horizontal Offset: 0px
+	//  Vertical Offset: 4px
+	//  Blur: 4px
+	//  Color: Black, with an opacity of 20%
+
+
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+	color: black;
+	--width: 20vw;
+	/* set the weight using a variable */
+	width: var(--width);
+	/* set the width of the container using the variable */
+	height: calc(var(--width) / 0.66);
+	/* calculate the height based on the width variable */
+}
+
+footer {
+	background-color: $bg;
+	height: 20vh;
+}
+
+.footer__info {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+
+	h3 {
+		margin: 0;
+	}
+
+	article {
+		padding: 0 2em;
+	}
+
+	ul {
+		display: inline-flex;
+		padding: 0;
+		margin: 0;
+	}
+
+	ul li {
+		list-style: none;
+		padding: 0;
+		flex-grow: 2;
+		// width: 50%;
+	}
+
+	ul li h3,
+	ul li p {
+		width: 100%;
+		// margin: 0 0.5rem;
+		margin-right: 1rem;
+	}
+
+	.footer__subtitle {
+		font-size: 0.8rem;
+		color: $st;
+		margin-bottom: -0.8rem;
+	}
+
+	// article:last-child {
+	//     display: block;
+	// }
+
+	img {
+		width: auto;
+		height: 2rem;
+		padding-right: 1rem;
+		padding-top: 1rem;
+	}
+
+	a {
+		color: $tt;
+		text-decoration: none;
+		transition: .1s ease-in-out;
+	}
+
+	a:hover {
+		color: $ap;
+	}
+}
