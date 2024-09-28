@@ -1,0 +1,216 @@
+@use "./partials/global" as *;
+
+.hero {
+    background-image: url(../assets/images/hero-shows.jpg);
+    justify-content: flex-start;
+
+    &__subhead {
+        font-family: AvenirNextLTPro-Demi;
+        letter-spacing: 0.025rem;
+        width: 100%;
+        color: $pri-light;
+        margin-left: 1rem;
+        margin-bottom: 0;
+        margin-top: 0.5rem;
+
+        @include tablet {
+            font-size: 1.5rem;
+            margin-left: 8rem;
+        }
+    }
+
+    &__head {
+        width: 75%;
+
+        @include desktop {
+            width: 35%;
+            margin-left: 8rem;
+        }
+    }
+
+    iframe {
+        width: 100%;
+        // width: 22rem;
+        height: 7rem;
+        padding: 0 1rem;
+
+        @include tablet {
+            width: 55%;
+            padding: 0 2rem;
+        }
+
+        @include desktop {
+            width: 40%;
+        }
+    }
+}
+.show-wrapper {
+    @include desktop {
+        display: flex;
+        justify-content: space-around;
+    }
+    .show-wrapper__head {
+        font-size: 2rem;
+        margin-left: 1rem;
+        margin-bottom: 0;
+
+        @include tablet {
+            margin-left: 2rem;
+        }
+
+        @include desktop {
+            margin-left: 4rem;
+        }
+    }
+}
+
+.shows {
+    @include desktop {
+        display: flex;
+        align-content: flex-start;
+        flex-direction: column;
+        width: 70%;
+    }
+}
+
+.shows__container,
+.showslist,
+.showslist__headings {
+    flex-direction: column;
+}
+
+.shows__container {
+
+    display: flex;
+    border-bottom: .2rem solid $pri-mid;
+    padding: 1rem;
+
+    @include tablet {
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem 2rem;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .showslist {
+        display: flex;
+        width: 100%;
+        list-style-type: none;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        @include tablet {
+            width: 75%;
+            justify-content: space-around;
+            flex-direction: row;
+        }
+
+        &__date-item,
+        &__venue-item,
+        &__location-item {
+
+            @include tablet {
+                width: 33%;
+                text-align: left;
+            }
+
+        }
+
+        &__headings {
+            color: $pri-mid;
+            padding-top: 1rem;
+
+            @include tablet {
+                color: #afafaf;
+                padding-top: 1rem;
+                order: -2;
+                flex-basis: calc(33% - 3rem);
+                margin-right: auto;
+                padding: 0.5rem;
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &__date-item {
+            font-weight: bold;
+        }
+
+        &__ticket-item {
+            text-transform: uppercase;
+            padding: 1rem;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            border-radius: 0.3rem;
+            padding-bottom: 0.8rem;
+
+            @include tablet {
+                // margin-top: 0.5rem;
+                margin-bottom: 1rem;
+                width: 25%;
+            }
+        }
+
+        &__headings--hidden {
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}
+
+.shows__container {
+    transition: background-color .25s ease-in-out;
+}
+.shows__container:hover {
+    background-color: $sec-light;
+}
+
+.shows__container:first-child:hover {
+    background-color: transparent;
+}
+
+.shows__container--selected {
+    background-color: $sec-mid;
+    &:hover {
+        background-color: $sec-mid;
+    }
+}
+
+.shows__container:first-child .showslist__headings--hidden {
+
+    @include tablet {
+        padding-left: 0;
+        display: flex;
+    }
+}
+
+.shows__container:first-child .showslist {
+    flex-wrap: wrap;
+    height: 3.5rem;
+}
+
+.shows__container:first-child {
+    text-transform: uppercase;
+    display: none;
+    border-color: transparent;
+
+    @include tablet {
+        display: flex;
+        align-items: flex-end;
+        padding: 1rem 2rem;
+        // padding: 0;
+        // padding-left: 2rem;
+    }
+}
+
+.shows__container:last-child {
+    margin-bottom: 1rem;
+
+    @include tablet {
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,352 @@
+@use "./partials/global" as *;
+
+.hero {
+    background-image: url(../assets/Images/hero-bio.jpg);
+}
+
+.biography {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-bottom: 0;
+
+    h2 {
+        font-family: 'AvenirNextLTPro-Demi';
+        line-height: 1rem;
+        margin: 0;
+        padding-top: 0.2rem;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            font-size: 2rem;
+            padding: 2rem 0 2rem 1rem;
+        }
+
+        @include desktop {
+            padding: 3rem 0 3rem 6.5rem;
+        }
+
+        &__author {
+            @include tablet {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__container {
+        font-family: 'AvenirNextLTPro-Demi';
+        font-size: 0.85rem;
+
+        @include tablet {
+            padding: 0rem 6rem;
+            // padding: 6rem;
+            // padding-bottom: 0rem;
+            // padding-top: 0rem;
+        }
+
+        @include desktop {
+            padding: 0 10rem;
+        }
+
+        p {
+            @include tablet {
+                font-size: 1.25rem;
+            }
+
+            @include desktop {
+                font-size: 1.7rem;
+                width: 78%;
+            }
+        }
+
+        #bio-photo {
+            background-image: url(../assets/images/band.jpg);
+            background-position: bottom;
+            background-size: cover;
+            // --width: calc(100vw - 2rem);
+            // max-width: 100%;
+            // width: var(--width);
+            // height: calc(var(--width) / 1.868315938667697);
+            width: auto;
+            height: 12rem;
+            
+
+            @include tablet {
+                background-position: center;
+                // --width: calc(100vw - 12rem);
+                // height: calc(var(--width) / 1.894736842105263);
+                height: 20rem;
+                width: auto;
+            }
+
+            @include desktop {
+                height: 35rem;
+                width: auto;
+            }
+        }
+    }
+}
+
+.atb {
+    font-size: 0.825rem;
+    line-height: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+
+    @include tablet {
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 0 6rem;
+    }
+
+    @include desktop {
+        padding: 0 10rem;
+    }
+
+    &__information {
+        padding: 1rem;
+        padding-top: 0;
+
+        @include tablet {
+            font-size: 0.8rem;
+            width: calc(50% - 2rem);
+            padding-bottom: 2rem;
+        }
+
+        @include desktop {
+            font-size: 1.125rem;
+        }
+    }
+
+    h2 {
+        font-size: 0.9rem;
+        text-indent: 1rem;
+        width: 100%;
+
+        @include tablet {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.gallery {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $sec-light;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    @include tablet {
+        gap: 1.5rem;
+        padding: 3.375rem 1.5rem 2rem 1.5rem;
+        margin-bottom: 0;
+
+        h2 {
+            font-size: 2.25rem;
+            margin: 0;
+            margin-left: 0.625rem;
+            width: 100%;
+        }
+    }
+
+    @include desktop {
+        padding: 2rem 6rem;
+    }
+
+    img {
+        box-sizing: border-box;
+        width: calc(100% - 2rem);
+
+        @include tablet {
+            width: calc(33% - 1.35rem);
+            filter: grayscale(100%);
+            transition: filter 125ms ease-in-out;
+        }
+    }
+
+    img:hover {
+        filter: grayscale(0);
+    }
+}
+
+.com-container {
+    padding: 1rem;
+
+    h2 { 
+
+        @include tablet {
+            padding-left: 1rem;
+        }
+
+        @include desktop {
+            padding-left: 6rem;
+        }
+    }
+
+
+    .newcomment {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        @include tablet {
+            width: 80%;
+            margin: auto;
+        }
+
+        @include desktop {
+            width: 50%;
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            flex: 80%;
+
+            label {
+                color: $pri-mid;
+                margin-bottom: 0.25rem;
+            }
+
+            label,
+            button {
+                text-transform: uppercase;
+            }
+
+            textarea,
+            button {
+                margin-bottom: 1rem;
+            }
+
+            label,
+            textarea,
+            button {
+                border-radius: 0.35rem;
+            }
+
+            button {
+
+                @include tablet {
+                    margin-left: auto;
+                    width: 10rem;
+                }
+            }
+
+            textarea {
+                padding: 0.5rem;
+            }
+
+            &__name {
+                height: 1.25rem;
+            }
+        }
+
+        &__pic {
+            flex: 2.25rem;
+
+            div {
+                margin-top: 1.5rem;
+                height: 2.25rem;
+                width: 2.25rem;
+                overflow: hidden;
+                border-radius: 3rem;
+            }
+
+            img {
+                height: 2.25rem;
+                width: auto;
+                background-color: $pri-mid;
+            }
+        }
+    }
+
+    .comments {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .comment {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        border-top: 1px solid $pri-mid;
+        padding: 1rem 0;
+
+        @include tablet {
+            
+            width: 80%;
+            margin: auto;
+        }
+
+        @include desktop {
+            width: 50%;
+        }
+
+        &:last-child {
+            border-bottom: 1px solid $pri-mid;
+            margin-bottom: 1rem;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            // padding: 10px;
+            flex: 80%;
+        }
+
+        &__pic {
+            flex: 2.25rem;
+
+            div {
+                height: 2.25rem;
+                width: 2.25rem;
+                overflow: hidden;
+                border-radius: 3rem;
+            }
+
+            img {
+                height: 2.25rem;
+                width: auto;
+                background-color: $pri-mid;
+            }
+        }
+
+        &__info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0.5rem;
+        }
+
+        &__info div {
+            margin: 0;
+        }
+
+        &__name {
+            color: $pri-dark;
+            font-weight: 900;
+        }
+
+        &__date {
+            color: $pri-mid;
+        }
+
+        // &__wrapper div:last-child {
+        //     margin-top: auto;
+        // }
+    }
+}
